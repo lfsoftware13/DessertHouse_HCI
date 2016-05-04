@@ -1,0 +1,15 @@
+
+#footer { min-height: 475px; _height: 475px; }
+#tmall-copyright .footer-copyright b { color: #fff; }
+/*#tmall-ensure { background: url(//img.alicdn.com/tps/TB1s2VXLpXXXXXFXVXXXXXXXXXX-1190-60.png) no-repeat; height: 60px; }*/
+#tmall-ensure { background: url(//img.alicdn.com/tps/TB1ijFSLFXXXXcdXXXXXXXXXXXX-1190-60.png) no-repeat; height: 60px; }
+#tmall-ensure a { width: 296px; height: 60px; }
+#tmall-copyright { border-color: #0061c4; background: #0061c4; }
+#tmall-copyright .footer-copyright { background: #0061c4; color: #fff; }
+#tmall-copyright .footer-copyright a { color: #fff; }
+#server-num, #footer .server-num { background: #0061c4; color: #0061c4; }
+@media (max-width: 1210px) {
+    /*#tmall-ensure { background: url(//img.alicdn.com/tps/TB1bGmNLpXXXXXUXVXXXXXXXXXX-990-60.jpg) no-repeat; }*/
+    #tmall-ensure { background: url(//img.alicdn.com/tps/TB1_zNyLFXXXXc4XFXXXXXXXXXX-990-60.png) no-repeat; }
+    #tmall-ensure a { width: 245px; }
+}

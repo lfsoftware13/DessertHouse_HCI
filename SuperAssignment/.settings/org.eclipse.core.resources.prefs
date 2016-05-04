@@ -1,0 +1,6 @@
+eclipse.preferences.version=1
+encoding//WebContent/page/jsps/Admin_Clerk.jsp=UTF-8
+encoding//WebContent/page/jsps/Login.jsp=UTF-8
+encoding//WebContent/page/jsps/loginFail.jsp=UTF-8
+encoding//WebContent/page/jsps/registerFail.jsp=UTF-8
+encoding//src/homework/servlets/ClerkInf.java=UTF-8

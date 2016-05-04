@@ -1,0 +1,25 @@
+
+.sn-mcate-bd{z-index:999999}
+.tmall-3c #footer{min-height:400px; height:auto; _height: 400px;}
+.row3-footer{height: auto}
+/**style for detail\list\shop */
+.tm-chn-3c .logo-3c{
+	font-size: 0;
+	position: relative;
+	float: left;
+    width: 104px;
+    display: block;
+    height: 33px;
+    margin-top: 18px;
+    margin-right: 7px;
+}
+.tm-chn-3c .logo-3c s{
+	position: absolute;
+	cursor :pointer;
+	top: 0;
+	left: 0;
+	width: 104px;
+    height: 33px;
+	background: url(//img.alicdn.com/tps/TB1.tZOIpXXXXXiXFXXXXXXXXXX.png) no-repeat;
+}
+@media only screen and (-webkit-min-device-pixel-ratio:2),only screen and (min--moz-device-pixel-ratio:2),only screen and (-o-min-device-pixel-ratio:2/1),only screen and (min-device-pixel-ratio:2),only screen and (min-resolution:192dpi),only screen and (min-resolution:2dppx){.tm-chn-3c .logo-3c s{background:url(//img.alicdn.com/tps/TB1fPMgIpXXXXXoXFXXXXXXXXXX.png) no-repeat;background-size: contain;}}

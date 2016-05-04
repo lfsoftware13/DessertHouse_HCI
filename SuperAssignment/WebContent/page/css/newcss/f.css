@@ -1,0 +1,319 @@
+#tstart-plugin-switch .tstart-item-icon,.tstart-minimized .switch-mini,#tstart .i-arrow,#tstart .msg-count,#tstart .msg-count span,#tstart .icon-new,#tstart-plugin-news .t-msg-count .arrow,#tstart .switch-mini-tip {
+	background-image:url(//img.alicdn.com/tps/i3/T1zYneXXlqXXaloVr4-167-122.png);
+	background-repeat:no-repeat
+}
+body,#tstart h1,#tstart h2,#tstart h3,#tstart h4,#tstart h5,#tstart h6,#tstart hr,#tstart p,#tstart dl,#tstart dt,#tstart dd,#tstart ul,#tstart ol,#tstart li,#tstart pre,#tstart form,#tstart fieldset,#tstart legend,#tstart button,#tstart input,#tstart th,#tstart td {
+	margin:0;
+	padding:0
+}
+body,#tstart button,#start input,#tstart select {
+	font:12px/1.5 tahoma,arial,b8bf53,sans-serif
+}
+#tstart h1,#tstart h2,#tstart h3,#tstart h4,#tstart h5,#tstart h6 {
+	font-size:100%
+}
+#tstart address,#tstart em {
+	font-style:normal
+}
+#tstart code,#tstart pre {
+	font-family:courier new,courier,monospace
+}
+#tstart small {
+	font-size:12px
+}
+#tstart ul,#tstart ol {
+	list-style:none
+}
+#tstart a {
+	text-decoration:none
+}
+#tstart sup {
+	vertical-align:text-top
+}
+#tstart sub {
+	vertical-align:text-bottom
+}
+#tstart legend {
+	color:#000
+}
+#tstart fieldset,#tstart img {
+	border:0;
+	margin:0;
+	float:none
+}
+#tstart button,#tstart input,#tstart select {
+	font-size:100%
+}
+#tstart .hidden,#tstart .tstart-hidden {
+	display:none!important
+}
+#tstart .invisible,#tstart .tstart-invisible {
+	visibility:hidden!important
+}
+#tstart {
+	position:fixed;
+	right:0;
+	bottom:0;
+	z-index:100000;
+	_position:absolute;
+	height:28px;
+	color:#3e3e3e;
+	text-align:left;
+	_right:1px
+}
+#tstart .tstart-toolbar {
+	height:28px;
+	float:right;
+	right:0
+}
+#tstart a {
+	color:#000;
+	text-decoration:none
+}
+#tstart .tstart-bd {
+	height:28px;
+	margin:0
+}
+#tstart .tstart-areas {
+	position:relative;
+	zoom:1;
+	height:28px;
+	line-height:28px;
+	float:right;
+}
+#tstart .tstart-item {
+	position:relative;
+	zoom:1;
+	float:left;
+	display:block;
+	height:28px;
+}
+#tstart .tstart-link-item a {
+	float:left;
+	padding:0 8px
+}
+#tstart a:hover {
+	color:#f60;
+	text-decoration:underline
+}
+#tstart .tstart-normal-trigger,#tstart .tstart-drop-trigger {
+	cursor:pointer;
+	padding:0 8px
+}
+#tstart .i-arrow {
+	width:5px;
+	height:3px;
+	position:absolute;
+	right:0;
+	top:12px;
+	background-position:-134px -59px
+}
+#tstart .tstart-item-active .i-arrow {
+	display:none
+}
+#tstart i {
+	background:0;
+	display:inline-block;
+	height:auto;
+	line-height:1;
+	margin:auto;
+	overflow:hidden;
+	text-indent:0;
+	vertical-align:middle;
+	width:auto
+}
+#tstart-plugin-switch {
+	height:25px
+}
+#tstart-plugin-switch .toggle-area {
+	cursor:pointer
+}
+#tstart-plugin-switch a {
+	display:none
+}
+#tstart-plugin-switch .tstart-item-icon {
+	display:inline-block;
+	width:19px;
+	height:25px;
+	line-height:100px;
+	overflow:hidden;
+	zoom:1;
+	background-position:0 -59px;
+	vertical-align:middle;
+	font-size:0;
+	margin-top:0;
+	vertical-align:top
+}
+.tstart-minimized #tstart-plugin-switch .tstart-item-icon {
+	background-position:-18px -59px
+}
+#tstart .switch-mini-tip {
+	display:none;
+	width:135px;
+	height:28px;
+	overflow:hidden;
+	position:absolute;
+	top:-30px;
+	margin-left:-160px;
+	background-position:0 -94px
+}
+.tstart-minimized .hover .switch-mini-tip {
+	display:inline-block!important
+}
+.tstart-minimized .switch-mini {
+	display:inline-block!important;
+	width:17px;
+	height:17px;
+	overflow:hidden;
+	vertical-align:middle;
+	margin:0 5px;
+	background-position:-47px -59px;
+	*margin-top:5px
+}
+.tstart-minimized .hover .switch-mini {
+	background-position:-69px -59px
+}
+.tstart-minimized .tstart-bd {
+	float:right;
+	width:auto;
+	display:inline
+}
+.tstart-minimized .tstart-areas {
+	float:left;
+	background:green
+}
+.tstart-minimized .tstart-item {
+	display:none
+}
+.tstart-minimized #tstart-plugin-tdog,.tstart-minimized #tstart-plugin-settings,.tstart-minimized #tstart-plugin-switch {
+	display:block
+}
+.tstart-news-tip {
+	position:absolute;
+	bottom:0;
+	left:0
+}
+#tstart-plugin-news .t-msg-count {
+	position:absolute;
+	bottom:-30px;
+	right:5px;
+	color:#fff;
+	display:inline-block;
+	text-align:right;
+	*width:132px
+}
+#tstart-plugin-news .t-msg-count .tip {
+	display:inline-block;
+	text-decoration:none;
+	border:1px solid #fbce67;
+	background-color:#fee195;
+	color:#3f4537;
+	height:21px;
+	line-height:21px;
+	white-space:nowrap;
+	padding:0 15px;
+	font-weight:400;
+	background-repeat:repeat-x;
+	background-position:0 -134px
+}
+#tstart-plugin-news .t-msg-count em {
+	color:#ff4300;
+	font-weight:400;
+	text-decoration:none;
+	font-style:normal;
+	margin:0 3px
+}
+#tstart-plugin-news .t-msg-count .arrow {
+	width:11px;
+	height:6px;
+	right:10px;
+	top:23px;
+	position:absolute;
+	z-index:2;
+	background-position:-112px -59px
+}
+#tstart .tstart-item-active .t-msg-count {
+	visibility:hidden
+}
+#tstart .msg-count,#tstart .msg-count span {
+	display:inline-block;
+	height:22px
+}
+#tstart .msg-count {
+	padding-right:5px;
+	background-position:right -32px;
+	position:absolute;
+	top:-15px;
+	right:0;
+	color:#fff;
+	font-weight:600;
+	line-height:16px
+}
+#tstart .msg-count span {
+	padding-left:5px;
+	background-position:0 0
+}
+#tstart .tstart-item-active .msg-count {
+	display:none
+}
+#tstart-plugin-myapps .tip-intro {
+	background:none repeat scroll 0 0 #ffffc5;
+	border:1px solid #d4d4d4;
+	height:24px;
+	left:0;
+	line-height:23px;
+	overflow:visible;
+	position:absolute;
+	top:-30px;
+	width:290px;
+	z-index:60
+}
+#tstart-plugin-myapps .tip-intro i,#tstart-plugin-myapps .tip-intro .close,#tstart-plugin-myapps .tip-intro s {
+	background:url(//img.alicdn.com/tps/i4/T1m4KGXi8jXXXXXXXX-120-213.png) no-repeat 0 0
+}
+#tstart-plugin-myapps .tip-intro i,#tstart-plugin-myapps .tip-intro .close {
+	width:23px;
+	height:23px;
+	line-height:23px;
+	display:inline-block
+}
+#tstart-plugin-myapps .tip-intro i {
+	background-position:0 -190px
+}
+#tstart-plugin-myapps .tip-intro .close {
+	background-position:-23px -190px;
+	display:block;
+	overflow:hidden;
+	position:absolute;
+	right:0;
+	text-indent:-1000px;
+	top:0;
+	cursor:pointer
+}
+#tstart-plugin-myapps .tip-intro s {
+	background-position:-46px -190px;
+	display:block;
+	height:13px;
+	left:20px;
+	position:absolute;
+	top:24px;
+	width:23px;
+	z-index:100
+}
+#tstart-plugin-myapps .tip-intro a {
+	color:#004d99
+}
+#tstart .icon-new {
+	width:21px;
+	height:16px;
+	position:absolute;
+	top:-7px;
+	right:0;
+	background-position:-96px -76px
+}
+#tstart .tstart-item-active .tip-new {
+	display:none
+}
+#tstart .tstart-drop-panel {
+	position:absolute
+}
