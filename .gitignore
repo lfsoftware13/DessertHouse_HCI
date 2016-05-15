@@ -1,1 +1,5 @@
 /SuperAssignment/src/note
+*.class
+/SuperAssignment/build/classes/note
+*/applicationContext.xml
+*.classpath
