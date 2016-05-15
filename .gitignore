@@ -1,8 +1,9 @@
 *.class
+*.classpath
 /SuperAssignment/src/note
+/SuperAssignment/.classpath
 /SuperAssignment/build/classes/note
 /SuperAssignment/build/classes/.gitignore
 applicationContext.xml
-*.classpath
 *.turn-project
-*.classpath
+SuperAssignment/.classpath
