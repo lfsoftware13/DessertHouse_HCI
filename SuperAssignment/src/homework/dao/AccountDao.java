@@ -2,8 +2,6 @@ package homework.dao;
 
 import java.util.List;
 
-import javax.ejb.Remote;
-
 import homework.model.Account;
 
 public interface AccountDao {

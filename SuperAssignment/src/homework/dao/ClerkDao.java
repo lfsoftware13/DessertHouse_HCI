@@ -2,8 +2,6 @@ package homework.dao;
 
 import java.util.List;
 
-import javax.ejb.Remote;
-
 import homework.model.Clerk;
 
 public interface ClerkDao {
