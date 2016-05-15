@@ -1,5 +1,6 @@
 *.class
 *.classpath
+*.project
 /SuperAssignment/src/note
 /SuperAssignment/.classpath
 /SuperAssignment/build/classes/note
