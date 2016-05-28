@@ -17,23 +17,37 @@ public class Stock implements Serializable {
 	@Id
 	private String id;
 
-	@Temporal(TemporalType.DATE)
-	private Date end;
+	private String details;
+
+	private double discount;
+
+	private String image;
+
+	private String intruduce;
+
+	private String name;
+
+	@Column(name="name_en")
+	private String nameEn;
 
 	private int number;
 
-	private String product;
+	private double price;
 
-	private String productid;
+	private String publisher;
+
+	private int rank;
+
+	private int sales;
+
+	private int score;
+	
+	private int level1;
+	
+	private int level2;
 
 	@Temporal(TemporalType.DATE)
-	private Date start;
-
-	private String store;
-
-	private String storeid;
-	
-	private Double price;
+	private Date time;
 
 	public Stock() {
 	}
@@ -46,12 +60,52 @@ public class Stock implements Serializable {
 		this.id = id;
 	}
 
-	public Date getEnd() {
-		return this.end;
+	public String getDetails() {
+		return this.details;
 	}
 
-	public void setEnd(Date end) {
-		this.end = end;
+	public void setDetails(String details) {
+		this.details = details;
+	}
+
+	public double getDiscount() {
+		return this.discount;
+	}
+
+	public void setDiscount(double discount) {
+		this.discount = discount;
+	}
+
+	public String getImage() {
+		return this.image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
+	}
+
+	public String getIntruduce() {
+		return this.intruduce;
+	}
+
+	public void setIntruduce(String intruduce) {
+		this.intruduce = intruduce;
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getNameEn() {
+		return this.nameEn;
+	}
+
+	public void setNameEn(String nameEn) {
+		this.nameEn = nameEn;
 	}
 
 	public int getNumber() {
@@ -62,52 +116,68 @@ public class Stock implements Serializable {
 		this.number = number;
 	}
 
-	public String getProduct() {
-		return this.product;
-	}
-
-	public void setProduct(String product) {
-		this.product = product;
-	}
-
-	public String getProductid() {
-		return this.productid;
-	}
-
-	public void setProductid(String productid) {
-		this.productid = productid;
-	}
-
-	public Date getStart() {
-		return this.start;
-	}
-
-	public void setStart(Date start) {
-		this.start = start;
-	}
-
-	public String getStore() {
-		return this.store;
-	}
-
-	public void setStore(String store) {
-		this.store = store;
-	}
-
-	public String getStoreid() {
-		return this.storeid;
-	}
-
-	public void setStoreid(String storeid) {
-		this.storeid = storeid;
-	}
-	
-	public Double getPrice() {
+	public double getPrice() {
 		return this.price;
 	}
 
-	public void setPrice(Double price) {
+	public void setPrice(double price) {
 		this.price = price;
+	}
+
+	public String getPublisher() {
+		return this.publisher;
+	}
+
+	public void setPublisher(String publisher) {
+		this.publisher = publisher;
+	}
+
+	public int getRank() {
+		return this.rank;
+	}
+
+	public void setRank(int rank) {
+		this.rank = rank;
+	}
+
+	public int getSales() {
+		return this.sales;
+	}
+
+	public void setSales(int sales) {
+		this.sales = sales;
+	}
+
+	public int getScore() {
+		return this.score;
+	}
+
+	public void setScore(int score) {
+		this.score = score;
+	}
+	
+	public int getLevel1() {
+		return this.level1;
+	}
+
+	public void setLevel1(int level1) {
+		this.level1 = level1;
+	}
+	
+	public int getLevel2() {
+		return this.level2;
+	}
+
+	public void setLevel2(int level2) {
+		this.level2 = level2;
+	}
+
+	public Date getTime() {
+		return this.time;
+	}
+
+	public void setTime(Date time) {
+		this.time = time;
 	}
 
 }

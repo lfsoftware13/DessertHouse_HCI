@@ -286,9 +286,9 @@ public class MemberServiceImpl implements MemberService {
 		Member mem=memberDao.findById(memberid);
 		Stock sto=stockDao.findById(stockid);
 		double discountprice=sto.getPrice();
-		if(mem!=null){
-			discountprice=discountprice*mem.getDiscount();
-		}
+//		if(mem!=null){
+//			discountprice=discountprice*mem.getDiscount();
+//		}
 		
 		double tot=number*discountprice;
 		
@@ -349,10 +349,10 @@ public class MemberServiceImpl implements MemberService {
 			con.setMemberid(mem.getId());
 			con.setMember(mem.getName());
 		}
-		con.setStoreid(sto.getStoreid());
-		con.setStore(sto.getStore());
-		con.setProductid(sto.getProductid());
-		con.setProduct(sto.getProduct());
+//		con.setStoreid(sto.getStoreid());
+//		con.setStore(sto.getStore());
+		con.setProductid(sto.getId());
+		con.setProduct(sto.getName());
 		con.setPrice(sto.getPrice());
 		con.setDiscountprice(discountprice);
 		con.setTotal(tot);

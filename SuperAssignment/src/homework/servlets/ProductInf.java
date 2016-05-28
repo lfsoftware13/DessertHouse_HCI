@@ -52,8 +52,8 @@ public class ProductInf extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-//		response.getWriter().append("Served at: ").append(request.getContextPath());
-		
+		//参数
+		//id：图书编号
 		PrintWriter out=response.getWriter();
 		Stock sto=planService.findStockById(request.getParameter("id"));
 		

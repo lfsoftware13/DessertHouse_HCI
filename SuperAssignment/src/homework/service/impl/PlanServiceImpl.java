@@ -198,12 +198,12 @@ public class PlanServiceImpl implements PlanService {
 			PlanItem pla=(PlanItem) list.get(i);
 			String note= noteService.getNote("stock");
 			stock.setId(note);
-			stock.setStoreid(plan.getStoreid());
-			stock.setStore(plan.getStore());
-			stock.setProductid(pla.getProductid());
-			stock.setProduct(pla.getProduct());
-			stock.setStart(plan.getStart());
-			stock.setEnd(plan.getEnd());
+//			stock.setStoreid(plan.getStoreid());
+//			stock.setStore(plan.getStore());
+//			stock.setProductid(pla.getProductid());
+//			stock.setProduct(pla.getProduct());
+//			stock.setStart(plan.getStart());
+//			stock.setEnd(plan.getEnd());
 			stock.setPrice(pla.getPrice());
 			stock.setNumber(pla.getNumber());
 			
@@ -279,8 +279,8 @@ public class PlanServiceImpl implements PlanService {
 		
 		for(int i=0;i<list.size();i++){
 			Stock sto=(Stock)list.get(i);
-			long start=sto.getStart().getTime();
-			long end=sto.getEnd().getTime();
+			long start=sto.getTime().getTime();
+			long end=sto.getTime().getTime();
 			System.out.println("start:"+start);
 			System.out.println("end:"+end);
 			if(ti>=start&&ti<=end&&sto.getNumber()>0){
