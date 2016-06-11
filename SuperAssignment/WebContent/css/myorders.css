@@ -1,0 +1,6 @@
+.tbl_orders{margin: 0 auto; border: 1; text-align: center}
+.tbl_orders td{width: 120px;}
+.tbl_orders img{width: 150px; height: 150px;}
+
+.order_title{margin-left: 80px; height: 50px; line-height: 50px;}
+.order_details{wdith: 100%; height: 200px; line-height: 100px;}

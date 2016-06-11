@@ -1,0 +1,16 @@
+h2{margin-left: 100px;}
+
+.choose_address{}
+.orderInfo{}
+.sum_submit{float: right; margin-right: 300px; margin-top: 20px; height: 100px; width: 150px;}
+
+.address_list{margin-left: 100px; margin-right: 100px;}
+.addressItem{float: left; margin-left: 100px; margin-top: 50px;  width: 150px; height: 150px; text-align: center;}
+.address_settings{margin-left: 100px; margin-right: 100px; height: 30px; line-height: 30px;}
+
+.tbl_orderItems{margin: 0 auto; border: 1px; text-align: center;}
+.tbl_orderItems td{width: 100px; min-width: 150px; height: 50px; line-height: 50px;}
+
+.sum_submit .sum{height: 50px; line-height: 50px; text-align: center;}
+.sum_submit .submit{height: 50px; text-align: center;}
+.submit input{}

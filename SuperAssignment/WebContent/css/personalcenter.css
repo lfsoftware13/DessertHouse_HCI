@@ -1,0 +1,5 @@
+.pc_leftnav{float: left; margin-left: 100px; width: 200px; text-align: center;}
+.pc_right_part{float: left; width: 1000px;}
+
+.pc_leftnav ul{list-style: none;}
+.pc_leftnav li{height: 120px; line-height: 120px;}

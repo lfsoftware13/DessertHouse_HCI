@@ -23,7 +23,7 @@ public class Stock implements Serializable {
 
 	private String image;
 
-	private String intruduce;
+	private String introduce;
 
 	private String name;
 
@@ -84,12 +84,12 @@ public class Stock implements Serializable {
 		this.image = image;
 	}
 
-	public String getIntruduce() {
-		return this.intruduce;
+	public String getIntroduce() {
+		return this.introduce;
 	}
 
-	public void setIntruduce(String intruduce) {
-		this.intruduce = intruduce;
+	public void setIntroduce(String introduce) {
+		this.introduce = introduce;
 	}
 
 	public String getName() {
