@@ -29,29 +29,41 @@ public class SearchServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String category1 = request.getParameter("c1");
-		String category2 = request.getParameter("c2");
-		String topic = request.getParameter("topic");
+		String type = request.getParameter("type");
+		if(type == null){
+			type = "kw";
+		}
 		String keyword = request.getParameter("kw");
+		if(keyword == null){
+			keyword = "javascript";
+		}
 		String fPublish = request.getParameter("f_publish");
 		String fPublishDate = request.getParameter("f_pd");
 		String fPrice = request.getParameter("f_price");
 		String fAvailable = request.getParameter("f_available");
 		String sortBy = request.getParameter("sort");
+		String page = request.getParameter("page");
 		
-		//RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/search.jsp");
-		//dispatcher.forward(request, response);
+		switch(type){
+		case "c1":
+			break;
+		case "c2":
+			break;
+		case "kw":
+			break;
+		case "topic":
+			break;
+		}
 		
 		HttpSession session = request.getSession();
-		session.setAttribute("c1", category1);
-		session.setAttribute("c2", category2);
-		session.setAttribute("topic", topic);
+		session.setAttribute("type", type);
 		session.setAttribute("kw", keyword);
 		session.setAttribute("f_publish", fPublish);
 		session.setAttribute("f_pd", fPublishDate);
 		session.setAttribute("f_price", fPrice);
 		session.setAttribute("f_available", fAvailable);
 		session.setAttribute("sort", sortBy);
+		session.setAttribute("page", page);
 		
 		response.sendRedirect(request.getContextPath() + "/jsp/search.jsp");
 	}

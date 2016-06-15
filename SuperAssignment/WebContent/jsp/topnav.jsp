@@ -5,7 +5,7 @@
 <div class="topnav">
 	<div>
 		<!--向左对齐-->
-		<font class="topnav-text topnav-left">欢迎来到灵图</font>
+		<font class="topnav-text topnav-left title">LingTu.Com</font>
 		<a class="topnav-text topnav-left">请登录</a>
 		<a class="topnav-text topnav-left">免费注册</a>
 	</div>
@@ -14,9 +14,8 @@
 <div class="topnav">
 	<div>
 		<!--向左对齐-->
-		<font class="topnav-text topnav-left">欢迎来到灵图</font>
+		<font class="topnav-text topnav-left title">LingTu.Com</font>
 		<!--向右对齐-->
-		<a class="topnav-text topnav-right" href="../OrdersServlet">我的订单</a>
 		<a class="topnav-text topnav-right" href="../PersonalCenterServlet">User1</a>
 	</div>
 </div>

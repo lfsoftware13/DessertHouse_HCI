@@ -1,6 +1,21 @@
-.setting_line{min-height: 50px;}
-.setting_line label{margin-top: 0px; width: 80px; text-align: right;}
-.setting_line input .input_text{width: 150px;}
+a.new_address{font-size: 18px; text-decoration: underline;}
 
-.tbl_address{align: 0px auto; text-align: center}
-.tbl_address td{min-width: 150px;}
+.tbl_settings{margin-left: -23px;}
+.tbl_settings tr{display: block; margin-top: 15px; font-size: 15px; color: #475A82;}
+.tbl_settings td{}
+.tbl_settings td.title{width: 120px; padding-top: 7px; padding-right: 15px; font-size: 20px; font-weight: bold; text-align: right; vertical-align: top;}
+.tbl_settings td.content{}
+.tbl_settings input, select{height: 40px;}
+.tbl_settings input[type="text"]{width: 200px;}
+.tbl_settings select{width: 120px;}
+
+.setting_line{margin-top: 15px; font-size: 18px;}
+.setting_line input[type="checkbox"]{}
+.setting_line .div_btn{margin-top: 15px;}
+
+.addresslist{margin-top: 50px;}
+.tbl_address{margin-left: -45px;;text-align: center}
+.tbl_address tr{display: block; margin-top: 5px;}
+.tbl_address tr.tbl_head{font-size: 20px; font-weight: bold;}
+.tbl_address tr.addressline{font-size: 15px; font-weight: bold; background-color: #ECF2FE;}
+.tbl_address td{min-width: 150px; color: #475A82;}

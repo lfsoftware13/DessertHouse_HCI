@@ -28,8 +28,6 @@ public class HomepageServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/homepage.jsp");
-		//dispatcher.forward(request, response);
 		response.sendRedirect(request.getContextPath() + "/jsp/homepage.jsp");
 	}
 

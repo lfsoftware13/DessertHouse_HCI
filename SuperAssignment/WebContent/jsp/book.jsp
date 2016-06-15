@@ -10,6 +10,7 @@
 <link href="<%= request.getContextPath() %>/css/topnav.css" rel="stylesheet">
 <link href="<%= request.getContextPath() %>/css/logoline.css" rel="stylesheet">
 <link href="<%= request.getContextPath() %>/css/public.css" rel="stylesheet">
+<link href="<%= request.getContextPath() %>/css/nav_route.css" rel="stylesheet">
 <link href="<%= request.getContextPath() %>/css/book.css" rel="stylesheet">
 <script type="text/javascript" src="<%= request.getContextPath() %>/js/jquery.min.js"></script>
 <script type="text/javascript" src="<%= request.getContextPath() %>/js/bootstrap.min.js"></script>
@@ -19,6 +20,7 @@
 <div class="lt_container">
 	<%@ include file="/jsp/topnav.jsp" %>
 	<%@ include file="/jsp/logoline.jsp" %>
+	<%@ include file="/jsp/nav_route.jsp" %>
 	
 	<div class="top_part">
 		<div class="pictures">
@@ -157,7 +159,7 @@ $(document).ready(function(){
 		var quantity = $(".input_quantity").val();
 		$.ajax({
 			type: 'post',
-			url: '../AddToCartServlet?bookId=<%= session.getAttribute("bookId") %>&quantity=' + quantity
+			url: '../CartServlet?bookId=<%= session.getAttribute("bookId") %>&quantity=' + quantity
 		});
 	});
 });

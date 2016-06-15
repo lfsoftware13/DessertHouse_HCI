@@ -1,17 +1,22 @@
 @import url("import_pagination_digg.css");
 
 .showborder{border: 1px solid black;}
-div .red{border-color: red;}
-div .yellow{border-color: yellow;}
-div .green{border-color: green;}
-div .blue{border-color: blue;}
 
-.lt_container{margin: 0 auto; width: 1345px;}
-a:link{color: black;}
-a:visited{color: black;}
-a:hover{color: black;}
-a:active{color: black;}
+.lt_container{margin-left: 10px; width: 1335px;}
+.bottom_part{margin-top: 15px;}
+a:link{color: #475A82;}
+a:visited{color: #475A82;}
+a:hover{color: #475A82;}
+a:active{color: #475A82;}
 a.no_underline:link{text-decoration: none;}
 a.no_underline:visited{text-decoration: none;}
 a.no_underline:hover{text-decoration: none;}
 a.no_underline:active{text-decoration: none;}
+
+/*div{border: 1px solid black;}*/
+
+tr.tbl_head{font-size: 20px; font-weight: bold;}
+tr input[type="checkbox"]{width: 15px; height: 15px;}
+
+div.div_btn{font-size: 20px; color: white; line-height: 40px; text-align: center; background-color: #718D8F; cursor: pointer;}
+div.div_btn_clicked{background-color: #718D8F;}

@@ -28,7 +28,7 @@
 <script>
 	$("#btn_search").click(function(){
 		var kw = $("#search_key").val();
-		window.location = "<%= request.getContextPath() %>/SearchServlet?kw=" + kw;
+		window.location = "<%= request.getContextPath() %>/SearchServlet?type=kw&kw=" + kw;
 	});
 </script>
 

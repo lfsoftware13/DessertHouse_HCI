@@ -1,8 +1,6 @@
 package homework.servlet;
 
 import java.io.IOException;
-
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -10,16 +8,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class BookServlet
+ * Servlet implementation class PurchaseServlet
  */
-@WebServlet("/BookServlet")
-public class BookServlet extends HttpServlet {
+@WebServlet("/PurchaseServlet")
+public class PurchaseServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public BookServlet() {
+    public PurchaseServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -28,19 +26,15 @@ public class BookServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String id = request.getParameter("id");
-		//RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/book.jsp");
-		//dispatcher.forward(request, response);
-		response.sendRedirect(request.getContextPath() + "/jsp/book.jsp");
+		response.sendRedirect(request.getContextPath() + "/jsp/order.jsp");
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String bookId = request.getParameter("bookId");
-		String page = request.getParameter("page");
-		//
+		// TODO Auto-generated method stub
+		doGet(request, response);
 	}
 
 }

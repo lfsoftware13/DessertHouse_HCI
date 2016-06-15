@@ -1,1 +1,10 @@
-.personal_info{margin-left: 200px;}
+.personal_info{margin-left: 0px;}
+
+.personal_info td{min-height: 70px; font-size: 20px; font-weight: bold; color: #475A82; line-height: 70px;}
+.personal_info td img{width: 180px; height: 180px; border: solid 1px #ECF2FE;}
+.personal_info td.title{width: 100px; text-align: right;}
+.personal_info td.content{width: 300px; padding-left: 50px;}
+.personal_info td input{vertical-align: mid; background-color: #ECF2FE; border: 0;}
+.personal_info td input[type="text"]{width: 180px; height: 30px; line-height: 30px;}
+.personal_info td input[type="radio"]{width: 15px; height: 15px;}
+.personal_info td input.not_first{margin-left: 50px;}

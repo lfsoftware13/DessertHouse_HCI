@@ -37,8 +37,22 @@ public class SecurityServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		String action = request.getParameter("action");
+		String newVal = request.getParameter("new");
+		switch(action){
+		case "email":
+			System.out.println(action + "   " + newVal);
+			break;
+		case "phone":
+			System.out.println(action + "   " + newVal);
+			break;
+		case "password":
+			String oldVal = request.getParameter("old");
+			System.out.println(action + "   " + oldVal + "   " + newVal);
+			break;
+		default:
+			System.out.println("invalid parameters");
+		}
 	}
 
 }

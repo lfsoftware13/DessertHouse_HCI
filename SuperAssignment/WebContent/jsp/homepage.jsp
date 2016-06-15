@@ -77,14 +77,16 @@
 			<div class="div_btn btn_prev"></div>
 			<div class="div_btn btn_next"></div>
 			<p class="title">新书速递</p>
-			<div class="new_book">
+			<%for(int i=0; i<3; i++){ %>
+			<div class="new_book" value="<%=i %>">
 				<img src="../img/vc.jpg">
 				<p class="introduction">
-					为了你我愿意热爱整个世界<br>
+					为了你我愿意热爱整个世界<%=i %><br>
 					xx著&nbsp&nbsp&nbsp&nbspxx出版社<br>
 					<font>¥20.0</font>
 				</p>
 			</div>
+			<%} %>
 		</div>
 	</div>
 	
@@ -125,6 +127,7 @@
 
 
 <script>
+
 	function carousel(){
 		var li = $(".tab_aa .on");
 		var idx = parseInt(li.find("span:eq(0)").html()) % 3;
@@ -158,7 +161,7 @@ $(document).ready(function(){
 	
 	$(".hot_topic").click(function(){
 		var topic = $(this).html();
-		window.location = "<%= request.getContextPath() %>/SearchServlet?topic=" + topic;
+		window.location = "<%= request.getContextPath() %>/SearchServlet?type=topic&kw=" + topic;
 	});
 	
 	$(".topic_rankings li:odd").hide();
@@ -174,6 +177,8 @@ $(document).ready(function(){
 		});
 	});
 	
+	$(".home_new_books .new_book:eq(0)").addClass("current");
+	
 	$(".btn_prev").mouseover(function(){
 		$(this).css("background", "url('../img/left2.jpg')");
 	});
@@ -185,6 +190,20 @@ $(document).ready(function(){
 	});
 	$(".btn_next").mouseout(function(){
 		$(this).css("background", "url('../img/right1.jpg')");
+	});
+	
+	$(".btn_prev").click(function(){
+		var idx = $(".home_new_books .current").attr("value");
+		$(".home_new_books .new_book").eq(idx).removeClass("current");
+		idx = (idx - 1) % 3;
+		$(".home_new_books .new_book").eq(idx).addClass("current");
+	});
+	
+	$(".btn_next").click(function(){
+		var idx = $(".home_new_books .current").attr("value");
+		$(".home_new_books .new_book").eq(idx).removeClass("current");
+		idx = (idx + 1) % 3;
+		$(".home_new_books .new_book").eq(idx).addClass("current");
 	});
 });
 </script>

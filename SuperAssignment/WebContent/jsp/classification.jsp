@@ -5,9 +5,9 @@
 	<%for(int i=0; i<8; i++){ %>
 	<div class="classification">
 		<dl>
-			<dt><a href="../SearchServlet?c1=1&kw=c1">一级分类<%= i+1 %></a></dt>
+			<dt><a href="../SearchServlet?type=c1&kw=c1">一级分类<%= i+1 %></a></dt>
 			<%for(int j=0; j<4; j++){ %>
-			<dd><a href="../SearchServlet?c2=1&kw=c2">二级分类<%=j+1 %></a></dd>
+			<dd><a href="../SearchServlet?type=c2&kw=c2">二级分类<%=j+1 %></a></dd>
 			<%} %>
 		</dl>
 	</div>

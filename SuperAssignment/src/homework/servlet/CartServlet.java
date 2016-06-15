@@ -37,8 +37,9 @@ public class CartServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		String bookId = request.getParameter("bookId");
+		int quantity = Integer.parseInt(request.getParameter("quantity"));
+		System.out.println(bookId + "      " + quantity);
 	}
 
 }

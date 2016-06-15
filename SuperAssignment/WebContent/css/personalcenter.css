@@ -1,5 +1,14 @@
-.pc_leftnav{float: left; margin-left: 100px; width: 200px; text-align: center;}
-.pc_right_part{float: left; width: 1000px;}
+.pc_leftnav{float: left; margin-left: 100px; width: 200px; height: 450px; background-color: #ECF2FE;}
+.pc_right_part{float: left; margin-left: 80px; width: 800px;}
 
-.pc_leftnav ul{list-style: none;}
-.pc_leftnav li{height: 120px; line-height: 120px;}
+.pc_leftnav ul{list-style: none; padding-left: 0px;}
+.pc_leftnav li{height: 80px; line-height: 80px; text-align: center; cursor: pointer;}
+.pc_leftnav li a{font-size: 30px; font-weight: bold; color: #475A82;}
+
+.bgcolor{background-color: #ECF2FE;}
+.bgcolor_mouseon{background-color: #CEDAF0;}
+.bgcolor_selected{background-color: #CEDAF0;}
+
+
+div.div_btn{width: 150px; height: 40px; font-size: 20px; color: white; line-height: 40px; text-align: center; background-color: #718D8F; cursor: pointer;}
+div.div_btn_clicked{background-color: #718D8F;}

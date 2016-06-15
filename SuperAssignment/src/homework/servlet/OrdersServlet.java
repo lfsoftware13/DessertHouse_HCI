@@ -28,8 +28,7 @@ public class OrdersServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/myorders.jsp");
-		//dispatcher.forward(request, response);
+		String page = request.getParameter("page");
 		response.sendRedirect(request.getContextPath() + "/jsp/myorders.jsp");
 	}
 
@@ -37,8 +36,7 @@ public class OrdersServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		
 	}
 
 }
