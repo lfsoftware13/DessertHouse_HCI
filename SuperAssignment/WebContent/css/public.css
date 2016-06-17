@@ -18,5 +18,4 @@ a.no_underline:active{text-decoration: none;}
 tr.tbl_head{font-size: 20px; font-weight: bold;}
 tr input[type="checkbox"]{width: 15px; height: 15px;}
 
-div.div_btn{font-size: 20px; color: white; line-height: 40px; text-align: center; background-color: #718D8F; cursor: pointer;}
-div.div_btn_clicked{background-color: #718D8F;}
+.div_btn{font-size: 20px; color: white; line-height: 40px; text-align: center; background-color: #556589; cursor: pointer;}

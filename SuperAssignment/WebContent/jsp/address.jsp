@@ -105,7 +105,8 @@
 </div>
 
 <script>
-$(".pc_leftnav li:eq(1)").attr("class", "bgcolor_selected");
+$(".pc_leftnav li:eq(1)").addClass("selected");
+$(".pc_leftnav li:eq(1)").find("a").addClass("selected");
 
 $("a.deleteline").click(function(){
 	$(this).parent().parent().remove();

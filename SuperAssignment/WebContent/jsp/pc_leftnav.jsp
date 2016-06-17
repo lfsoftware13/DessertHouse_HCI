@@ -12,14 +12,14 @@
 
 <script>
 $(document).ready(function(){
-	$(".pc_leftnav li").addClass("bgcolor");
-	
 	$(".pc_leftnav li").mouseover(function(){
-		$(this).addClass("bgcolor_mouseon");
+		$(this).addClass("mouseon");
+		$(this).find("a").addClass("mouseon");
 	});
 	
 	$(".pc_leftnav li").mouseout(function(){
-		$(this).removeClass("bgcolor_mouseon");
+		$(this).removeClass("mouseon");
+		$(this).find("a").removeClass("mouseon");
 	});
 });
 </script>

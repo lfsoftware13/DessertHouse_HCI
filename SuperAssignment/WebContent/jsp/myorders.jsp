@@ -27,40 +27,42 @@
 		<%@ include file="pc_leftnav.jsp" %>
 		
 		<div class="pc_right_part">
-			<table class="tbl_orders">
-				<tr class="tbl_head">
-					<td><input type="checkbox" name="chooseAll">全选</td>
-					<td>商品信息</td>
-					<td>单价</td>
-					<td>数量</td>
-					<td>实付款</td>
-					<td>交易状态</td>
-					<td>操作</td>
-				</tr>
-			</table>
+			<div class="titleline">
+				<table class="tbl_orders">
+					<tr class="tbl_head">
+						<td class="bookinfo">商品信息</td>
+						<td class="narrow">单价</td>
+						<td class="narrow">数量</td>
+						<td class="wide">实付款</td>
+						<td class="wide">交易状态</td>
+					</tr>
+				</table>
+			</div>
 			<%for(int i=0; i<5; i++){ %>
 			<div class="order">
 				<div class="order_title">
-					<input type="checkbox">
-					<span>2016-05-26</span>
+					<span class="bold">2016-05-26</span>
 					<span>订单号：<span>9347013740912375</span></span>
-					<a class="show_details">详情</a>
+					<div class="div_btn deleteline">删除</div>
 				</div>
 				<div class="order_details">
 					<table class="tbl_orders">
 						<%for(int j=0; j<3; j++){ %>
 						<tr class="orderline">
-							<td><img src="<%= request.getContextPath() %>/img/cpp.jpg" alt="cover"></td>
-							<td>Head First Java(Edition 1)</td>
-							<td>22.0</td>
-							<td>4</td>
-							<td>88.0</td>
-							<td>交易成功<br><a href="">订单详情</a></td>
-							<td>删除</td>
+							<td class="bookinfo"><img src="<%= request.getContextPath() %>/img/cpp.jpg" alt="cover">Head First Java(Edition 1)</td>
+							<td class="narrow">22.0</td>
+							<td class="narrow">4</td>
 						</tr>
 						<%} %>
 					</table>
 				</div>
+				<div class="vertical_line" style="height: <%=110 * 3 %>px; line-height: <%=110 * 3 %>px;">
+					123.0
+				</div>
+				<div class="vertical_line" style="height: <%=110 * 3 %>px; line-height: <%=110 * 3 %>px;">
+					交易成功
+				</div>
+				<div style="clear: both;"></div>
 			</div>
 			<%} %>
 			<div class="digg">
@@ -71,21 +73,14 @@
 </div>
 
 <script>
-$(".pc_leftnav li:eq(3)").attr("class", "bgcolor_selected");
+$(".pc_leftnav li:eq(3)").addClass("selected");
+$(".pc_leftnav li:eq(3)").find("a").addClass("selected");
 
-$(".order_details:gt(0)").hide();
-$("a.show_details:eq(0)").html("收起");
-
-$(".show_details").click(function(){
-	var details = $(this).parent().next("div");
-	if(details.css("display") != "none"){
-		details.hide();
-		$(this).html("详情");
-	}else{
-		details.show();
-		$(this).html("收起");
-	}
+$(".order .deleteline").click(function(){
+	$(this).parent().parent().remove();
 });
+
+$(".order_details .orderline:gt(0)").addClass("top_border");
 </script>
 
 </body>

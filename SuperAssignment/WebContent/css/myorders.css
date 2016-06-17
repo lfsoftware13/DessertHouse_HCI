@@ -1,15 +1,23 @@
 input[type="checkbox"]{width: 15px; height: 15px;}
 
-.order{margin-top: 10px; margin-bottom: 30px;}
-.order_title{height: 50px; line-height: 50px; background-color: #ECF2FE; cursor: pointer;}
+.titleline{background-color: #556589; border: solid 2px #556589;}
+.order{margin-top: 10px; margin-bottom: 30px; border: solid 2px #DCDCDC;}
+.order_title{padding-left: 50px; height: 50px; line-height: 50px; background-color: #DCDCDC;}
 .order_title input[type="checkbox"]{margin-left: 29px; width: 15px; height: 15px;}
-.order_title span{padding-right: 30px; font-size: 20px; color: #475A82; font-weight: bold;}
-.order_title a.show_details{float: right; margin-right: 40px; font-size: 18px; text-decoration: underline;}
-.order_details{margin-top: 5px; wdith: 100%;}
+.order_title span{padding-right: 30px; font-size: 20px;}
+.order_title span.bold{font-weight: bold;}
+.order_title .div_btn{float: right; margin-top: 4px; margin-right: 20px; width: 120px; height: 40px; font-size: 18px; background-color: #556589;}
+.order_details{float: left; wdith: 100%; background-color: #F5F5F5;}
+.vertical_line{float: left; width: 150px; text-align: center; vertical-align: middle; font-size: 18px; color: #475A82; background-color: #F5F5F5; border-left: solid 1px #DCDCDC;}
 
-.tbl_orders{margin: 0 auto; height: 100%; border: 1; text-align: center; font-size: 18px; color: #475A82;}
-.tbl_orders tr{display: block; margin-top: 5px;}
-.tbl_orders tr.orderline{height: 100px; background-color: #ECF2FE;}
-.tbl_orders td{width: 120px;}
-.tbl_orders img{width: 100px; height: 100px; border: solid 5px #ECF2FE;}
+.tbl_orders{height: 100%; border: 1; text-align: center; font-size: 18px; color: #475A82;}
+.tbl_orders tr{display: block;}
+.tbl_orders tr.tbl_head{color: white;}
+.tbl_orders tr.orderline{height: 110px; padding-top: 5px;}
+.tbl_orders td.narrow{width: 100px;}
+.tbl_orders td.wide{width: 150px;}
+.tbl_orders td.bookinfo{width: 450px;}
+.tbl_orders img{width: 100px; height: 100px;}
 .tbl_orders a{text-decoration: underline;}
+
+.tbl_orders tr.top_border{border-top: solid 1px #DCDCDC;}

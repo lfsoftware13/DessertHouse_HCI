@@ -26,32 +26,30 @@
 		
 	<div class="pc_right_part">
 		<div class="personal_info">
-			<table>
-				<tr>
-					<td class="title">头像</td>
-					<td class="content"><img src="../img/avatar2.jpg" alt="avatar" width="250" height="250"></td>
-				</tr>
-				<tr>
-					<td class="title">昵称</td>
-					<td class="content"><input type="text" id="nickname" value="许可蕊"></td>
-				</tr>
-				<tr>
-					<td class="title">性别</td>
-					<td class="content">
-						<input type="radio" name="sex" value="male" checked="checked">男
-						<input type="radio" name="sex" value="female" class="not_first">女
-					</td>
-				</tr>
-				<tr>
-					<td class="title">真实姓名</td>
-					<td class="content"><input type="text" id="name" value="许珂磊"></td>
-				</tr>
-			</table>
-			
-			<div class="div_btn" style="margin-left: 150px;">
-				保存
+			<div class="avatar">
+				<img src="../img/avatar2.jpg">
 			</div>
-						
+			<div class="info">
+				<table>
+					<tr>
+						<td class="title">昵称</td>
+						<td class="content"><input type="text" id="nickname" value="许珂磊"></td>
+					</tr>
+					<tr>
+						<td class="title">性别</td>
+						<td class="content">
+							<input type="radio" name="sex" value="male" checked="checked">男
+							<input type="radio" name="sex" value="female" class="not_first">女
+						</td>
+					</tr>
+					<tr>
+						<td class="title">真实姓名</td>
+						<td class="content"><input type="text" id="name" value="许珂磊"></td>
+					</tr>
+				</table>
+			</div>
+			<div style="clear: both;"></div>
+			<div class="div_btn">保存</div>				
 		</div>
 	</div>
 	</div>
@@ -59,7 +57,8 @@
 
 <script>
 
-$(".pc_leftnav li:eq(0)").attr("class", "bgcolor_selected");
+$(".pc_leftnav li:eq(0)").addClass("selected");
+$(".pc_leftnav li:eq(0)").find("a").addClass("selected");
 
 $(".div_btn").click(function(){
 	$(this).addClass("div_btn_clicked");

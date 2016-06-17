@@ -109,7 +109,8 @@
 </div>
 
 <script>
-$(".pc_leftnav li:eq(2)").attr("class", "bgcolor_selected");
+$(".pc_leftnav li:eq(2)").addClass("selected");
+$(".pc_leftnav li:eq(2)").find("a").addClass("selected");
 
 $("#show_mod_email").click(function(){
 	$(".init").hide();

@@ -6,11 +6,13 @@
 .tbl_pc td.title{min-width: 60px; text-align: right; padding-right: 10px;}
 .tbl_pc td.content{width: 250px;}
 .tbl_pc td.btn{}
-.tbl_pc td input{float: left; vertical-align: middle; background-color: #ECF2FE; border: 0;}
-.tbl_pc td input[type="text"]{width: 250px; height: 30px; font-size: 15px; line-height: 30px;}
+.tbl_pc td input{float: left; vertical-align: middle;}
+.tbl_pc td input[type="text"]{width: 250px; height: 30px; font-size: 15px; line-height: 30px; border-radius: 5px; border: solid 1px gray;}
 .tbl_pc td input[type="password"]{width: 250px; height: 30px; font-size: 15px; line-height: 30px;}
 .tbl_pc span.error_msg{position: absolute; margin-left: 5px; margin-top: -20px; font-size: 12px; color: black}
 
 .div_mod_title{height: 30px; line-height: 30px;}
 .div_mod_title span{display: block; float: left; font-size: 30px; color: #475A82;}
 .div_mod_title a{float: left; margin-left: 350px; font-size: 18px;}
+
+.tbl_pc .div_btn, .div_mod .div_btn{width: 150px; height: 40px; line-height: 40px; background-color: #556589;}
