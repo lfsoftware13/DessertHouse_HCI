@@ -14,6 +14,7 @@
 <link href="<%= request.getContextPath() %>/css/book.css" rel="stylesheet">
 <script type="text/javascript" src="<%= request.getContextPath() %>/js/jquery.min.js"></script>
 <script type="text/javascript" src="<%= request.getContextPath() %>/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="<%= request.getContextPath() %>/js/fly.js"></script>
 
 </head>
 <body>
@@ -160,6 +161,32 @@ $(document).ready(function(){
 		$.ajax({
 			type: 'post',
 			url: '../CartServlet?bookId=<%= session.getAttribute("bookId") %>&quantity=' + quantity
+		});
+	});
+});
+</script>
+
+<script>
+//加入购物车效果
+$(function() {
+	var offset = $(".logoline .cart").offset();
+	$(".btn_addToCart").click(function(event) {
+		var img = "../img/icon_cart.jpg" //获取当前点击图片链接 
+		var flyer = $('<img class="img_flyer" src="' + img + '">'); //抛物体对象 
+		flyer.fly({
+			start: {
+				left: event.pageX,//抛物体起点横坐标 
+				top: event.pageY //抛物体起点纵坐标 
+			},
+			end: {
+				left: offset.left,//抛物体终点横坐标 
+				top: offset.top, //抛物体终点纵坐标 
+				width: 15,       //结束时宽度
+				height: 15       //结束时高度
+			},
+			onEnd: function() {
+				flyer.remove()
+			}
 		});
 	});
 });

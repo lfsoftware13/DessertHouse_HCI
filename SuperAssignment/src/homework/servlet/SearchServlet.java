@@ -44,6 +44,8 @@ public class SearchServlet extends HttpServlet {
 		String sortBy = request.getParameter("sort");
 		String page = request.getParameter("page");
 		
+		System.out.println(page);
+		
 		switch(type){
 		case "c1":
 			break;
@@ -65,7 +67,11 @@ public class SearchServlet extends HttpServlet {
 		session.setAttribute("sort", sortBy);
 		session.setAttribute("page", page);
 		
-		response.sendRedirect(request.getContextPath() + "/jsp/search.jsp");
+		String url = request.getContextPath() + "/jsp/search.jsp";
+		if(page != null){
+			url += "?page=" + page;
+		}
+		response.sendRedirect(url);
 	}
 
 	/**
