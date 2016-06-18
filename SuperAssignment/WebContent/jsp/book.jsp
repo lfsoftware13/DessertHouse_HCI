@@ -15,6 +15,7 @@
 <script type="text/javascript" src="<%= request.getContextPath() %>/js/jquery.min.js"></script>
 <script type="text/javascript" src="<%= request.getContextPath() %>/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="<%= request.getContextPath() %>/js/fly.js"></script>
+<script type="text/javascript" src="<%= request.getContextPath() %>/js/pagination.js"></script>
 
 </head>
 <body>
@@ -123,8 +124,8 @@
 					</div>
 				</div>
 				<%} %>
-				<div class="digg">
-					<span class="disabled"> < </span><span class="current">1</span><a href="#?page=2">2</a><a href="#?page=3">3</a><a href="#?page=4">4</a><a href="#?page=5">5</a><a href="#?page=6">6</a><a href="#?page=7">7</a>...<a href="#?page=199">199</a><a href="#?page=200">200</a><a href="#?page=2"> > </a>
+				<div class="digg" id="div_pagination">
+					
 				</div>
 			</div>
 		</div>
@@ -190,6 +191,16 @@ $(function() {
 		});
 	});
 });
+</script>
+
+<script>
+	<%
+	String cur_page = request.getParameter("page");
+	if(cur_page == null){
+		cur_page = "1";
+	}
+	%>
+	$.paging(<%=cur_page %>, 100, 10, "div_pagination", "../SearchServlet");
 </script>
 
 </body>
