@@ -6,6 +6,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>???</title>
 
+<link href="http://cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
 <link href="<%= request.getContextPath() %>/css/bootstrap.min.css" rel="stylesheet">
 <link href="<%= request.getContextPath() %>/css/public.css" rel="stylesheet">
 <link href="<%= request.getContextPath() %>/css/topnav.css" rel="stylesheet">
@@ -40,7 +42,11 @@
 	
 	<div class="search_right">
 		<div class="result_filter">
-			<div class="filter_line filter_border first_line" id="filter_publish">
+			<div class = "filter_line filter_border first_line line">
+				<span id = "search_type" value = "<%= keyword %>"></span>
+				<span id = "book_num">相关书籍123本</span>
+			</div>
+			<div class="filter_line filter_border" id="filter_publish">
 				<span class="title">出版社：</span>
 				<span><input type="checkbox" class="checkbox_filter" name="checkbox_publish" value="0">所有</span>
 				<span><input type="checkbox" class="checkbox_filter" name="checkbox_publish" value="1">机械工业出版社</span>
@@ -67,7 +73,7 @@
 			<div style="float: left">
 				<label>排序：</label>
 				<div class="btn-group">
-					<button type="button" class="btn btn-default">评分</button>
+					<button type="button" class="btn btn-default active in">评分</button>
 					<button type="button" class="btn btn-default">价格</button>
 					<button type="button" class="btn btn-default">折扣</button>
 				</div>
@@ -82,8 +88,12 @@
 					<a href="../BookServlet?id=book_i"><img class="cover" src="https://images-cn.ssl-images-amazon.com/images/I/516W9PDv80L._SX353_BO1,204,203,200_.jpg" alt="cover"></a><br>
 					<p><a href="../BookServlet?id=book_i">Head First Java</a><br>
 					<a href="">xx著</a>&nbsp&nbsp<a href="">xx出版社</a><br>
-					<font>¥20.0</font></p>
-					<img src="../img/icon_star.jpg" alt="5星" class="star">
+					<font>¥20.0</font>
+					</p>
+					<span class = "level" >
+						<i class = "fa fa-star level"></i><i class = "fa fa-star"></i><i class = "fa fa-star"></i><i class = "fa fa-star"></i><i class = "fa fa-star-half-o"></i>
+					</span>
+					
 				</div>
 			<% } %>
 		</div>
@@ -155,4 +165,9 @@ $(document).ready(function(){
 </script>
 
 
+<script>
+$(document).ready(function(){
+	$("#search_type").html("<%= keyword %> 类书籍");
+});
+</script>
 </html>
