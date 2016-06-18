@@ -16,7 +16,10 @@
 		<!--向左对齐-->
 		<font class="topnav-text topnav-left title">LingTu.Com</font>
 		<!--向右对齐-->
-		<a class="topnav-text topnav-right" href="../PersonalCenterServlet">User1</a>
+		<a class="topnav-text topnav-right user" href="../PersonalCenterServlet"> 
+			<i class = "fa fa-user fa-lg"></i>
+			&nbspUser1
+		</a>
 	</div>
 </div>
 <%}%>

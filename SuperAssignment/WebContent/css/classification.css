@@ -1,9 +1,9 @@
-.left_nav{position: absolute; margin-left: 0px; width: 300px;}
+.left_nav{position: absolute; margin-left: 0px; width: 230px;margin-left: 0px;}
 .classification{width: 100%; height: 100px;}
-.classification dt{margin-left: 12px; font-size: 25px; line-height: 40px;}
-.classification dd{float: left; margin-left: 12px; margin-top: 10px; height: 10px; line-height: 10px; font-size: 15px;}
-.classification dd.not_last{border-right: solid 1px gray; padding-right: 12px;}
-.classification_title{width: 100%; height: 50px; background-color: #718DBC;}
-.classification_title .title{width: 100%; height: 50px; text-align: center; line-height: 50px; font-size: 40px; color: #CEDFF3; }
-.bgcolor_even{background-color: #EBFDFF;}
-.bgcolor_odd{background-color: #CBDBF2;}
+.classification dt{margin-left: 12px; font-size: 18px; line-height: 40px;}
+.classification dd{float: left; margin-left: 12px; margin-top: 10px; height: 10px; line-height: 10px; font-size: 15px;color:black;}
+.classification dd.not_last{border-right: solid 1px gray; padding-right: 12px;color:black;}
+.classification_title{width: 100%; height: 50px; background-color: #556589;}
+.classification_title .title{width: 100%; height: 50px; text-align: center; line-height: 50px; font-size: 25px; color: white; }
+.bgcolor_even{background-color: #ecf3fe;}
+.bgcolor_odd{background-color: #cedaef;}

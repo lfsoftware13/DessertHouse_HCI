@@ -4,6 +4,11 @@ div.topnav{margin-left: -15px; width: 100%+30px; height:50px; line-height: 50px;
 .topnav-text{}
 .topnav-left{float: left; margin-left: 50px;}
 .topnav-right{float: right; margin-right: 50px;}
-.topnav .title{font-size: 45px; color: white;}
+.topnav a{color: white; font-family: 'Lithos Pro'}
+.topnav a:link {color: white} /* 未访问的链接 */
+.topnav a:visited {color: white} /* 已访问的链接 */
+.topnav a:hover {color: #DDDDDD; text-decoration: none;} /* 当有鼠标悬停在链接上 */
+.topnav a:active {color: #DDDDDD} /* 被选择的链接 */
+.topnav .title{font-size: 30px; color: white;font-family:'Lithos Pro';}
 
 .logout{}

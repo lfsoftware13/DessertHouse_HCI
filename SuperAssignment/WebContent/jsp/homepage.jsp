@@ -6,6 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>灵图网</title>
 
+<link href="http://cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 <link href="<%= request.getContextPath() %>/css/bootstrap.min.css" rel="stylesheet">
 <link href="<%= request.getContextPath() %>/css/public.css" rel="stylesheet">
 <link href="<%= request.getContextPath() %>/css/topnav.css" rel="stylesheet">
@@ -25,9 +26,9 @@
 	<div class="home_first_screen">
 		<%@ include file="/jsp/classification.jsp" %>
 		<div class="home_carousel">
-			<div class="col storey_one_center">
-				<div id='component_403753'></div>
-					<div  class="tab_box_aa">
+			<div class="col storey_one_center" style = "width:800px;">
+				<div id='component_403753' style = "width:800px;"></div>
+					<div  class="tab_box_aa" style = "width:800px;">
 						<div class="head">
 							<ul class="tab_aa">
 								<li class="on first" type="bar"><span>1</span></li>
@@ -35,20 +36,20 @@
 								<li type="bar" ><span>3</span></li>
 							</ul>
 						</div>
-						<div class="tab_content_aa">
-							<div class="content tab_1">
+						<div class="tab_content_aa" >
+							<div class="content tab_1" style = "width:800px;">
 								<a class=" _1  pic" href="http://book.dangdang.com/20160528_4twk" target="_blank">
-									<img src="http://img60.ddimg.cn/upload_img/00087/hw/750x315_ljx_0603.jpg"/>
+									<img src="http://img60.ddimg.cn/upload_img/00087/hw/750x315_ljx_0603.jpg"/ style = "width:800px;">
 								</a>
 							</div>
-							<div class="content tab_2" style="display: none">
+							<div class="content tab_2" style="display: none; width:800px;">
 								<a class=" _1  pic" href="http://baby.dangdang.com/20160603_jnj3">
-									<img src="http://img60.ddimg.cn/upload_img/00570/tongshu/750315duan66.jpg"/>
+									<img src="http://img60.ddimg.cn/upload_img/00570/tongshu/750315duan66.jpg" style = "width:800px;"/>
 								</a>
 							</div>
-							<div class="content tab_3" style="display: none">
+							<div class="content tab_3" style="display: none; width:800px;">
 								<a   class=" _1  pic" href="http://book.dangdang.com/20160606_nvsg">
-									<img src="http://img63.ddimg.cn/upload_img/00367/fyf/0607shidaihuayu750-315.jpg"/>
+									<img src="http://img63.ddimg.cn/upload_img/00367/fyf/0607shidaihuayu750-315.jpg" style = "width:800px;"/>
 								</a>
 							</div>    
 						</div>
@@ -57,7 +58,7 @@
 		</div>
 		<div class="home_hot_topics">
 			<div style="float: left;">
-				<span>热门专题</span>
+				<span>&nbsp<i class = "fa fa-bookmark-o fg"></i> &nbsp热门专题</span>
 			</div>
 			<div class="topics">
 				<%for(int i=0; i<14; i++){ %>
@@ -65,10 +66,10 @@
 					从零开始学html
 				</div>
 				<%} %>
-				<div class="hot_topic">
-					<a href="">
-						<img src="../img/icon_refresh.jpg" class="lt_icon">
-						<font color="white">换一批</font>
+				<div class="change" >
+					<a href="" >
+						<i class="fa fa-refresh fa-spin"></i>
+						换一批
 					</a>
 				</div>
 			</div>
@@ -93,7 +94,7 @@
 	<%for(int i=0; i<3; i++){ %>
 	<div class="home_single_topic">
 		<div class="hot_books" id="topic_<%=i %>">
-			<h1>Android学习</h1>
+			<h3><i class = "fa fa-code fg"></i> &nbsp&nbspAndroid学习</h3>
 			<div class="book_list" id="book_i">
 				<%for(int j=0; j<10; j++){ %>
 				<div class="book">
@@ -104,7 +105,7 @@
 			</div>
 		</div>
 		<div class="topic_rankings rankings">
-			<h1>畅销榜单</h1>
+			<h3><i class = "fa fa-server fg"></i>&nbsp&nbsp畅销榜单</h3>
 			<ul>
 				<%for(int k=0; k<10; k++){ %>
 				<li class="line0<%=k %> brief">
