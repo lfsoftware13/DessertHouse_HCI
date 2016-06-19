@@ -1,28 +1,41 @@
 .cartItems{width: 100%;}
-.footer{position: fixed; left: 0px; bottom: 0px; width: 100%; height: 60px;}
-div.empty{height: 60px;}
+.footer{position: fixed; left: 0px; bottom: 0px; width: 100%; height: 50px;}
+div.empty{height: 50px;}
 
 .cartItems .top{margin: 0 auto; width: 1100px; background-color: #556589;}
-.cartItems .top .tbl_cart tr{color: white;}
-.cartItems .bottom{margin: 0 auto; margin-top: 10px; width: 1100px; background-color: #F5F5F5;}
+.cartItems .top .tbl_cart tr{color: white;font-weight: lighter;}
+.cartItems .bottom{margin: 0 auto; margin-top: 10px; width: 1100px; background-color: #F8F8F8;}
 .tbl_cart{margin: 0 auto; text-align: center;}
 .tbl_cart tr{display: block; color: #475A82;}
 .tbl_cart tr.cartline{border-bottom: solid 1px #E7E7E7;}
 .tbl_cart td{width: 140px; height: 80px; font-size: 18px; line-height: 50px;}
 .tbl_cart .tbl_head td{height: 50px; line-height: 50px;}
-.tbl_cart .tbl_head .select{text-align: left; padding-left: 50px;}
+.tbl_cart .tbl_head .select{text-align: left;padding-left: 10px;}
+.tbl_cart .tbl_head input{padding-left: 10px;margin-right: 20px;}
 .tbl_cart td.select{width: 200px;}
 .tbl_cart td.bookinfo{width: 300px;}
-.tbl_cart .div_btn{background-color: #53658B;}
-
+.tbl_cart td.price{width:200px;}
+.tbl_cart td.price_info{font-family: 'Lithos Pro';color: black;}
+.tbl_cart td.num{margin-left:50px;width:180px;}
+.tbl_cart td.total_info{font-family: 'Lithos Pro';color: red;}
+.tbl_cart .div_btn{background-color: #53658B;font-weight: lighter;font-size: 18px;}
+.tbl_cart .div_btn:hover{background-color: #718dbf}
 .tbl_cart img{width: 160px; height: 160px; border: solid 10px #F5F5F5;}
 
-.footer{font-size: 20px; font-weight: bold; color: white;}
-.footer .left{float: left; margin-left: 100px; padding-left: 98px; width: 1020px; height: 60px; line-height: 60px; background-color: #556589;}
+.footer{font-size: 18px; font-weight: lighter; color: white;}
+.footer .left{float: left; margin-left: 100px;padding-left: 32px; width: 1020px; height: 50px; line-height: 50px; background-color: #556589;}
 .footer .left .chooseAll{float: left;}
-.footer .left .sum{float: right; padding-right: 30px; font-size: 25px;}
-.footer .right{float: left; height: 60px; line-height: 60px;}
+.footer .left .chooseAll input{margin-right: 20px;}
+.footer .left .sum{float: right; padding-right: 30px; font-size: 18px;}
+.footer .right{float: left; height: 50px; line-height: 50px;}
 .footer span.space{margin-left: 10px;}
-.footer span.big_font{font-size: 35px;}
+.footer span.big_font{font-size: 30px;font-family: 'Lithos Pro';vertical-align: middle;}
 .footer input[type="checkbox"]{width: 15px; height: 15px;}
-.footer .div_btn{width: 150px; height: 60px; line-height: 50px; background-color: #556589; border: solid 5px #DEE5F5;}
+.footer .div_btn{width: 150px; height: 50px; line-height: 50px; background-color: #556589;border: 3px solid #EEEEEE;vertical-align: middle;}
+.footer .div_btn:hover{background-color: #718dbf}
+
+.span_quantity{display: block; height: 50px;text-align: center}
+.span_quantity .input_quantity_cart{float: left; width:70px; margin-left: 5px;height: 40px; line-height: 40px; font-size: 15p; border: solid 1px #CCCCCC;}
+.span_quantity .add_cart{display: block; float: left; padding-top:-10px;padding-bottom:15px; width: 40px; height: 40px;border:solid 1px #CCCCCC;}
+.span_quantity .minus_cart{display: block; float: left; margin-left: 5px;width: 40px; height: 40px; border:solid 1px #CCCCCC;text-align: center;vertical-align: middle;}
+.add_minus span{display: block; margin-bottom: 4px; width: 20px; height: 18px; line-height: 15px; text-align: center; border: solid 1px gray; cursor: pointer;}
