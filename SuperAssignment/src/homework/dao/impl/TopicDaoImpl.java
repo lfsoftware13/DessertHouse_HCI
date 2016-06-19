@@ -7,11 +7,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import homework.dao.BaseDao;
-import homework.dao.MemberDao;
-import homework.model.Member;
+import homework.dao.TopicDao;
+import homework.model.Topic;
 
 @Repository
-public class MemberDaoImpl implements MemberDao {
+public class TopicDaoImpl implements TopicDao {
 
 	@Autowired
 	BaseDao baseDao;
@@ -21,40 +21,40 @@ public class MemberDaoImpl implements MemberDao {
 	@Override
 	public List findAll() {
 		// TODO Auto-generated method stub
-		return baseDao.getAllList(Member.class);
+		return baseDao.getAllList(Topic.class);
 	}
 
 	@Override
-	public Member findById(String id) {
+	public Topic findById(String id) {
 		// TODO Auto-generated method stub
-		return (Member)baseDao.load(Member.class, id);
+		return (Topic)baseDao.load(Topic.class, id);
 	}
 
 	@Override
-	public boolean save(Member mem) {
+	public boolean save(Topic topic) {
 		// TODO Auto-generated method stub
-		baseDao.save(mem);
+		baseDao.save(topic);
 		return true;
 	}
 
 	@Override
-	public boolean update(Member mem) {
+	public boolean update(Topic topic) {
 		// TODO Auto-generated method stub
-		baseDao.update(mem);
+		baseDao.update(topic);
 		return true;
 	}
 
 	@Override
-	public boolean delete(Member mem) {
+	public boolean delete(Topic topic) {
 		// TODO Auto-generated method stub
-		baseDao.delete(Member.class, mem.getId());
+		baseDao.delete(Topic.class, topic.getId());
 		return true;
 	}
 
 	@Override
 	public boolean delete(String id) {
 		// TODO Auto-generated method stub
-		baseDao.delete(Member.class, id);
+		baseDao.delete(Topic.class, id);
 		return true;
 	}
 	

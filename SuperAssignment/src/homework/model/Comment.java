@@ -2,6 +2,7 @@ package homework.model;
 
 import java.io.Serializable;
 import javax.persistence.*;
+import java.util.Date;
 
 
 /**
@@ -21,6 +22,9 @@ public class Comment implements Serializable {
 	private String bookid;
 
 	private String comment;
+
+	@Temporal(TemporalType.DATE)
+	private Date time;
 
 	public Comment() {
 	}
@@ -55,6 +59,14 @@ public class Comment implements Serializable {
 
 	public void setComment(String comment) {
 		this.comment = comment;
+	}
+
+	public Date getTime() {
+		return this.time;
+	}
+
+	public void setTime(Date time) {
+		this.time = time;
 	}
 
 }

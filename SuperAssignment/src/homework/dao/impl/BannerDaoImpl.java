@@ -6,56 +6,56 @@ import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import homework.dao.BannerDao;
 import homework.dao.BaseDao;
-import homework.dao.MemberDao;
-import homework.model.Member;
+import homework.model.Banner;
 
 @Repository
-public class MemberDaoImpl implements MemberDao {
+public class BannerDaoImpl implements BannerDao {
 
 	@Autowired
 	BaseDao baseDao;
 
 	Session session;
-
+	
 	@Override
 	public List findAll() {
 		// TODO Auto-generated method stub
-		return baseDao.getAllList(Member.class);
+		return baseDao.getAllList(Banner.class);
 	}
 
 	@Override
-	public Member findById(String id) {
+	public Banner findBannerById(String id) {
 		// TODO Auto-generated method stub
-		return (Member)baseDao.load(Member.class, id);
+		return (Banner)baseDao.load(Banner.class, id);
 	}
 
 	@Override
-	public boolean save(Member mem) {
+	public boolean save(Banner ban) {
 		// TODO Auto-generated method stub
-		baseDao.save(mem);
+		baseDao.save(ban);
 		return true;
 	}
 
 	@Override
-	public boolean update(Member mem) {
+	public boolean update(Banner ban) {
 		// TODO Auto-generated method stub
-		baseDao.update(mem);
+		baseDao.update(ban);
 		return true;
 	}
 
 	@Override
-	public boolean delete(Member mem) {
+	public boolean delete(Banner ban) {
 		// TODO Auto-generated method stub
-		baseDao.delete(Member.class, mem.getId());
+		baseDao.delete(Banner.class, ban.getId());
 		return true;
 	}
 
 	@Override
 	public boolean delete(String id) {
 		// TODO Auto-generated method stub
-		baseDao.delete(Member.class, id);
+		baseDao.delete(Banner.class, id);
 		return true;
 	}
-	
+
 }

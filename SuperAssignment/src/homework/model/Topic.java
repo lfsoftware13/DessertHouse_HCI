@@ -20,8 +20,6 @@ public class Topic implements Serializable {
 
 	private String name;
 
-	private String stockid;
-
 	public Topic() {
 	}
 
@@ -47,14 +45,6 @@ public class Topic implements Serializable {
 
 	public void setName(String name) {
 		this.name = name;
-	}
-
-	public String getStockid() {
-		return this.stockid;
-	}
-
-	public void setStockid(String stockid) {
-		this.stockid = stockid;
 	}
 
 }

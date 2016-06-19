@@ -10,14 +10,14 @@ public interface AccountDao {
 	
 	public Account findById(String id);
 	
-	public Account find(String name);
+	public Account findByName(String name);
 	
-	public boolean save(Account account);
+	public boolean save(Account acc);
 	
-	public boolean update(Account account);
-	
-	public boolean delete(Account account);
+	public boolean update(Account acc);
 	
 	public boolean delete(String id);
+	
+	public boolean delete(Account acc);
 
 }

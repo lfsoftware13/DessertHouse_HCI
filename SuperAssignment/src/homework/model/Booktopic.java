@@ -5,12 +5,12 @@ import javax.persistence.*;
 
 
 /**
- * The persistent class for the banner database table.
+ * The persistent class for the booktopic database table.
  * 
  */
 @Entity
-@NamedQuery(name="Banner.findAll", query="SELECT b FROM Banner b")
-public class Banner implements Serializable {
+@NamedQuery(name="Booktopic.findAll", query="SELECT b FROM Booktopic b")
+public class Booktopic implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -18,9 +18,9 @@ public class Banner implements Serializable {
 
 	private String bookid;
 
-	private String image;
+	private String topicid;
 
-	public Banner() {
+	public Booktopic() {
 	}
 
 	public String getId() {
@@ -39,12 +39,12 @@ public class Banner implements Serializable {
 		this.bookid = bookid;
 	}
 
-	public String getImage() {
-		return this.image;
+	public String getTopicid() {
+		return this.topicid;
 	}
 
-	public void setImage(String image) {
-		this.image = image;
+	public void setTopicid(String topicid) {
+		this.topicid = topicid;
 	}
 
 }

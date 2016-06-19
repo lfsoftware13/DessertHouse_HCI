@@ -2,7 +2,6 @@ package homework.model;
 
 import java.io.Serializable;
 import javax.persistence.*;
-import java.util.Date;
 
 
 /**
@@ -17,26 +16,19 @@ public class Member implements Serializable {
 	@Id
 	private String id;
 
-	private String address;
-
 	private int age;
 
-	private double discount;
+	private String image;
 
-	private int level;
-
-	private double money;
+	private String mail;
 
 	private String name;
 
-	private int point;
+	private String nickname;
+
+	private String phone;
 
 	private String sex;
-
-	private int status;
-
-	@Temporal(TemporalType.DATE)
-	private Date valid;
 
 	public Member() {
 	}
@@ -49,14 +41,6 @@ public class Member implements Serializable {
 		this.id = id;
 	}
 
-	public String getAddress() {
-		return this.address;
-	}
-
-	public void setAddress(String address) {
-		this.address = address;
-	}
-
 	public int getAge() {
 		return this.age;
 	}
@@ -65,28 +49,20 @@ public class Member implements Serializable {
 		this.age = age;
 	}
 
-	public double getDiscount() {
-		return this.discount;
+	public String getImage() {
+		return this.image;
 	}
 
-	public void setDiscount(double discount) {
-		this.discount = discount;
+	public void setImage(String image) {
+		this.image = image;
 	}
 
-	public int getLevel() {
-		return this.level;
+	public String getMail() {
+		return this.mail;
 	}
 
-	public void setLevel(int level) {
-		this.level = level;
-	}
-
-	public double getMoney() {
-		return this.money;
-	}
-
-	public void setMoney(double money) {
-		this.money = money;
+	public void setMail(String mail) {
+		this.mail = mail;
 	}
 
 	public String getName() {
@@ -97,12 +73,20 @@ public class Member implements Serializable {
 		this.name = name;
 	}
 
-	public int getPoint() {
-		return this.point;
+	public String getNickname() {
+		return this.nickname;
 	}
 
-	public void setPoint(int point) {
-		this.point = point;
+	public void setNickname(String nickname) {
+		this.nickname = nickname;
+	}
+
+	public String getPhone() {
+		return this.phone;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
 	}
 
 	public String getSex() {
@@ -111,22 +95,6 @@ public class Member implements Serializable {
 
 	public void setSex(String sex) {
 		this.sex = sex;
-	}
-
-	public int getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(int status) {
-		this.status = status;
-	}
-
-	public Date getValid() {
-		return this.valid;
-	}
-
-	public void setValid(Date valid) {
-		this.valid = valid;
 	}
 
 }

@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import homework.dao.BaseDao;
-import homework.model.Store;
 
 @Repository
 public class BaseDaoImpl implements BaseDao {

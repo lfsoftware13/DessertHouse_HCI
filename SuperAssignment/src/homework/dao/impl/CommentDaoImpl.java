@@ -8,70 +8,71 @@ import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import homework.dao.AccountDao;
 import homework.dao.BaseDao;
-import homework.model.Account;
+import homework.dao.CommentDao;
+import homework.model.Booktopic;
+import homework.model.Comment;
 
 @Repository
-public class AccountDaoImpl implements AccountDao{
-
+public class CommentDaoImpl implements CommentDao {
+	
 	@Autowired
 	BaseDao baseDao;
 
 	Session session;
-	
+
 	@Override
 	public List findAll() {
 		// TODO Auto-generated method stub
-		return baseDao.getAllList(Account.class);
+		return baseDao.getAllList(Comment.class);
 	}
 
 	@Override
-	public Account findById(String id) {
+	public Comment findById(String id) {
 		// TODO Auto-generated method stub
-		return (Account)baseDao.load(Account.class, id);
+		return (Comment)baseDao.load(Comment.class, id);
 	}
 
 	@Override
-	public Account findByName(String account) {
+	public List findByBook(String bookid) {
 		// TODO Auto-generated method stub
 		session=baseDao.getNewSession();
-		Criteria c=session.createCriteria(Account.class);
-		c.add(Restrictions.eq("account",account));
+		Criteria c=session.createCriteria(Comment.class);
+		c.add(Restrictions.eq("bookid",bookid));
 		List list=c.list();
 		session.close();
 		if(list.size()<=0){
 			return null;
 		}
-		return (Account)list.get(0);
+		return list;
 	}
 
 	@Override
-	public boolean save(Account acc) {
+	public boolean save(Comment com) {
 		// TODO Auto-generated method stub
-		baseDao.save(acc);
+		baseDao.save(com);
 		return true;
 	}
 
 	@Override
-	public boolean update(Account acc) {
+	public boolean update(Comment com) {
 		// TODO Auto-generated method stub
-		baseDao.update(acc);
+		baseDao.update(com);
+		return true;
+	}
+
+	@Override
+	public boolean delete(Comment com) {
+		// TODO Auto-generated method stub
+		baseDao.delete(Comment.class, com.getId());
 		return true;
 	}
 
 	@Override
 	public boolean delete(String id) {
 		// TODO Auto-generated method stub
-		baseDao.delete(Account.class, id);
+		baseDao.delete(Comment.class, id);
 		return true;
 	}
-
-	@Override
-	public boolean delete(Account acc) {
-		// TODO Auto-generated method stub
-		baseDao.delete(Account.class, acc.getId());
-		return true;
-	}
-
+	
 }

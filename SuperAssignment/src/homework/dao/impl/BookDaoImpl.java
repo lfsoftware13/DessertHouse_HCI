@@ -7,11 +7,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import homework.dao.BaseDao;
-import homework.dao.MemberDao;
-import homework.model.Member;
+import homework.dao.BookDao;
+import homework.model.Book;
 
 @Repository
-public class MemberDaoImpl implements MemberDao {
+public class BookDaoImpl implements BookDao {
 
 	@Autowired
 	BaseDao baseDao;
@@ -21,40 +21,40 @@ public class MemberDaoImpl implements MemberDao {
 	@Override
 	public List findAll() {
 		// TODO Auto-generated method stub
-		return baseDao.getAllList(Member.class);
+		return baseDao.getAllList(Book.class);
 	}
 
 	@Override
-	public Member findById(String id) {
+	public Book findById(String id) {
 		// TODO Auto-generated method stub
-		return (Member)baseDao.load(Member.class, id);
+		return (Book)baseDao.load(Book.class, id);
 	}
 
 	@Override
-	public boolean save(Member mem) {
+	public boolean save(Book book) {
 		// TODO Auto-generated method stub
-		baseDao.save(mem);
+		baseDao.save(book);
 		return true;
 	}
 
 	@Override
-	public boolean update(Member mem) {
+	public boolean update(Book book) {
 		// TODO Auto-generated method stub
-		baseDao.update(mem);
+		baseDao.update(book);
 		return true;
 	}
 
 	@Override
-	public boolean delete(Member mem) {
+	public boolean delete(Book book) {
 		// TODO Auto-generated method stub
-		baseDao.delete(Member.class, mem.getId());
+		baseDao.delete(Book.class, book.getId());
 		return true;
 	}
 
 	@Override
 	public boolean delete(String id) {
 		// TODO Auto-generated method stub
-		baseDao.delete(Member.class, id);
+		baseDao.delete(Book.class, id);
 		return true;
 	}
 	
