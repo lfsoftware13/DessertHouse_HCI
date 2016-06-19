@@ -6,7 +6,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>xxx</title>
 
-<<<<<<< HEAD
 <link
 	href="http://cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css"
 	rel="stylesheet">
@@ -28,18 +27,6 @@
 	src="<%=request.getContextPath()%>/js/bootstrap.min.js"></script>
 <script type="text/javascript"
 	src="<%=request.getContextPath()%>/js/fly.js"></script>
-=======
-<link href="<%= request.getContextPath() %>/css/bootstrap.min.css" rel="stylesheet">
-<link href="<%= request.getContextPath() %>/css/topnav.css" rel="stylesheet">
-<link href="<%= request.getContextPath() %>/css/logoline.css" rel="stylesheet">
-<link href="<%= request.getContextPath() %>/css/public.css" rel="stylesheet">
-<link href="<%= request.getContextPath() %>/css/nav_route.css" rel="stylesheet">
-<link href="<%= request.getContextPath() %>/css/book.css" rel="stylesheet">
-<script type="text/javascript" src="<%= request.getContextPath() %>/js/jquery.min.js"></script>
-<script type="text/javascript" src="<%= request.getContextPath() %>/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="<%= request.getContextPath() %>/js/fly.js"></script>
-<script type="text/javascript" src="<%= request.getContextPath() %>/js/pagination.js"></script>
->>>>>>> origin/master
 
 </head>
 <body>
@@ -267,14 +254,7 @@
 						</div>
 					</div>
 				</div>
-<<<<<<< HEAD
 
-=======
-				<%} %>
-				<div class="digg" id="div_pagination">
-					
-				</div>
->>>>>>> origin/master
 			</div>
 		</div>
 	</div>
@@ -349,16 +329,6 @@ $(document).ready(function(){
 			});
 		});
 	</script>
-
-<script>
-	<%
-	String cur_page = request.getParameter("page");
-	if(cur_page == null){
-		cur_page = "1";
-	}
-	%>
-	$.paging(<%=cur_page %>, 100, 10, "div_pagination", "../SearchServlet");
-</script>
 
 </body>
 </html>

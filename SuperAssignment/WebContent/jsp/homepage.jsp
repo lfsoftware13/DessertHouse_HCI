@@ -78,20 +78,16 @@
 			<div class="div_btn btn_prev"></div>
 			<div class="div_btn btn_next"></div>
 			<p class="title">新书速递</p>
-			<div class="scroll_box">
-				<div class="scroll_new_books">
-					<%for(int i=0; i<3; i++){ %>
-					<div class="new_book" value="<%=i %>">
-						<img src="../img/vc.jpg">
-						<p class="introduction">
-							为了你我愿意热爱整个世界<%=i %><br>
-							xx著&nbsp&nbsp&nbsp&nbspxx出版社<br>
-							<font>¥20.0</font>
-						</p>
-					</div>
-					<%} %>
-				</div>
+			<%for(int i=0; i<3; i++){ %>
+			<div class="new_book" value="<%=i %>">
+				<img src="../img/vc.jpg">
+				<p class="introduction">
+					为了你我愿意热爱整个世界<%=i %><br>
+					xx著&nbsp&nbsp&nbsp&nbspxx出版社<br>
+					<font>¥20.0</font>
+				</p>
 			</div>
+			<%} %>
 		</div>
 	</div>
 	
@@ -139,7 +135,7 @@
 		li.removeClass("on");
 		$(".tab_aa li").eq(idx).addClass("on");
 		$(".tab_content_aa div").eq(idx-1).hide();
-		$(".tab_content_aa div").eq(idx).fadeIn(1000);
+		$(".tab_content_aa div").eq(idx).show();
 	}
 
 	$(".tab_aa li").each(function(i){
@@ -148,7 +144,7 @@
 			$(".tab_aa li").eq(idx).removeClass("on");
 			$(".tab_aa li").eq(i).addClass("on");
 			$(".tab_content_aa div").eq(idx).hide();
-			$(".tab_content_aa div").eq(i).fadeIn(1000);
+			$(".tab_content_aa div").eq(i).show();
 		});
 	});
 	
@@ -182,6 +178,8 @@ $(document).ready(function(){
 		});
 	});
 	
+	$(".home_new_books .new_book:eq(0)").addClass("current");
+	
 	$(".btn_prev").mouseover(function(){
 		$(this).css("background", "url('../img/left2.jpg')");
 	});
@@ -195,38 +193,18 @@ $(document).ready(function(){
 		$(this).css("background", "url('../img/right1.jpg')");
 	});
 	
-	
-	//新书速递轮播
-	setInterval(function(){
-		var div = $(".scroll_new_books");
-		var width = div.find(".new_book:eq(0)").width();
-		div.animate({
-			"left": -width + "px"
-		}, 500, function(){
-			div.css("left", "0px");
-			div.find(".new_book:eq(0)").appendTo(div);
-		});
-	}, 5000);
-	
 	$(".btn_prev").click(function(){
-		var div = $(".scroll_new_books");
-		var width = div.find(".new_book:eq(0)").width();	
-		div.css("left", -width + "px");
-		div.find(".new_book:eq(-1)").prependTo(div);
-		div.animate({
-			"left": "0px"
-		}, 500);
+		var idx = $(".home_new_books .current").attr("value");
+		$(".home_new_books .new_book").eq(idx).removeClass("current");
+		idx = (idx - 1) % 3;
+		$(".home_new_books .new_book").eq(idx).addClass("current");
 	});
 	
 	$(".btn_next").click(function(){
-		var div = $(".scroll_new_books");
-		var width = div.find(".new_book:eq(0)").width();
-		div.animate({
-			"left": -width + "px"
-		}, 500, function(){
-			div.css("left", "0px");
-			div.find(".new_book:eq(0)").appendTo(div);
-		});
+		var idx = $(".home_new_books .current").attr("value");
+		$(".home_new_books .new_book").eq(idx).removeClass("current");
+		idx = (idx + 1) % 3;
+		$(".home_new_books .new_book").eq(idx).addClass("current");
 	});
 });
 </script>
