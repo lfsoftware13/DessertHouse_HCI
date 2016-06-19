@@ -1,18 +1,24 @@
 .security_item{min-height: 150px;}
 .security_item p{font-size: 20px;}
 
-.tbl_pc{font-size: 20px; font-weight: bold; color: #475A82;}
+.tbl_pc{font-size: 18px;color: #A4A4A4;}
 .tbl_pc td{height: 70px; line-height: 70px;}
-.tbl_pc td.title{min-width: 60px; text-align: right; padding-right: 10px;}
-.tbl_pc td.content{width: 250px;}
+.tbl_pc td.title{min-width: 60px; text-align: right; padding-right: 10px;font-weight: lighter;}
+.tbl_pc td.content{padding-left:10px;width: 250px; color: black; }
 .tbl_pc td.btn{}
 .tbl_pc td input{float: left; vertical-align: middle;}
-.tbl_pc td input[type="text"]{width: 250px; height: 30px; font-size: 15px; line-height: 30px; border-radius: 5px; border: solid 1px gray;}
-.tbl_pc td input[type="password"]{width: 250px; height: 30px; font-size: 15px; line-height: 30px;}
+.tbl_pc td input[type="text"]{padding-left:10px;width: 250px; height: 30px; font-size: 15px; line-height: 30px; border-radius: 5px; border: solid 1px gray;}
+.tbl_pc td input[type="password"]{padding-left:10px;width: 250px; height: 30px; font-size: 15px; line-height: 30px; border-radius: 5px; border: solid 1px gray;}
 .tbl_pc span.error_msg{position: absolute; margin-left: 5px; margin-top: -20px; font-size: 12px; color: black}
 
-.div_mod_title{height: 30px; line-height: 30px;}
+.div_mod_title{height: 30px; line-height: 27px;}
 .div_mod_title span{display: block; float: left; font-size: 30px; color: #475A82;}
-.div_mod_title a{float: left; margin-left: 350px; font-size: 18px;}
+.div_mod_title a{margin-left: 10px; font-size: 18px;font-weight: lighter;}
 
-.tbl_pc .div_btn, .div_mod .div_btn{width: 150px; height: 40px; line-height: 40px; background-color: #556589;}
+.tbl_pc .div_btn{margin-top: 10px;}
+
+.tbl_pc .div_btn, .div_mod .div_btn{font-size: 18px;width: 150px; height: 40px; line-height: 40px; background-color: #556589;}
+.tbl_pc .div_btn:hover, .div_mod .div_btn:hover{background-color: #718dbf};
+
+a.return{color: #556589}
+a.return:hover{color:#718dbf;text-decoration: none;};

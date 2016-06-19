@@ -6,6 +6,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>收货地址</title>
 
+<link
+	href="http://cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css"
+	rel="stylesheet">
 <link href="<%= request.getContextPath() %>/css/bootstrap.min.css" rel="stylesheet">
 <link href="<%= request.getContextPath() %>/css/public.css" rel="stylesheet">
 <link href="<%= request.getContextPath() %>/css/topnav.css" rel="stylesheet">
@@ -27,7 +30,7 @@
 		
 		<div class="pc_right_part">
 			<div class="settings">
-				<div><a class="new_address">新增收货地址</a></div>
+				<div><a class="new_address"><i class="fa fa-plus-circle fa-lg"></i>&nbsp新增收货地址</a></div>
 				<table class="tbl_settings">
 					<tr>
 						<td class="title">所在地区</td>
@@ -47,19 +50,19 @@
 					<tr>
 						<td class="title">详细地址</td>
 						<td>
-							<textarea rows="3" cols="60">详细地址</textarea>
+							<textarea rows="3" cols="60"placeholder = "详细地址"></textarea>
 						</td>
 					</tr>
 					<tr>
 						<td class="title">邮政编码</td>
 						<td>
-							<input type="text" id="txt_zipcode" value="默认为000000">
+							<input type="text" id="txt_zipcode" placeholder="默认为000000">
 						</td>
 					</tr>
 					<tr>
 						<td class="title">收货人姓名</td>
 						<td>
-							<input type="text" id="txt_name" value="不超过25个字">
+							<input type="text" id="txt_name" placeholder="不超过25个字">
 						</td>
 					</tr>
 					<tr>
@@ -68,7 +71,7 @@
 							<select name="contact_zone" id="txt_contact_zone">
 								<option value="cn">中国大陆+86</option>
 							</select>
-							<input type="text" id="txt_contact" value="手机或电话号码">
+							<input type="text" id="txt_contact" placeholder="手机或电话号码">
 						</td>
 					</tr>
 				</table>
@@ -77,7 +80,11 @@
 					<div class="div_btn">保存</div>
 				</div>
 			</div>
+			
 			<div class="addresslist">
+				<div class = "add_title">
+								<span>已有地址</span>
+							</div>
 				<table class="tbl_address">
 					<tr class="tbl_head">
 						<td>收货人</td>

@@ -26,37 +26,57 @@
 	<div class="bottom_part">
 		
 	<div class="choose_address">
-		<h2>收货地址</h2>
-		<div class="address_list">
-			<%for(int i=0; i<5; i++){ %>
+		<div class = "info_title">
+			<span>选择收货地址</span>
+			<a href="../AddressServlet"><i class="fa fa-plus-circle fa-lg"></i>&nbsp使用新地址</a>
+		</div>
+		</div>
+		<div class = "address_list">
+		<%for(int i=0; i<5; i++){ %>
 			<div class="addressItem">
 				<p>江苏省南京市鼓楼区汉口路22号陶园1舍3楼313室</p>
 			</div>
 			<%} %>
 		</div>
 		<div style="clear: both"></div>
-		<div class="address_settings">
-			<a href="../AddressServlet">使用新地址</a>
-		</div>
+		
 	</div>
 	
 	<div class="orderInfo">
-		<h2>订单信息</h2>
+		<div class = "info_title">
+			<span>商品列表 </span>
+		</div>
 		<div class="order_list">
 			<table class="tbl_orderItems">
 				<tr class="head">
-					<td>商品信息</td>
-					<td>单价</td>
-					<td>数量</td>
-					<td>金额</td>
+					<td class="bookinfo">商品信息</td>
+					<td class = "price">单价</td>
+					<td class = "num">数量</td>
+					<td class = "total">金额</td>
 					<td>操作</td>
 				</tr>
 				<%for(int i =0; i<10; i++){%>
 				<tr class="orderline">
-					<td><a href="">C++高级程序设计</a></td>
-					<td>22.0</td>
-					<td>2</td>
-					<td>44.0</td>
+					<td><img src="<%= request.getContextPath() %>/img/cpp.jpg" alt="cover">
+					</td>
+					<td class = ><a href="">C++高级程序设计</a></td>
+					<td class = "price price_info">11.1</td>
+
+					<td class = "num">
+						<span class="span_quantity" id="span_quantity">
+							<span id="quantity_add_cart" class = "add_cart">
+							+
+							</span>
+							 <input
+								type="text" value="1" class="input_quantity_cart">
+							<span id="quantity_minus_cart" class = "minus_cart">
+							-
+							</span>
+								
+						</span>
+					</td>
+
+					<td class = "total total_info">99.9</td>
 					<td><a class="deleteline">放回购物车</a></td>
 					<td style="display: none;">bookId</td>
 				</tr>

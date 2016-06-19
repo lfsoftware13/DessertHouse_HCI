@@ -1,8 +1,8 @@
-.pc_leftnav{float: left; margin-left: 100px; width: 150px; height: 450px;}
-.pc_right_part{float: left; margin-left: 80px;}
+.pc_leftnav{float: left; margin-left: 100px; width: 180px; height: 450px;}
+.pc_right_part{float: left; margin-left: 45px;}
 
 .pc_leftnav ul{list-style: none; padding-left: 0px;}
-.pc_leftnav li{height: 50px; line-height: 50px; text-align: center; cursor: pointer;}
+.pc_leftnav li{height: 50px; line-height: 50px; text-align: center; cursor: pointer;margin-bottom: 10px;}
 .pc_leftnav li a{font-size: 18px;  color:  #556589;}
 
 li.mouseon{border-radius: 10px; background-color: #556589;}

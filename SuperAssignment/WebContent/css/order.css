@@ -1,21 +1,21 @@
 h2{margin-left: 100px; color: #475A82;}
 
-.choose_address{margin: 0 auto; width: 1200px;}
-.orderInfo{margin: 0 auto; width: 1200px;}
+.choose_address{margin-left: 150px; width: 1000px;}
+.orderInfo{margin-left: 150px; margin-top:40px;width: 1000px;}
 .sum_submit{float: right; margin-right: 300px; margin-top: 20px; height: 100px; width: 150px;}
-
+#set_default{color: #A4A4A4;font-size: 16px;}
 .address_list{margin: 0 auto; width: 1000px;}
-.addressItem{float: left; margin-left: 100px; margin-top: 30px;  width: 200px; height: 150px; text-align: center; background-color: #ECF2FE; border: dotted 3px white; cursor: pointer;}
+.addressItem{float: left; margin-left: 30px; margin-top: 30px;  width: 200px; height: 100px; text-align: center; background-color: #ECF2FE; border: dotted 3px white; cursor: pointer;}
 .addressItem p{padding-left: 20px; padding-right: 20px; font-size: 18px; color: #475A82;}
 .address_settings{margin: 0 auto; width: 800px; height: 30px; line-height: 30px;}
-.address_settings a{float: right; font-size: 20px; font-weight: bold; color: #475A82;}
+
 .address_list .selected{border: dotted 3px gray;}
 
 .order_list{margin: 0 auto; width: 1000px;}
 .tbl_orderItems{margin: 0 auto; border: 1px; text-align: center;}
-.tbl_orderItems tr{display: block; margin-top: 5px; color: #475A82;}
-.tbl_orderItems tr.head{font-size: 20px; font-weight: bold;}
-.tbl_orderItems tr.orderline{font-size: 15px;}
+.tbl_orderItems tr{display: block; margin-top: 5px; color: #556589;}
+.tbl_orderItems tr.head{font-size: 18px; color: white;}
+.tbl_orderItems tr.orderline{font-size: 13px;color: black}
 .tbl_orderItems td{width: 100px; min-width: 150px; height: 50px; line-height: 50px; background-color: #ECF2FE;}
 
 .sum_submit{background-color: #ECF2FE;}
@@ -25,3 +25,8 @@ h2{margin-left: 100px; color: #475A82;}
 
 div.div_btn{margin-left: 25px; width: 100px; height: 40px; font-size: 20px; color: white; line-height: 40px; text-align: center; background-color: #718D8F; cursor: pointer;}
 div.div_btn_clicked{background-color: #718D8F;}
+
+.info_title{margin-top:20px;border-bottom: 1px solid #718dbf;width: 1000px;height: 25px; margin-bottom: 20px}
+.info_title span{padding-left:10px; padding-top: 5px; padding-right:10px; padding-bottom: 5px;	background-color: #718dbf;color: white;border-left: 2px solid #556589;}
+.info_title a{float: right; margin-right:40px;font-size: 15px; color: #556589;}
+.info_title a:hover{color: #718dbf}

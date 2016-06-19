@@ -6,6 +6,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>安全中心</title>
 
+<link
+	href="http://cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css"
+	rel="stylesheet">
 <link href="<%= request.getContextPath() %>/css/bootstrap.min.css" rel="stylesheet">
 <link href="<%= request.getContextPath() %>/css/public.css" rel="stylesheet">
 <link href="<%= request.getContextPath() %>/css/topnav.css" rel="stylesheet">
@@ -48,8 +51,8 @@
 		</div>
 		<div class="div_mod_email div_mod" style="display: none;">
 			<div class="div_mod_title">
-				<span>修改邮箱</span>
-				<a class="return">返回</a>
+				<!-- <span>修改邮箱</span> -->
+				<a class="return"><i class="fa fa-undo"></i>&nbsp返回</a>
 				<div style="clear: both"></div>
 			</div>
 			<table class="tbl_pc">
@@ -62,12 +65,12 @@
 					<td class="content"><input type="text" id="text_new_email2"><span class="error_msg"></span></td>
 				</tr>
 			</table>
-			<div class="div_btn" id="btn_mod_email" style="margin-left: 175px;">保存</div>
+			<div class="div_btn" id="btn_mod_email" style="margin-left: 155px;">保存</div>
 		</div>
 		<div class="div_mod_phone div_mod"  style="display: none;">
 			<div class="div_mod_title">
-				<span>修改手机</span>
-				<a class="return">返回</a>
+				<!-- <span>修改手机</span> -->
+				<a class="return"><i class="fa fa-undo"></i>&nbsp返回</a>
 				<div style="clear: both"></div>
 			</div>
 			<table class="tbl_pc">
@@ -80,12 +83,12 @@
 					<td class="content"><input type="text" id="text_new_phone2"><span class="error_msg"></span></td>
 				</tr>
 			</table>
-			<div class="div_btn" id="btn_mod_phone" style="margin-left: 175px;">保存</div>
+			<div class="div_btn" id="btn_mod_phone" style="margin-left: 155px;">保存</div>
 		</div>
 		<div class="div_mod_password div_mod"  style="display: none;">
 			<div class="div_mod_title">
-				<span>修改密码</span>
-				<a class="return">返回</a>
+				<!-- <span>修改密码</span> -->
+				<a class="return"><i class="fa fa-undo"></i>&nbsp返回</a>
 				<div style="clear: both"></div>
 			</div>
 			<table class="tbl_pc">
@@ -102,7 +105,7 @@
 					<td class="content"><input type="password" id="text_new_password2"><span class="error_msg"></span></td>
 				</tr>
 			</table>
-			<div class="div_btn" id="btn_mod_password" style="margin-left: 135px;">保存</div>
+			<div class="div_btn" id="btn_mod_password" style="margin-left: 130px;">保存</div>
 		</div>
 	</div>
 	</div>

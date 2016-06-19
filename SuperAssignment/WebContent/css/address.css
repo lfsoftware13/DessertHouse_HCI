@@ -1,9 +1,10 @@
-a.new_address{font-size: 18px; text-decoration: underline;}
+a.new_address{font-size: 20px;color: #556589}
+a.new_address:hover{color:#718dbf; text-decoration: none;}
 
-.tbl_settings{margin-left: -23px;}
+.tbl_settings{margin-left: -23px;margin-top: 20px;}
 .tbl_settings tr{display: block; margin-top: 15px; margin-bottom: 25px; font-size: 15px;}
 .tbl_settings td{}
-.tbl_settings td.title{width: 120px; padding-top: 7px; padding-right: 15px; font-size: 20px; font-weight: bold; color: #898989; text-align: right; vertical-align: top;}
+.tbl_settings td.title{width: 120px; padding-top: 7px; padding-right: 15px; font-size: 18px;color: #898989; text-align: right; vertical-align: top;}
 .tbl_settings td.content{}
 .tbl_settings input, select{height: 40px;}
 .tbl_settings input, select, textarea{border-radius: 5px;}
@@ -11,15 +12,21 @@ a.new_address{font-size: 18px; text-decoration: underline;}
 .tbl_settings input[type="text"]{width: 200px;}
 .tbl_settings select{width: 120px;}
 
-.setting_line{padding-left: 100px; font-size: 18px;}
-.setting_line input[type="checkbox"]{}
+.setting_line{padding-left: 100px; font-size: 16px; color: #A4A4A4}
+.setting_line input[type="checkbox"]{color: #A4A4A4}
 .setting_line .div_btn{margin-top: 15px; width: 150px; height: 40px; line-height: 40px; background-color: #556589;}
+.setting_line .div_btn:hover{background-color:#718dbf }
 
 .addresslist{margin-top: 50px;}
-.tbl_address{margin-left: -45px; text-align: center}
+.tbl_address{margin-left: 0px; text-align: center}
 .tbl_address tr{}
-.tbl_address tr.tbl_head{font-size: 20px; font-weight: bold; background-color: #556589;}
-.tbl_address tr.addressline{height: 40px; line-height: 40px; font-size: 15px; font-weight: bold; background-color: #F5F5F5;}
-.tbl_address td{min-width: 150px; color: #475A82;}
+.tbl_address tr.tbl_head{font-size: 18px;background-color: #556589;font-weight: lighter;}
+.tbl_address tr.addressline{height: 40px; line-height: 40px; font-size: 13px; background-color: #F5F5F5;}
+.tbl_address td{min-width: 150px; color: black;}
 .tbl_address .tbl_head td{color: white;}
-.tbl_address .addressline td{}
+.tbl_address .addressline td{color: black;}
+a.deleteline{color: #556589}
+a.deleteline:hover{color: #718dbf; text-decoration: none;}
+
+.add_title{border-bottom: 1px solid #718dbf;width: 890px;height: 25px; margin-bottom: 20px}
+.add_title span{padding-left:10px; padding-top: 5px; padding-right:10px; padding-bottom: 5px;	background-color: #718dbf;color: white;border-left: 2px solid #556589;}
