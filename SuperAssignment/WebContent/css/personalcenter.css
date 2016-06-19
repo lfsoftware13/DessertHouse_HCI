@@ -3,10 +3,12 @@
 
 .pc_leftnav ul{list-style: none; padding-left: 0px;}
 .pc_leftnav li{height: 50px; line-height: 50px; text-align: center; cursor: pointer;}
-.pc_leftnav li a{font-size: 25px; font-weight: bold; color:  #556589;}
+.pc_leftnav li a{font-size: 18px;  color:  #556589;}
 
 li.mouseon{border-radius: 10px; background-color: #556589;}
 li.selected{border-radius: 10px; background-color: #556589;}
+li:hover{background-color: #9fb4db}
+a:hover{color: white}
 a.mouseon {color: white !important;}
 a.selected {color: white !important;}
 

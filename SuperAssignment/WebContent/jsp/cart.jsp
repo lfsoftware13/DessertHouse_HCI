@@ -59,7 +59,10 @@
 					</td>
 
 					<td class = "total total_info">99.9</td>
-					<td><div class="div_btn deleteline" style="width: 100px; margin: 0 auto;">删除</div></td>
+					<td class = "del">
+						<!-- <div class="div_btn deleteline" style="width: 100px; margin: 0 auto;">删除</div> -->
+						<i class="fa fa-trash-o fa-lg"></i>
+					</td>
 				</tr>
 				<%} %>
 			</table>

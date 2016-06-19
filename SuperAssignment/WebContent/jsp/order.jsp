@@ -6,6 +6,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>订单</title>
 
+<link
+	href="http://cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css"
+	rel="stylesheet">
 <link href="<%= request.getContextPath() %>/css/bootstrap.min.css" rel="stylesheet">
 <link href="<%= request.getContextPath() %>/css/public.css" rel="stylesheet">
 <link href="<%= request.getContextPath() %>/css/topnav.css" rel="stylesheet">

@@ -6,6 +6,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>我的订单</title>
 
+<link
+	href="http://cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css"
+	rel="stylesheet">
 <link href="<%= request.getContextPath() %>/css/bootstrap.min.css" rel="stylesheet">
 <link href="<%= request.getContextPath() %>/css/public.css" rel="stylesheet">
 <link href="<%= request.getContextPath() %>/css/topnav.css" rel="stylesheet">
@@ -43,20 +46,22 @@
 				<div class="order_title">
 					<span class="bold">2016-05-26</span>
 					<span>订单号：<span>9347013740912375</span></span>
-					<div class="div_btn deleteline">删除</div>
+					<span class="del">
+						<i class="fa fa-trash-o fa-lg"></i>
+					</span>
 				</div>
 				<div class="order_details">
 					<table class="tbl_orders">
 						<%for(int j=0; j<3; j++){ %>
 						<tr class="orderline">
 							<td class="bookinfo"><img src="<%= request.getContextPath() %>/img/cpp.jpg" alt="cover">Head First Java(Edition 1)</td>
-							<td class="narrow">22.0</td>
+							<td class="narrow price">22.0</td>
 							<td class="narrow">4</td>
 						</tr>
 						<%} %>
 					</table>
 				</div>
-				<div class="vertical_line" style="height: <%=110 * 3 %>px; line-height: <%=110 * 3 %>px;">
+				<div class="vertical_line totle" style="height: <%=110 * 3 %>px; line-height: <%=110 * 3 %>px;">
 					123.0
 				</div>
 				<div class="vertical_line" style="height: <%=110 * 3 %>px; line-height: <%=110 * 3 %>px;">
