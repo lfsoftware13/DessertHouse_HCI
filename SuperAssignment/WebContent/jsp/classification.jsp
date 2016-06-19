@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <div class="left_nav">
-	<div class="classification_title"><p class="title">图书分类</p></div>
+	<div class="classification_title"><p class="title">图&nbsp书&nbsp分&nbsp类</p></div>
 	<%for(int i=0; i<8; i++){ %>
 	<div class="classification">
 		<dl>

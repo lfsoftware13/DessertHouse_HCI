@@ -1,63 +1,77 @@
-.top_part{width: 100%; height: 400px;}
+.top_part{width: 100%; height: 400px;margin-top: 20px;}
 .bottom_part{margin-top: 20px; width: 100%;}
 
-.pictures{float: left; margin-left: 0px; width: 400px; height: 100%;}
-.details{float: left; margin-left: 0px; width: 800px; height: 100%;}
+.pictures{float: left;margin-left: 50px; width: 350px; height: 390px;border: 1px solid #DDDDDD;}
+.details{float: left; margin-left: 20px; width: 800px; height: 100%;}
 
-.pictures img{margin-left: 80px; margin-top: 30px; width: 300px; height: 300px;}
+.pictures img{margin-left: 20px; margin-right:20px;margin-top: 45px; margin-bottom:45px;width: 300px; height: 300px;}
 
-.details .book_title{font-size: 30px; font-weight: bold; line-height: 30px;}
-.book_introduction{margin-top: 8px; font-size: 15px;}
+.details .book_title{font-size: 30px; font-weight: bold; line-height: 30px;font-family: 幼圆}
+.book_introduction{margin-top: 15px; font-size: 15px;color: #a0a0a0}
 .publish_info{margin-top: 8px;}
-.publish_info span{margin-right: 20px;}
-.sales_comments{margin-top: 10px; width: 300px; height: 50px; line-height: 50px; text-align: left; border: solid 1px #CEDAF0;}
-.sales_comments span{display: block; float: left; margin-right: 50px; font-size: 18px; font-weight: bold;}
-.sales_comments font{margin-left: 10px; color: red;}
-div.price{margin-top: 10px; background-color: #CEDAF0;}
-.price img{width: 120px; height: 30px;}
-font.price{font-size: 35px; font-weight: bold; color: red;}
-font.ranking{margin-left: 20px; font-size: 18px;}
+.publish_info span{margin-right: 20px;color:#a8a8a8;}
+.publish_info a{color: #556589;}
+.publish_info a:hover{color:#718dbf;}
+
+.sales_comments{margin-top: 10px;margin-bottom: 10px; width: 402px; height: 40px; line-height: 40px; text-align: left; border: solid 1px #EEEEEE;}
+.sales_comments .comments_name{display: block; float:left;text-align: center; font-size: 15px; font-color:#CCCCCC; color:#B5B5B5;width: 200px;}
+.sales_comments .line{border-right: 1px dotted #EEEEEE}
+.sales_comments font{margin-left: 10px; color: red;font-weight: lighter;font-family: 'Lithos Pro'}
+div.price{margin-top: 10px; padding-top:10px; padding-bottom:10px;background-color: #e4ebf6;}
+.price .level{margin-left: 10px;}
+font.price_symbol{margin-left:10px;font-size: 20px;font-weight: lighter;color: red;font-family: 微软雅黑}
+font.price{font-size: 35px; font-weight: bold; color: red;font-family: '黑体'}
+font.ranking{margin-left: 20px; font-size: 14px;color: #a4a4a4}
+font.ranking_num{font-family: 'Lithos Pro';font-size: 15px;color: red;}
 .quantity{margin-top: 10px; height: 50px;}
 .quantity dl{clear: left;}
-.quantity dt{float: left; text-align: center; line-height: 40px;}
-.quantity dd{float: left; margin-left: 50px;}
+.quantity dt{float: left; text-align: center; line-height: 40px;color: #a8a8a8;font-weight: lighter;}
+.quantity dd{float: left; margin-left: 30px;}
 .span_quantity{display: block; height: 50px;}
 .span_quantity .input_quantity{float: left; width:50px; height: 40px; line-height: 40px; font-size: 15p; border: solid 1px gray;}
 .span_quantity .unit{display: block; float: left; margin-left: 10px; height: 40px; line-height: 40px;}
 .span_quantity .add_minus{display: block; float: left; margin-left: 5px; width: 20px; height: 30px;}
 .add_minus span{display: block; margin-bottom: 4px; width: 20px; height: 18px; line-height: 15px; text-align: center; border: solid 1px gray; cursor: pointer;}
-div.btn_addToCart{margin-top: 10px; width: 150px; height: 40px; line-height: 40px; text-align: center; font-size: 18px; font-weight: bold; color: white; background-color: #718DBF; cursor: pointer;}
-.btn_addToCart img{width: 30px; height: 30px; vertical-align: middle;}
+div.btn_addToCart{margin-top: 10px; width: 150px; height: 40px; line-height: 40px; text-align: center; font-size: 16px; font-weight: lighter; color: white; background-color: #556589; cursor: pointer;}
+div.btn_addToCart:hover{background-color: #718dbf}
 
-.book_recommend{float: left; margin-left: 100px; width: 250px;}
-.book_recommend .title{height: 20px; font-size: 20px; line-height: 20px; color: gray;}
-.book_recommend .book{width: 250px; height: 250px; border-bottom: #EBECF0 5px dotted; border-left: #EBECF0 5px solid; border-right: #EBECF0 5px solid;}
+.book_recommend{float: left; margin-left: 50px;margin-bottom: 20px; width: 230px;margin-top: 50px;}
+.book_recommend .title{height: 20px; font-size: 18px; line-height: 20px; color: #BBBBBB;}
+.booklist{width: 100%;height: 100%;border-top: #EBECF0 5px solid;}
+.book_recommend .book{width: 230px; height: 250px; border-bottom: #EBECF0 5px dotted; border-left: #EBECF0 5px solid; border-right: #EBECF0 5px solid;}
+
 .book img{margin-left: 35px; margin-top: 5px; width: 180px; height: 180px;}
 .book p{text-align: center;}
 .book font{color: red;}
 
-.more_details{float: left; margin-left: 50px; width: 800px;}
+.more_details{float: left; margin-left: 50px; width: 900px;margin-top: 35px;}
 
-.book_details{width: 100%;}
-.book_comments{width: 100%; display: none;}
-.book_comments .single_comment{width: 100%; height: 130px; border-bottom: solid 1px gray;}
-.book_comments .single_comment .left{float: left; width: 100px; height: 100%;}
-.book_comments .single_comment .left img{width: 100px; height: 100px;}
-.book_comments .single_comment .left p{width: 100px; text-align: center;}
-.book_comments .single_comment .right{float: left; width: 650px; height: 130px;}
-.book_comments .single_comment .right1{height: 70px;}
-.book_comments .single_comment .right2{height: 30px; line-height: 30px; text-align: right;}
+#tabContent{margin-left:0px; margin-top: 30px;}
+#book_details{width: 100%; margin-top: 30px;}
+#book_details .basic_item{float: left; width: 280px;height: 30px;font-size: 14px;}
+#book_details .basic_item span{color: #a4a4a4}
+#book_details .basic_item font{color: #a4a4a4;}
+#book_details .title{border-bottom: 1px solid #718dbf;width: 890px;height: 25px}
+#book_details .title span{padding-left:10px; padding-top: 5px; padding-right:10px; padding-bottom: 5px;
+	background-color: #718dbf;color: white;border-left: 2px solid #556589;}
+#book_details .content{padding-left: 20px; padding-right: 20px; padding-top: 40px; padding-bottom: 40px;}
+
+#book_comments{width: 100%;}
+#book_comments .single_comment{width: 100%; height: 130px; border-bottom: solid 1px #DDDDDD;}
+#book_comments .single_comment .left{float: left; width: 100px; height: 100%;}
+#book_comments .single_comment .left img{width: 100px; height: 100px;}
+#book_comments .single_comment .left p{width: 100px; text-align: center;}
+#book_comments .single_comment .right{float: left; width: 750px; height: 130px;}
+#book_comments .single_comment .right1{height: 70px;}
+#book_comments .single_comment .right2{height: 30px; line-height: 30px; text-align: right;color: #a4a4a4}
 .right1 p{margin-left: 30px; margin-top: 30px; width: 780px; height: 70px;}
 
-.comments_score{margin-top: 10px; width: 100%; height: 100px; text-align: center; border: solid 1px gray;}
-.score{float: left; margin-top: 5px; width: 200px; height: 90px; border-right: solid 1px gray;}
+.comments_score{padding:20px;margin-bottom:20px;width: 100%; height: 130px; text-align: center; border: solid 1px #DDDDDD;background-color: #F8F8F8;font-size: 18px;}
+.score{float: left; margin-top: 5px; width: 200px; height: 90px; border-right: solid 1px #DDDDDD;}
 .match{float: left; margin-top: 5px; width: 300px; height: 90px;}
-.comments_score p{font-size: 20px; line-height: 30px;}
-.comments_score font{color: red;}
+.comments_score p{font-size: 16px; line-height: 30px;}
+.comments_score font{color: red;font-size: 22px;font-family: 'Lithos Pro'}
 
-
-.score img{}
-.match img{width: 100px; height: 30px;}
 
 
 img.img_flyer{width: 50px; height: 50px;}

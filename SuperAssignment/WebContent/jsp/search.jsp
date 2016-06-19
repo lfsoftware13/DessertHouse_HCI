@@ -97,7 +97,7 @@
 				</div>
 			<% } %>
 		</div>
-		<div class="digg" id="div_pagination">
+		<div class="digg page" id="div_pagination">
 			
 		</div>
 	</div>
