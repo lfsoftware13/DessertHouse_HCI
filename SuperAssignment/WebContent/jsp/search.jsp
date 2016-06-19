@@ -17,6 +17,7 @@
 <link href="<%= request.getContextPath() %>/css/import_pagination_digg.css" rel="stylesheet">
 <script type="text/javascript" src="<%= request.getContextPath() %>/js/jquery.min.js"></script>
 <script type="text/javascript" src="<%= request.getContextPath() %>/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="<%= request.getContextPath() %>/js/pagination.js"></script>
 
 </head>
 <body>
@@ -104,7 +105,6 @@
 </div>
 </body>
 
-<script type="text/javascript" src="<%= request.getContextPath() %>/js/pagination.js"></script>
 <script>
 	<%
 	String cur_page = request.getParameter("page");

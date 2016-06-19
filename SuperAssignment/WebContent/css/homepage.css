@@ -19,11 +19,12 @@
 .home_hot_topics .topics .change a:hover{color: #DDDDDD; text-decoration: none;}
 .not_first{margin-left: 9px;}
 
-.home_new_books .new_book{display: none;}
-.home_new_books .current{display: block;}
+.home_new_books .scroll_box{position: relative; width: 230px; height: 380px; overflow: hidden;}
+.home_new_books .scroll_new_books{width: 1000px; position: absolute;}
+.home_new_books .new_book{float: left; width: 230px; height: 380px;}
 .home_new_books .div_btn{width: 25px; height: 49px; font-size: 30px; line-height: 60px; cursor: pointer;}
-.home_new_books .btn_prev{position: absolute; margin-left: 0px; margin-top: 175px; background: url("../img/left1.jpg");}
-.home_new_books .btn_next{position: absolute; margin-left: 205px; margin-top: 175px; background: url("../img/right1.jpg");}
+.home_new_books .btn_prev{position: absolute; margin-left: 0px; margin-top: 175px; background: url("../img/left1.jpg"); z-index: 999;}
+.home_new_books .btn_next{position: absolute; margin-left: 205px; margin-top: 175px; background: url("../img/right1.jpg"); z-index: 999;}
 .home_new_books p.title{height: 50px; line-height: 50px; text-align: center; font-size: 25px; color: white; background-color: #556589;}
 .home_new_books img{margin-left: 22px; margin-top: 15px; width: 180px; height: 210px;}
 .home_new_books p.introduction{margin-top: 20px; text-align: center; font-size: 15px; line-height: 30px;}
