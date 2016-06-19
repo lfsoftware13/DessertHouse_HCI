@@ -307,8 +307,9 @@ $(document).ready(function(){
 		$(function() {
 			var offset = $(".logoline .cart").offset();
 			$(".btn_addToCart").click(function(event) {
-				var img = "../img/icon_cart.jpg" //获取当前点击图片链接 
+				var img = "../img/icon_cart.png" //获取当前点击图片链接 
 				var flyer = $('<img class="img_flyer" src="' + img + '">'); //抛物体对象 
+				var flyer = $('<i class="fa fa-book fa-2x" style = "color:#556589;"></i> ')
 				flyer.fly({
 					start : {
 						left : event.pageX,//抛物体起点横坐标 
