@@ -2,11 +2,11 @@ h2{margin-left: 100px; color: #475A82;}
 
 .choose_address{margin-left: 150px; width: 1000px;}
 .orderInfo{margin-left: 150px; margin-top:40px;width: 1000px;}
-.sum_submit{float: right; margin-right: 300px; margin-top: 20px; height: 100px; width: 150px;}
-#set_default{color: #A4A4A4;font-size: 16px;}
+.sum_submit{float: right; margin-right: 247px; margin-top: 20px; height: 150px; width: 300px;margin-bottom: 50px;}
+#set_default{color: #A4A4A4;font-size: 14px;}
 .address_list{margin: 0 auto; width: 1000px;}
 .addressItem{float: left; margin-left: 30px; margin-top: 30px;  width: 200px; height: 100px; text-align: center; background-color: #ECF2FE; border: dotted 3px white; cursor: pointer;}
-.addressItem p{padding-left: 20px; padding-right: 20px; font-size: 18px; color: #475A82;}
+.addressItem p{padding-left: 20px; padding-right: 20px; font-size: 15px; color: #475A82;}
 .address_settings{margin: 0 auto; width: 800px; height: 30px; line-height: 30px;}
 
 .address_list .selected{border: dotted 3px gray;}
@@ -14,19 +14,38 @@ h2{margin-left: 100px; color: #475A82;}
 .order_list{margin: 0 auto; width: 1000px;}
 .tbl_orderItems{margin: 0 auto; border: 1px; text-align: center;}
 .tbl_orderItems tr{display: block; margin-top: 5px; color: #556589;}
-.tbl_orderItems tr.head{font-size: 18px; color: white;}
+.tbl_orderItems tr.head{font-size: 18px; color: white;background-color: #556589;text-align: center}
 .tbl_orderItems tr.orderline{font-size: 13px;color: black}
-.tbl_orderItems td{width: 100px; min-width: 150px; height: 50px; line-height: 50px; background-color: #ECF2FE;}
+.tbl_orderItems td{width: 100px; min-width: 150px; height: 50px; line-height: 50px;}
+.tbl_orderItems tr.head{font-size: 18px; color: white;background-color: #556589}
 
-.sum_submit{background-color: #ECF2FE;}
-.sum_submit .sum{height: 50px; line-height: 50px; text-align: center;}
+.orderline{background-color: #F5F5F5;margin-top:30px;border-bottom: solid 1px #E7E7E7;}
+.orderline td{font-size: 15px;}
+.tbl_orderItems td.bookinfo{width: 200px}
+.tbl_orderItems td.price{width: 200px;}
+.tbl_orderItems td.price_info{font-family: 'Trajan Pro';color: black;}
+.tbl_orderItems td.num{margin-left:50px;width:180px;}
+.tbl_orderItems td.total_info{font-family: 'Trajan Pro';color: red;}
+.tbl_orderItems img{width: 160px; height: 160px; border: solid 10px #F5F5F5;}
+
+.span_quantity{display: block; height: 50px;text-align: center}
+.span_quantity .input_quantity_order{float: left; width:70px; margin-left: 5px;height: 40px; line-height: 40px; font-size: 15p; border: solid 1px #CCCCCC;}
+.span_quantity .add_cart{display: block; float: left; padding-top:-10px;padding-bottom:15px; width: 40px; height: 40px;border:solid 1px #CCCCCC;}
+.span_quantity .minus_cart{display: block; float: left; margin-left: 5px;width: 40px; height: 40px; border:solid 1px #CCCCCC;text-align: center;vertical-align: middle;}
+.add_minus span{display: block; margin-bottom: 4px; width: 20px; height: 18px; line-height: 15px; text-align: center; border: solid 1px gray; cursor: pointer;}
+
+
+.sum_submit{background-color: #F5F5F5;border: 1px solid #DDDDDD;padding-top: 30px;padding-bottom: 30px;padding-left: 50px;padding-right: 50px; }
+.sum_submit .sum{line-height: 50px; text-align: center;}
 .sum_submit .submit{height: 50px; text-align: center;}
-.sum span{font-size: 20px; font-weight: bold; color: #475A82;}
+.sum span{font-size: 18px; color: black;}
+.sum font{font-size: 25px;color: red;font-family: 'Trajan Pro';}
 
-div.div_btn{margin-left: 25px; width: 100px; height: 40px; font-size: 20px; color: white; line-height: 40px; text-align: center; background-color: #718D8F; cursor: pointer;}
-div.div_btn_clicked{background-color: #718D8F;}
+div.div_btn{float:right;margin-left: 25px; width: 100px; height: 40px; font-size: 20px; color: white; line-height: 40px; text-align: center; background-color: #556589; cursor: pointer;}
+div.div_btn_clicked{background-color: #556589;color: white;}
+div.div_btn:hover{background-color: #718dbf;}
 
 .info_title{margin-top:20px;border-bottom: 1px solid #718dbf;width: 1000px;height: 25px; margin-bottom: 20px}
 .info_title span{padding-left:10px; padding-top: 5px; padding-right:10px; padding-bottom: 5px;	background-color: #718dbf;color: white;border-left: 2px solid #556589;}
-.info_title a{float: right; margin-right:40px;font-size: 15px; color: #556589;}
-.info_title a:hover{color: #718dbf}
+.info_title a{float: right; margin-right:20px;font-size: 15px; color: #556589;}
+.info_title a:hover{color: #718dbf;text-decoration: none;}

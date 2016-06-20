@@ -44,7 +44,7 @@
 	
 	<div class="orderInfo">
 		<div class = "info_title">
-			<span>商品列表 </span>
+			<span>选购商品列表 </span>
 		</div>
 		<div class="order_list">
 			<table class="tbl_orderItems">
@@ -57,19 +57,20 @@
 				</tr>
 				<%for(int i =0; i<10; i++){%>
 				<tr class="orderline">
-					<td><img src="<%= request.getContextPath() %>/img/cpp.jpg" alt="cover">
+					<td class = "bookinfo"><img src="<%= request.getContextPath() %>/img/cpp.jpg" alt="cover">
+						<a href="">C++高级程序设计</a>
+
 					</td>
-					<td class = ><a href="">C++高级程序设计</a></td>
 					<td class = "price price_info">11.1</td>
 
 					<td class = "num">
 						<span class="span_quantity" id="span_quantity">
-							<span id="quantity_add_cart" class = "add_cart">
+							<span id="quantity_add_order" class = "add_cart">
 							+
 							</span>
 							 <input
-								type="text" value="1" class="input_quantity_cart">
-							<span id="quantity_minus_cart" class = "minus_cart">
+								type="text" value="1" class="input_quantity_order">
+							<span id="quantity_minus_order" class = "minus_cart">
 							-
 							</span>
 								
@@ -87,7 +88,7 @@
 	
 	<div class="sum_submit">
 		<div class="sum">
-			<span>总价：<font id="sum">0</font>元</span>
+			<span>应付总金额：<font id="sum">0</font>元</span>
 		</div>
 		<div class="submit">
 			<div class="div_btn">提交订单</div>
@@ -98,6 +99,21 @@
 </div>
 
 <script>
+
+$(document).ready(function(){
+	$("#quantity_add_order").click(function(){
+		var val = parseInt($(".input_quantity_order").attr("value"));
+		$(".input_quantity_order").attr("value", val+1);
+	});
+	
+	$("#quantity_minus_order").click(function(){
+		var val = parseInt($(".input_quantity_order").attr("value"));
+		if(val > 1){
+			$(".input_quantity_order").attr("value", val-1);
+		}
+	});
+
+});
 
 $(".tbl_orderItems tr:gt(0)").each(function(){
 	var sum = parseFloat($(this).find("td:eq(3)").html()) + parseFloat($("#sum").html());
