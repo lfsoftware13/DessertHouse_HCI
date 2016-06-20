@@ -43,7 +43,7 @@
 	<div class="search_right">
 		<div class="result_filter">
 			<div class = "filter_line filter_border first_line line">
-				<span id = "search_type" value = "<%= keyword %>"></span>
+				<span id = "search_type" value = "<%= session.getAttribute("kw") %>"></span>
 				<span id = "book_num">相关书籍123本</span>
 			</div>
 			<div class="filter_line filter_border" id="filter_publish">
@@ -73,9 +73,9 @@
 			<div style="float: left">
 				<label>排序：</label>
 				<div class="btn-group">
-					<button type="button" class="btn btn-default active in">评分</button>
-					<button type="button" class="btn btn-default">价格</button>
-					<button type="button" class="btn btn-default">折扣</button>
+					<button type="button" class="btn btn-default active in" name="btn_sort" value="0">评分</button>
+					<button type="button" class="btn btn-default" name="btn_sort" value="1">价格</button>
+					<button type="button" class="btn btn-default" name="btn_sort" value="2">折扣</button>
 				</div>
 			</div>
 			<div class="available_only">
@@ -132,23 +132,41 @@ $(document).ready(function(){
 	if(f_price == null){
 		f_price = "0";
 	}
+	String sort = (String)session.getAttribute("sort");
+	if(sort == null){
+		sort = "0";
+	}
 	%>
 	
 	$("input[name='checkbox_publish']").eq(<%=f_publish %>).prop("checked", "checked");
 	$("input[name='checkbox_publishDate']").eq(<%=f_pd %>).prop("checked", "checked");
 	$("input[name='checkbox_price']").eq(<%=f_price %>).prop("checked", "checked");
+	$("button[name='btn_sort']").eq(<%=sort %>).addClass("active in");
 	
 	$("input[name='checkbox_publish']").click(function(i){
 		$("input[name='checkbox_publish']").removeAttr("checked");
 		$(this).prop("checked", true);
+		search();
 	});
 	$("input[name='checkbox_publishDate']").click(function(i){
 		$("input[name='checkbox_publishDate']").removeAttr("checked");
 		$(this).prop("checked", true);
+		search();
 	});
 	$("input[name='checkbox_price']").click(function(i){
 		$("input[name='checkbox_price']").removeAttr("checked");
 		$(this).prop("checked", true);
+		search();
+	});
+	$("button[name='btn_sort']").click(function(){
+		if(!$(this).hasClass("selected")){
+			$("button[name='btn_sort'].active").removeClass("active in");
+			$(this).addClass("active in");
+			search();
+		}
+	});
+	$("#checkbox_show_available_only").click(function(){
+		search();
 	});
 	
 	$(".book").click(function(){
@@ -161,13 +179,24 @@ $(document).ready(function(){
 			$(this).addClass("not_first");
 		}
 	});
+	
+	
+	function search(){
+		var publish = $("input[name='checkbox_publish']:checked:eq(0)").val();
+		var publishDate = $("input[name='checkbox_publishDate']:checked:eq(0)").val();
+		var price = $("input[name='checkbox_price']:checked:eq(0)").val();
+		var sort = $("button[name='btn_sort'].active").val();
+		var available = $("#checkbox_show_available_only").prop("checked");
+		var page = $("#div_pagination .current").html();
+		alert(publish + " " + publishDate + " " + price + " " + sort + " " + available + " " + page);
+	}
 });
 </script>
 
 
 <script>
 $(document).ready(function(){
-	$("#search_type").html("<%= keyword %> 类书籍");
+	$("#search_type").html("<%= session.getAttribute("kw") %> 类书籍");
 });
 </script>
 </html>

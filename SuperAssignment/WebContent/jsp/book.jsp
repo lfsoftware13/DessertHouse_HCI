@@ -84,9 +84,8 @@
 			<div class="book_recommend">
 				<p class="title">看过本商品的人还看了</p>
 				<div class="booklist">
-
 					<%
-						for (int i = 0; i < 5; i++) {
+					for(int i=0; i<5; i++) {
 					%>
 					<div class="book">
 						<a href="../BookServlet?id=book_i"> <img src="../img/vc.jpg">
@@ -96,12 +95,10 @@
 						</a>
 					</div>
 					<%
-						}
+					}
 					%>
 				</div>
 			</div>
-
-
 
 			<div class="more_details">
 				<ul id="book_infos" class="nav nav-tabs">
@@ -183,7 +180,7 @@
  　　常被人问起自己觉得哪一卷最满意，所以借《鬼吹灯》完结之际也来个“导演自评”。作为作者，自己评价一下自己的作品，也是一件很有趣的事情。
  　　全套八卷故事，每一卷的核心元素与题材都不相同，想表现的内容也有所区别。在连载的过程中，每天只能写几千字，出于时间限制和个人喜好的原因，对于已经写过的部分基本上从未进行修改，而且始终没有故事大纲，到现在还不知道大纲是什么。对我而言，自己也不清楚下一章会出现什么意想不到的情况，许多都是即兴发挥，这是创作过程中很大的乐趣。
  　　很难说这八卷中有哪一卷是我自己最满意的，每一卷都有很满意的章节和桥段；但在我自己看来，每一卷也都同样存在着不足和缺陷，如果重新修改一遍，会好很多，可是 
-</p>
+							</p>
 						</div>
 
 						<div>
@@ -206,9 +203,8 @@
 							<div class = "content" id = "catelog">
 							</div>
 						</div>
-
-
 					</div>
+					
 					<div id="book_comments" class="tab-pane fade activity">
 						<div class="comments_score">
 							<div class="score">
@@ -217,17 +213,19 @@
 								</p>
 							</div>
 							<div class="match">
-								<p>
-									与描述相符<br> <font>4.9</font><br> 
-									<span class="level"> <i class="fa fa-star level"></i><i
-						class="fa fa-star"></i><i class="fa fa-star"></i><i
-						class="fa fa-star"></i><i class="fa fa-star-half-o"></i>
-					</span> 	
+								<p>与描述相符<br> <font>4.9</font><br> 
+									<span class="level">
+										<i class="fa fa-star level"></i>
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star-half-o"></i>
+									</span> 	
 								</p>
 							</div>
 						</div>
 						<%
-							for (int i = 0; i < 8; i++) {
+						for (int i = 0; i < 8; i++) {
 						%>
 						<div class="single_comment">
 							<div class="left">
@@ -243,24 +241,19 @@
 							</div>
 						</div>
 						<%
-							}
+						}
 						%>
-						<div class="digg">
-							<span class="disabled"> < </span><span class="current">1</span><a
-								href="#?page=2">2</a><a href="#?page=3">3</a><a href="#?page=4">4</a><a
-								href="#?page=5">5</a><a href="#?page=6">6</a><a href="#?page=7">7</a>...<a
-								href="#?page=199">199</a><a href="#?page=200">200</a><a
-								href="#?page=2"> > </a>
+						<div class="digg" id="div_pagination">
+						
 						</div>
 					</div>
 				</div>
-
 			</div>
 		</div>
 	</div>
 
 
-	<script>
+<script>
 $(document).ready(function(){
 
 // 	$('#myTab a').click(function (e) {
@@ -294,42 +287,50 @@ $(document).ready(function(){
 		var quantity = $(".input_quantity").val();
 		$.ajax({
 			type: 'post',
-			url: '../CartServlet?bookId=<%=session.getAttribute("bookId")%>
-		&quantity='
-																	+ quantity
-														});
-											});
-						});
-	</script>
-
-	<script>
-		//加入购物车效果
-		$(function() {
-			var offset = $(".logoline .cart").offset();
-			$(".btn_addToCart").click(function(event) {
-				var img = "../img/icon_cart.png" //获取当前点击图片链接 
-				var flyer = $('<img class="img_flyer" src="' + img + '">'); //抛物体对象 
-				var flyer = $('<i class="fa fa-book fa-2x" style = "color:#556589;"></i> ')
-				flyer.fly({
-					start : {
-						left : event.pageX,//抛物体起点横坐标 
-						top : event.pageY
-					//抛物体起点纵坐标 
-					},
-					end : {
-						left : offset.left,//抛物体终点横坐标 
-						top : offset.top, //抛物体终点纵坐标 
-						width : 15, //结束时宽度
-						height : 15
-					//结束时高度
-					},
-					onEnd : function() {
-						flyer.remove()
-					}
-				});
-			});
+			url: '../CartServlet?bookId=<%=session.getAttribute("bookId")%>&quantity=' + quantity
 		});
-	</script>
+	});
+});
+</script>
+
+<script>
+//加入购物车效果
+$(function() {
+	$(".btn_addToCart").click(function(event) {
+		var offset = $(".logoline .cart").find("i").offset();
+		var scrollTop = $(window).scrollTop();
+		alert(scrollTop);
+		var flyer = $('<i class="fa fa-book fa-2x" style = "color:#556589;"></i>');//抛物体对象 
+		flyer.fly({
+			start : {
+				left : event.pageX,//抛物体起点横坐标 
+				top : event.pageY - scrollTop  //抛物体起点纵坐标 
+			},
+			end : {
+				left : offset.left,//抛物体终点横坐标 
+				top : offset.top - scrollTop, //抛物体终点纵坐标 
+				width : 15, //结束时宽度
+				height : 15 //结束时高度
+			},
+			speed: 1.5,
+			onEnd : function() {
+				flyer.remove()
+			}
+		});
+	});
+});
+</script>
+	
+<script type="text/javascript" src="<%= request.getContextPath() %>/js/pagination.js"></script>
+<script>
+	<%
+	String cur_page = request.getParameter("page");
+	if(cur_page == null){
+		cur_page = "1";
+	}
+	%>
+	$.paging(<%=cur_page %>, 100, 10, "div_pagination", "../SearchServlet");
+</script>
 
 </body>
 </html>

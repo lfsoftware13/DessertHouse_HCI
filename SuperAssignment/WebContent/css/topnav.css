@@ -11,4 +11,6 @@ div.topnav{margin-left: -15px; width: 100%+30px; height:50px; line-height: 50px;
 .topnav a:active {color: #DDDDDD} /* 被选择的链接 */
 .topnav .title{font-size: 30px; color: white;font-family:'Lithos Pro';}
 
-.logout{}
+.my-modal-footer{text-align: right; margin-top: -15px; height: 40px; line-height: 40px;}
+.my-modal-footer span{display: inline-block; float: left; margin-left: 30px; margin-top: -3px; color: red;}
+.my-modal-footer button{float: right; margin-right: 30px;}
