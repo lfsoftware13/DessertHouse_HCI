@@ -8,7 +8,7 @@ div.empty{height: 50px;}
 .tbl_cart{margin: 0 auto; text-align: center;}
 .tbl_cart tr{display: block; color: #475A82;}
 .tbl_cart tr.cartline{border-bottom: solid 1px #E7E7E7;}
-.tbl_cart td{width: 140px; height: 80px; font-size: 18px; line-height: 50px;}
+.tbl_cart td{width: 140px; height: 80px; font-size: 18px;line-height: 40px;}
 .tbl_cart .tbl_head td{height: 50px; line-height: 50px;}
 .tbl_cart .tbl_head .select{text-align: left;padding-left: 10px;}
 .tbl_cart .tbl_head input{padding-left: 10px;margin-right: 20px;}
@@ -34,10 +34,11 @@ div.empty{height: 50px;}
 .footer .div_btn{width: 150px; height: 50px; line-height: 50px; background-color: #556589;border: 3px solid #EEEEEE;vertical-align: middle;}
 .footer .div_btn:hover{background-color: #718dbf}
 
-.span_quantity{display: block; height: 50px;text-align: center}
+.span_quantity{display: block; height: 40px;text-align: center}
 .span_quantity .input_quantity_cart{float: left; width:70px; margin-left: 5px;height: 40px; line-height: 40px; font-size: 15p; border: solid 1px #CCCCCC;}
-.span_quantity .add_cart{display: block; float: left; padding-top:-10px;padding-bottom:15px; width: 40px; height: 40px;border:solid 1px #CCCCCC;}
-.span_quantity .minus_cart{display: block; float: left; margin-left: 5px;width: 40px; height: 40px; border:solid 1px #CCCCCC;text-align: center;vertical-align: middle;}
-.add_minus span{display: block; margin-bottom: 4px; width: 20px; height: 18px; line-height: 15px; text-align: center; border: solid 1px gray; cursor: pointer;}
+.span_quantity .add_cart{display: block; float: left;  width: 40px; height: 40px;border:solid 1px #CCCCCC;cursor: pointer;}
+.span_quantity .minus_cart{display: block; float: left; margin-left: 5px;width: 40px; height: 40px; border:solid 1px #CCCCCC;text-align: center;vertical-align: middle;cursor: pointer;}
+.add_minus span{display: block; margin-bottom: 4px; width: 20px; height: 18px; line-height: 15px; text-align: center; border: solid 1px gray;cursor: pointer;}
 
+.del i{cursor: pointer;}
 .del i:hover{color:#718dbf;}

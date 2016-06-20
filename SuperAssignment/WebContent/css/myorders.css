@@ -25,6 +25,7 @@ input[type="checkbox"]{width: 15px; height: 15px;}
 .tbl_orders tr.top_border{border-top: solid 1px #DCDCDC;}
 
 
-.del i{color:#556589;float: right;margin-right:30px;margin-top:15px;text-align: center;vertical-align: middle;}
+.del i{color:#556589;float: right;margin-right:30px;margin-top:15px;text-align: center;vertical-align: middle;cursor: pointer;}
 .del i:hover{color: #718dbf}
 .totle{font-family:'Trajan Pro';color: red}
+.logo a{color: #6F7F98}

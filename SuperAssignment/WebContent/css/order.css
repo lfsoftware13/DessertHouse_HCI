@@ -16,7 +16,7 @@ h2{margin-left: 100px; color: #475A82;}
 .tbl_orderItems tr{display: block; margin-top: 5px; color: #556589;}
 .tbl_orderItems tr.head{font-size: 18px; color: white;background-color: #556589;text-align: center}
 .tbl_orderItems tr.orderline{font-size: 13px;color: black}
-.tbl_orderItems td{width: 100px; min-width: 150px; height: 50px; line-height: 50px;}
+.tbl_orderItems td{width: 100px; min-width: 150px; height: 50px; line-height: 40px;}
 .tbl_orderItems tr.head{font-size: 18px; color: white;background-color: #556589}
 
 .orderline{background-color: #F5F5F5;margin-top:30px;border-bottom: solid 1px #E7E7E7;}
@@ -28,10 +28,10 @@ h2{margin-left: 100px; color: #475A82;}
 .tbl_orderItems td.total_info{font-family: 'Trajan Pro';color: red;}
 .tbl_orderItems img{width: 160px; height: 160px; border: solid 10px #F5F5F5;}
 
-.span_quantity{display: block; height: 50px;text-align: center}
+.span_quantity{display: block; height: 40px;text-align: center}
 .span_quantity .input_quantity_order{float: left; width:70px; margin-left: 5px;height: 40px; line-height: 40px; font-size: 15p; border: solid 1px #CCCCCC;}
-.span_quantity .add_cart{display: block; float: left; padding-top:-10px;padding-bottom:15px; width: 40px; height: 40px;border:solid 1px #CCCCCC;}
-.span_quantity .minus_cart{display: block; float: left; margin-left: 5px;width: 40px; height: 40px; border:solid 1px #CCCCCC;text-align: center;vertical-align: middle;}
+.span_quantity .add_cart{display: block; float: left; width: 40px; height: 40px;border:solid 1px #CCCCCC;cursor: pointer;}
+.span_quantity .minus_cart{display: block; float: left; margin-left: 5px;width: 40px; height: 40px; border:solid 1px #CCCCCC;text-align: center;vertical-align: middle;cursor: pointer;}
 .add_minus span{display: block; margin-bottom: 4px; width: 20px; height: 18px; line-height: 15px; text-align: center; border: solid 1px gray; cursor: pointer;}
 
 

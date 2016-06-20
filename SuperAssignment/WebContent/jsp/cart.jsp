@@ -46,12 +46,12 @@
 
 					<td class = "num">
 						<span class="span_quantity" id="span_quantity">
-							<span id="quantity_add_cart" class = "add_cart">
+							<span id="quantity_add_cart<%=i%>" class = "add_cart">
 							+
 							</span>
 							 <input
-								type="text" value="1" class="input_quantity_cart">
-							<span id="quantity_minus_cart" class = "minus_cart">
+								type="text" value="1" id = "input_quantity_cart<%=i%>"class="input_quantity_cart">
+							<span id="quantity_minus_cart<%=i%>" class = "minus_cart">
 							-
 							</span>
 								
@@ -135,17 +135,31 @@ $("#settle").click(function(){
 });
 
 $(document).ready(function(){
-	$("#quantity_add_cart").click(function(){
-		var val = parseInt($(".input_quantity_cart").attr("value"));
-		$(".input_quantity_cart").attr("value", val+1);
-	});
-	
-	$("#quantity_minus_cart").click(function(){
-		var val = parseInt($(".input_quantity_cart").attr("value"));
+	for (var i = 0; i < 10; i++) {
+
+    	(function (lockedInIndex) {
+
+        	$("#quantity_add_cart"+lockedInIndex).click(function () {
+            	// e.preventDefault();
+            	// alert('I am link #' + lockedInIndex);
+            	var val = parseInt($("#input_quantity_cart"+lockedInIndex).attr("value"));
+				$("#input_quantity_cart"+lockedInIndex).attr("value", val+1);
+        	});
+
+    	})(i);
+
+	}
+	// i = 0;
+	for(var i = 0; i < 10; i++){
+	(function(i){
+	$("#quantity_minus_cart"+i).click(function(){
+		var val = parseInt($("#input_quantity_cart"+i).attr("value"));
 		if(val > 1){
-			$(".input_quantity_cart").attr("value", val-1);
+			$("#input_quantity_cart"+i).attr("value", val-1);
 		}
 	});
+	})(i);
+	}
 
 });
 </script>

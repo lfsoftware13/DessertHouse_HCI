@@ -65,12 +65,12 @@
 
 					<td class = "num">
 						<span class="span_quantity" id="span_quantity">
-							<span id="quantity_add_order" class = "add_cart">
+							<span id="quantity_add_order<%=i%>" class = "add_cart" click = "">
 							+
 							</span>
 							 <input
-								type="text" value="1" class="input_quantity_order">
-							<span id="quantity_minus_order" class = "minus_cart">
+								type="text" value="1" id = "input_quantity_order<%=i%>"class="input_quantity_order">
+							<span id="quantity_minus_order<%=i%>" class = "minus_cart">
 							-
 							</span>
 								
@@ -101,17 +101,42 @@
 <script>
 
 $(document).ready(function(){
-	$("#quantity_add_order").click(function(){
-		var val = parseInt($(".input_quantity_order").attr("value"));
-		$(".input_quantity_order").attr("value", val+1);
-	});
-	
-	$("#quantity_minus_order").click(function(){
-		var val = parseInt($(".input_quantity_order").attr("value"));
+	// var i = 0;
+	//  for (var i = 0; i < 10; i++) {
+	// 	$("#quantity_add_order"+count).click(function(i){
+	// 		return function(e){
+	// 			e.preventDefault();
+	// 			var val = parseInt($("#input_quantity_order"+count).attr("value"));
+	// 			$("#input_quantity_order"+count).attr("value", val+1);
+	// 		};
+		
+	// })(i);
+	// alert("here");
+	for (var i = 0; i < 10; i++) {
+
+    	(function (lockedInIndex) {
+
+        	$("#quantity_add_order"+lockedInIndex).click(function () {
+            	// e.preventDefault();
+            	// alert('I am link #' + lockedInIndex);
+            	var val = parseInt($("#input_quantity_order"+lockedInIndex).attr("value"));
+				$("#input_quantity_order"+lockedInIndex).attr("value", val+1);
+        	});
+
+    	})(i);
+
+	}
+	// i = 0;
+	for(var i = 0; i < 10; i++){
+	(function(i){
+	$("#quantity_minus_order"+i).click(function(){
+		var val = parseInt($("#input_quantity_order"+i).attr("value"));
 		if(val > 1){
-			$(".input_quantity_order").attr("value", val-1);
+			$("#input_quantity_order"+i).attr("value", val-1);
 		}
 	});
+	})(i);
+	}
 
 });
 
