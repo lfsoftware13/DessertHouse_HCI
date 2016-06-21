@@ -35,7 +35,7 @@ public class CartDaoImpl implements CartDao {
 	}
 
 	@Override
-	public List findByMemberid(int memberid) {
+	public Cart findByMemberid(int memberid) {
 		// TODO Auto-generated method stub
 		session=baseDao.getNewSession();
 		Criteria c=session.createCriteria(Cart.class);
@@ -45,7 +45,7 @@ public class CartDaoImpl implements CartDao {
 		if(list.size()<=0){
 			return null;
 		}
-		return list;
+		return (Cart)list.get(0);
 	}
 
 	@Override

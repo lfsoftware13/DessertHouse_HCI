@@ -29,4 +29,10 @@ public interface AddressService {
 	 */
 	public boolean updateAddress(int addressid, String name, String prov, String city, String details, String zip, String phone, boolean isDefault);
 
+	/**
+	 * @param addressid 地址id
+	 * @return 操作是否成功
+	 */
+	public boolean deleteAddress(int addressid);
+	
 }

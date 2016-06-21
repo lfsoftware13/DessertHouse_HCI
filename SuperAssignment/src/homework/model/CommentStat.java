@@ -13,7 +13,7 @@ public class CommentStat {
 	
 	int rank;
 	
-	String bookid;
+	int bookid;
 	
 	String book;
 
@@ -49,11 +49,11 @@ public class CommentStat {
 		this.rank = rank;
 	}
 
-	public String getBookid() {
+	public int getBookid() {
 		return bookid;
 	}
 
-	public void setBookid(String bookid) {
+	public void setBookid(int bookid) {
 		this.bookid = bookid;
 	}
 

@@ -50,6 +50,6 @@ public interface BookService {
 	 * @param bookid 书籍id
 	 * @return 书籍列表
 	 */
-	public List<Comment> getSimilarBook(int bookid);
+	public List<Book> getSimilarBook(int bookid);
 	
 }

@@ -11,7 +11,7 @@ public interface CartDao {
 	
 	public Cart findById(int id);
 	
-	public List findByMemberid(int memberid);
+	public Cart findByMemberid(int memberid);
 	
 	public boolean save(Cart cart);
 	
