@@ -73,7 +73,7 @@
 			<div style="float: left">
 				<label>排序：</label>
 				<div class="btn-group">
-					<button type="button" class="btn btn-default active in" name="btn_sort" value="0">评分</button>
+					<button type="button" class="btn btn-default" name="btn_sort" value="0">评分</button>
 					<button type="button" class="btn btn-default" name="btn_sort" value="1">价格</button>
 					<button type="button" class="btn btn-default" name="btn_sort" value="2">折扣</button>
 				</div>
@@ -136,12 +136,16 @@ $(document).ready(function(){
 	if(sort == null){
 		sort = "0";
 	}
+	String available_only = (String)session.getAttribute("f_available");
 	%>
 	
 	$("input[name='checkbox_publish']").eq(<%=f_publish %>).prop("checked", "checked");
 	$("input[name='checkbox_publishDate']").eq(<%=f_pd %>).prop("checked", "checked");
 	$("input[name='checkbox_price']").eq(<%=f_price %>).prop("checked", "checked");
 	$("button[name='btn_sort']").eq(<%=sort %>).addClass("active in");
+	if(<%= available_only %>){
+		$("#checkbox_show_available_only").prop("checked", true);
+	}
 	
 	$("input[name='checkbox_publish']").click(function(i){
 		$("input[name='checkbox_publish']").removeAttr("checked");
@@ -182,13 +186,15 @@ $(document).ready(function(){
 	
 	
 	function search(){
+		var type = "<%= (String)session.getAttribute("type") %>";
+		var kw = "<%= (String)session.getAttribute("kw") %>";
 		var publish = $("input[name='checkbox_publish']:checked:eq(0)").val();
 		var publishDate = $("input[name='checkbox_publishDate']:checked:eq(0)").val();
 		var price = $("input[name='checkbox_price']:checked:eq(0)").val();
 		var sort = $("button[name='btn_sort'].active").val();
 		var available = $("#checkbox_show_available_only").prop("checked");
-		var page = $("#div_pagination .current").html();
-		alert(publish + " " + publishDate + " " + price + " " + sort + " " + available + " " + page);
+		alert(publish + " " + publishDate + " " + price + " " + sort + " " + available);
+		window.location = "../SearchServlet?type=" + type + "&kw=" + kw + "&f_publish=" + publish + "&f_pd=" + publishDate + "&f_price=" + price + "&sort=" + sort + "&f_available=" + available;
 	}
 });
 </script>

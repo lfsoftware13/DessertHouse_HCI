@@ -45,9 +45,9 @@
 			<div class="order">
 				<div class="order_title">
 					<span class="bold">2016-05-26</span>
-					<span>订单号：<span>9347013740912375</span></span>
+					<span>订单号：<span class="orderId">9347013740912375</span></span>
 					<span class="del">
-						<i class="fa fa-trash-o fa-lg"></i>
+						<i class="fa fa-trash-o fa-lg deleteOrder"></i>
 					</span>
 				</div>
 				<div class="order_details">
@@ -81,8 +81,13 @@
 $(".pc_leftnav li:eq(3)").addClass("selected");
 $(".pc_leftnav li:eq(3)").find("a").addClass("selected");
 
-$(".order .deleteline").click(function(){
-	$(this).parent().parent().remove();
+$(".order .deleteOrder").click(function(){
+	var orderId = $(this).parent().parent().find("span.orderId").html();
+	$.ajax({
+		type: "post",
+		url: "../OrderServlet?action=delete&orderId=" + orderId
+	});
+	
 });
 
 $(".order_details .orderline:gt(0)").addClass("top_border");
@@ -96,8 +101,10 @@ $(".order_details .orderline:gt(0)").addClass("top_border");
 		cur_page = "1";
 	}
 	%>
-	$.paging(<%=cur_page %>, 100, 10, "div_pagination", "../SearchServlet");
+	$.paging(<%=cur_page %>, 100, 10, "div_pagination", "../OrdersServlet");
 </script>
+
+
 
 </body>
 </html>

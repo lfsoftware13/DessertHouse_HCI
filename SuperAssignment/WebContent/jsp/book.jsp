@@ -40,6 +40,7 @@
 				<img src="../img/cpp.jpg">
 			</div>
 			<div class="details">
+				<input type="hidden" id="bookId" value="123456789">
 				<div class="book_title">Visual C++从入门到精通</div>
 				<div class="book_introduction">
 					<p>累计15次印刷 14小时视频 881个实例 371项面试真题 616项测试 vc 入门经典 范例 案例 视频教程
@@ -284,10 +285,11 @@ $(document).ready(function(){
 	});
 	
 	$(".btn_addToCart").click(function(){
+		var bookId = $("#bookId").val();
 		var quantity = $(".input_quantity").val();
 		$.ajax({
 			type: 'post',
-			url: '../CartServlet?bookId=<%=session.getAttribute("bookId")%>&quantity=' + quantity
+			url: '../CartServlet?bookId=' + bookId + '&quantity=' + quantity
 		});
 	});
 });
@@ -299,7 +301,6 @@ $(function() {
 	$(".btn_addToCart").click(function(event) {
 		var offset = $(".logoline .cart").find("i").offset();
 		var scrollTop = $(window).scrollTop();
-		alert(scrollTop);
 		var flyer = $('<i class="fa fa-book fa-2x" style = "color:#556589;"></i>');//抛物体对象 
 		flyer.fly({
 			start : {

@@ -63,6 +63,7 @@
 						<!-- <div class="div_btn deleteline" style="width: 100px; margin: 0 auto;">删除</div> -->
 						<i class="fa fa-trash-o fa-lg"></i>
 					</td>
+					<td class="bookId" style="display: none;">bookId_12345</td>
 				</tr>
 				<%} %>
 			</table>
@@ -131,8 +132,32 @@ $(".deleteline").click(function(){
 });
 
 $("#settle").click(function(){
-	window.location = "../PurchaseServlet";
+	var list = new Array();
+	$("input[type='checkbox'][name='choose']:checked").each(function(i){
+		var row = $(this).parent().parent();
+		var bookId = row.find("td.bookId").html();
+		var bookName = row.find("td.bookinfo a").html();
+		var price = row.find("td.price").html();
+		var quantity = row.find("td.num input").val();
+		var orderItem = new OrderItem(bookId, bookName, price, quantity);
+		list[i] = orderItem;
+	});
+	var orderList = new OrderList(list);
+	var str_list = JSON.stringify(orderList).replace(/\+/g, "%2B");
+	window.location = "../PurchaseServlet?orderList=" + str_list;
 });
+
+function OrderItem(bookId, bookName, price, quantity){
+	this.bookId = bookId;
+	this.bookName = bookName;
+	this.price = price;
+	this.quantity = quantity;
+	this.sum = price * quantity;
+}
+
+function OrderList(list){
+	this.list = list;
+}
 
 $(document).ready(function(){
 	for (var i = 0; i < 10; i++) {
@@ -163,5 +188,6 @@ $(document).ready(function(){
 
 });
 </script>
+
 </body>
 </html>

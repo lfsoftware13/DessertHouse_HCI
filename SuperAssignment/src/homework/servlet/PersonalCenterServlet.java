@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  * Servlet implementation class PersonalCenterServlet
@@ -28,8 +29,13 @@ public class PersonalCenterServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/myinfo.jsp");
-		//dispatcher.forward(request, response);
+		HttpSession session = request.getSession();
+		String nickname = "昵称";
+		String sex = "female";
+		String name = "姓名";
+		session.setAttribute("nickname", nickname);
+		session.setAttribute("sex", sex);
+		session.setAttribute("name", name);
 		response.sendRedirect(request.getContextPath() + "/jsp/myinfo.jsp");
 	}
 
@@ -41,6 +47,7 @@ public class PersonalCenterServlet extends HttpServlet {
 		String sex = request.getParameter("sex");
 		String name = request.getParameter("name");
 		System.out.println(nickname + "   " + sex + "   " + name);
+		doGet(request, response);
 	}
 
 }

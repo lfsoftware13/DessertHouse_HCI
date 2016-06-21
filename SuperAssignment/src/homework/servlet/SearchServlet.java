@@ -29,43 +29,62 @@ public class SearchServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String type = request.getParameter("type");
-		if(type == null){
-			type = "kw";
-		}
-		String keyword = request.getParameter("kw");
-		if(keyword == null){
-			keyword = "javascript";
-		}
-		String fPublish = request.getParameter("f_publish");
-		String fPublishDate = request.getParameter("f_pd");
-		String fPrice = request.getParameter("f_price");
-		String fAvailable = request.getParameter("f_available");
-		String sortBy = request.getParameter("sort");
-		String page = request.getParameter("page");
-		
-		System.out.println(page);
-		
-		switch(type){
-		case "c1":
-			break;
-		case "c2":
-			break;
-		case "kw":
-			break;
-		case "topic":
-			break;
-		}
-		
 		HttpSession session = request.getSession();
-		session.setAttribute("type", type);
-		session.setAttribute("kw", keyword);
-		session.setAttribute("f_publish", fPublish);
-		session.setAttribute("f_pd", fPublishDate);
-		session.setAttribute("f_price", fPrice);
-		session.setAttribute("f_available", fAvailable);
-		session.setAttribute("sort", sortBy);
-		session.setAttribute("page", page);
+		
+		String type = request.getParameter("type");
+		String keyword;
+		String fPublish;
+		String fPublishDate;
+		String fPrice;
+		String fAvailable;
+		String sortBy;
+		String page = "1";
+		
+		if(type != null){
+			keyword = request.getParameter("kw");
+			if(keyword == null){
+				keyword = "javascript";
+			}
+			fPublish = request.getParameter("f_publish");
+			fPublishDate = request.getParameter("f_pd");
+			fPrice = request.getParameter("f_price");
+			fAvailable = request.getParameter("f_available");
+			sortBy = request.getParameter("sort");
+						
+			switch(type){
+			case "c1":
+				break;
+			case "c2":
+				break;
+			case "kw":
+				break;
+			case "topic":
+				break;
+			}
+			
+			session.setAttribute("type", type);
+			session.setAttribute("kw", keyword);
+			session.setAttribute("f_publish", fPublish);
+			session.setAttribute("f_pd", fPublishDate);
+			session.setAttribute("f_price", fPrice);
+			session.setAttribute("f_available", fAvailable);
+			session.setAttribute("sort", sortBy);
+		}else{
+			type = (String)session.getAttribute("type");
+			keyword = request.getParameter("kw");
+			if(keyword == null){
+				keyword = "javascript";
+			}
+			fPublish = (String)session.getAttribute("f_publish");
+			fPublishDate = (String)session.getAttribute("f_pd");
+			fPrice = (String)session.getAttribute("f_price");
+			fAvailable = (String)session.getAttribute("f_available");
+			sortBy = (String)session.getAttribute("sort");
+			page = request.getParameter("page");
+		}
+		
+		System.out.println(type + " " + keyword);
+		System.out.println(fPublish + " " + fPublishDate + " " + fPrice + " " + fAvailable + " " + sortBy);
 		
 		String url = request.getContextPath() + "/jsp/search.jsp";
 		if(page != null){

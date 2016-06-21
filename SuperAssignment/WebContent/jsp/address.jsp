@@ -39,18 +39,14 @@
 								<option value="cn">中国大陆</option>
 								<option value="cn1">中国大陆1</option>
 							</select>
-							<select name="area_province">
-								<option value="default">请选择省份</option>
-							</select>
-							<select name="area_city">
-								<option value="default">请选择城市</option>
-							</select>
+							<select name="area_province" runat="server" id="province" onchange="selectprovince(this);"></select>
+							<select name="area_city" id="city"></select>
 						</td>
 					</tr>
 					<tr>
 						<td class="title">详细地址</td>
 						<td>
-							<textarea rows="3" cols="60"placeholder = "详细地址"></textarea>
+							<textarea id="detailedAddress" rows="3" cols="60" placeholder = "详细地址"></textarea>
 						</td>
 					</tr>
 					<tr>
@@ -76,8 +72,9 @@
 					</tr>
 				</table>
 				<div class="setting_line">
+					<input type="hidden" id="addressId" value="">
 					<input type="checkbox" id="set_default">设置为默认收货地址
-					<div class="div_btn">保存</div>
+					<div class="div_btn" id="btn_save_address">保存</div>
 				</div>
 			</div>
 			
@@ -102,6 +99,7 @@
 						<td>222222</td>
 						<td>123****890</td>
 						<td><a class="deleteline">删除</a></td>
+						<td style="display: none;">addressId_<%= i %></td>
 					</tr>
 					<%} %>
 				</table>
@@ -115,10 +113,74 @@
 $(".pc_leftnav li:eq(1)").addClass("selected");
 $(".pc_leftnav li:eq(1)").find("a").addClass("selected");
 
-$("a.deleteline").click(function(){
+$(".tbl_address").on("click", "a.deleteline", function(){
 	$(this).parent().parent().remove();
 });
-</script>	
+</script>
+
+<script src="<%= request.getContextPath() %>/js/city.js"></script>
+<script>
+	$("#btn_save_address").click(function(){
+		var addressId = $("#addressId").val();
+		var province = $("#province option:selected").text();
+		var city = $("#city option:selected").text();
+		var detailedAddr = $("#detailedAddress").val();
+		var zipcode = $("#txt_zipcode").val();
+		var name = $("#txt_name").val();
+		var phone = $("#txt_contact").val();
+		var isDefault = $("#set_default").prop("checked");
+		var address = new Address(addressId, province, city, detailedAddr, zipcode, name, phone, isDefault);
+		var action = "add";
+		if(addressId != ""){
+			action = "modify";
+		}
+		$.ajax({
+			type: "post",
+			url: "../AddressServlet?action=" + action,
+			data: address,
+			success: function(msg){
+				if(msg != "fail"){
+					if(action == "add"){
+						address.id = msg;
+						addAddressLine(address);
+					}else if(action == "modify"){
+						modifyAddressLine(address);
+					}
+				}else{
+					alert("fail");
+				}
+			}
+		});
+	});
+	
+	function Address(id, province, city, detailedAddr, zipcode, name, phone, isDefault){
+		this.id = id;
+		this.province = province;
+		this.city = city;
+		this.detailedAddr = detailedAddr;
+		this.zipcode = zipcode;
+		this.name = name;
+		this.phone = phone;
+		this.isDefault = isDefault;
+	}
+	
+	function addAddressLine(address){
+		var html_row = "<tr class='addressline'>"
+		html_row += "<td>" + address.name + "</td>";
+		html_row += "<td>" + address.province + address.city + "</td>";
+		html_row += "<td>" + address.detailedAddr + "</td>";
+		html_row += "<td>" + address.zipcode + "</td>";
+		html_row += "<td>" + address.phone + "</td>";
+		html_row += "<td><a class='deleteline'>删除</a></td>";
+		html_row += "<td style='display: none;'>" + address.id + "</td>";
+		html_row += "</tr>";
+		$(".tbl_address").append(html_row);
+	}
+	
+	function modifyAddressLine(address){
+		
+	}
+</script>
 	
 </body>
 </html>

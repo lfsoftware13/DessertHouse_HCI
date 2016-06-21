@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="homework.model.OrderItem" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -55,13 +57,17 @@
 					<td class = "total">金额</td>
 					<td>操作</td>
 				</tr>
-				<%for(int i =0; i<10; i++){%>
+				<%
+				ArrayList<OrderItem> orderList = (ArrayList<OrderItem>)session.getAttribute("orderList");
+				for(int i =0; i<orderList.size(); i++){
+					OrderItem item = orderList.get(i);
+				%>
 				<tr class="orderline">
 					<td class = "bookinfo"><img src="<%= request.getContextPath() %>/img/cpp.jpg" alt="cover">
-						<a href="">C++高级程序设计</a>
+						<a href=""><%= item.getBook() %></a>
 
 					</td>
-					<td class = "price price_info">11.1</td>
+					<td class = "price price_info"><%= item.getPrice() %></td>
 
 					<td class = "num">
 						<span class="span_quantity" id="span_quantity">
@@ -69,7 +75,7 @@
 							+
 							</span>
 							 <input
-								type="text" value="1" id = "input_quantity_order<%=i%>"class="input_quantity_order">
+								type="text" value="<%= item.getNumber() %>" id = "input_quantity_order<%=i%>"class="input_quantity_order">
 							<span id="quantity_minus_order<%=i%>" class = "minus_cart">
 							-
 							</span>
@@ -77,9 +83,9 @@
 						</span>
 					</td>
 
-					<td class = "total total_info">99.9</td>
+					<td class = "total total_info"><%= item.getTotal() %></td>
 					<td><a class="deleteline">放回购物车</a></td>
-					<td style="display: none;">bookId</td>
+					<td style="display: none;"><%= item.getBookid() %></td>
 				</tr>
 				<%} %>
 			</table>
