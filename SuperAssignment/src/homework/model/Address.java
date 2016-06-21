@@ -14,7 +14,8 @@ public class Address implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	private String id;
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private int id;
 
 	private String city;
 
@@ -22,9 +23,9 @@ public class Address implements Serializable {
 
 	private int isDefault;
 
-	private String name;
+	private int memberid;
 
-	private String memberid;
+	private String name;
 
 	private String phone;
 
@@ -35,11 +36,11 @@ public class Address implements Serializable {
 	public Address() {
 	}
 
-	public String getId() {
+	public int getId() {
 		return this.id;
 	}
 
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
@@ -67,20 +68,20 @@ public class Address implements Serializable {
 		this.isDefault = isDefault;
 	}
 
+	public int getMemberid() {
+		return this.memberid;
+	}
+
+	public void setMemberid(int memberid) {
+		this.memberid = memberid;
+	}
+
 	public String getName() {
 		return this.name;
 	}
 
 	public void setName(String name) {
 		this.name = name;
-	}
-
-	public String getMemberid() {
-		return this.memberid;
-	}
-
-	public void setMemberid(String memberid) {
-		this.memberid = memberid;
 	}
 
 	public String getPhone() {

@@ -29,13 +29,13 @@ public class CartDaoImpl implements CartDao {
 	}
 
 	@Override
-	public Cart findById(String id) {
+	public Cart findById(int id) {
 		// TODO Auto-generated method stub
 		return (Cart)baseDao.load(Cart.class, id);
 	}
 
 	@Override
-	public List findByMemberid(String memberid) {
+	public List findByMemberid(int memberid) {
 		// TODO Auto-generated method stub
 		session=baseDao.getNewSession();
 		Criteria c=session.createCriteria(Cart.class);
@@ -70,7 +70,7 @@ public class CartDaoImpl implements CartDao {
 	}
 
 	@Override
-	public boolean delete(String id) {
+	public boolean delete(int id) {
 		// TODO Auto-generated method stub
 		baseDao.delete(Cart.class, id);
 		return true;
@@ -84,13 +84,13 @@ public class CartDaoImpl implements CartDao {
 	}
 
 	@Override
-	public CartItem findItemById(String id) {
+	public CartItem findItemById(int id) {
 		// TODO Auto-generated method stub
 		return (CartItem)baseDao.load(CartItem.class, id);
 	}
 
 	@Override
-	public List findItemByCart(String cartid) {
+	public List findItemByCart(int cartid) {
 		// TODO Auto-generated method stub
 		session=baseDao.getNewSession();
 		Criteria c=session.createCriteria(CartItem.class);
@@ -125,7 +125,7 @@ public class CartDaoImpl implements CartDao {
 	}
 
 	@Override
-	public boolean deleteItem(String id) {
+	public boolean deleteItem(int id) {
 		// TODO Auto-generated method stub
 		baseDao.delete(CartItem.class, id);
 		return true;

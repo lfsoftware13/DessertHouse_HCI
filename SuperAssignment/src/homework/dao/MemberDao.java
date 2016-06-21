@@ -8,7 +8,7 @@ public interface MemberDao {
 	
 	public List findAll();
 	
-	public Member findById(String id);
+	public Member findById(int id);
 	
 	public boolean save(Member mem);
 	
@@ -16,6 +16,6 @@ public interface MemberDao {
 	
 	public boolean delete(Member mem);
 	
-	public boolean delete(String id);
+	public boolean delete(int id);
 
 }

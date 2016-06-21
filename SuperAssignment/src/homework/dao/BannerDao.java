@@ -8,7 +8,7 @@ public interface BannerDao {
 	
 	public List findAll();
 	
-	public Banner findBannerById(String id);
+	public Banner findBannerById(int id);
 	
 	public boolean save(Banner ban);
 	
@@ -16,6 +16,6 @@ public interface BannerDao {
 	
 	public boolean delete(Banner ban);
 	
-	public boolean delete(String id);
+	public boolean delete(int id);
 
 }

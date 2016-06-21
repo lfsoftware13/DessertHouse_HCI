@@ -8,7 +8,7 @@ public interface BookDao {
 	
 	public List findAll();
 	
-	public Book findById(String id);
+	public Book findById(int id);
 	
 	public boolean save(Book book);
 	
@@ -16,6 +16,6 @@ public interface BookDao {
 	
 	public boolean delete(Book book);
 	
-	public boolean delete(String id);
+	public boolean delete(int id);
 
 }

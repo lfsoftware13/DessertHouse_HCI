@@ -15,13 +15,14 @@ public class CartItem implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	private String id;
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private int id;
 
 	private String book;
 
-	private String bookid;
+	private int bookid;
 
-	private String cartid;
+	private int cartid;
 
 	private int number;
 
@@ -32,11 +33,11 @@ public class CartItem implements Serializable {
 	public CartItem() {
 	}
 
-	public String getId() {
+	public int getId() {
 		return this.id;
 	}
 
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
@@ -48,19 +49,19 @@ public class CartItem implements Serializable {
 		this.book = book;
 	}
 
-	public String getBookid() {
+	public int getBookid() {
 		return this.bookid;
 	}
 
-	public void setBookid(String bookid) {
+	public void setBookid(int bookid) {
 		this.bookid = bookid;
 	}
 
-	public String getCartid() {
+	public int getCartid() {
 		return this.cartid;
 	}
 
-	public void setCartid(String cartid) {
+	public void setCartid(int cartid) {
 		this.cartid = cartid;
 	}
 

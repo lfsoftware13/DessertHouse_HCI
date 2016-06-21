@@ -28,13 +28,13 @@ public class CommentDaoImpl implements CommentDao {
 	}
 
 	@Override
-	public Comment findById(String id) {
+	public Comment findById(int id) {
 		// TODO Auto-generated method stub
 		return (Comment)baseDao.load(Comment.class, id);
 	}
 
 	@Override
-	public List findByBook(String bookid) {
+	public List findByBook(int bookid) {
 		// TODO Auto-generated method stub
 		session=baseDao.getNewSession();
 		Criteria c=session.createCriteria(Comment.class);
@@ -69,7 +69,7 @@ public class CommentDaoImpl implements CommentDao {
 	}
 
 	@Override
-	public boolean delete(String id) {
+	public boolean delete(int id) {
 		// TODO Auto-generated method stub
 		baseDao.delete(Comment.class, id);
 		return true;

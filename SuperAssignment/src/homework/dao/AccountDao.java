@@ -8,7 +8,7 @@ public interface AccountDao {
 	
 	public List findAll();
 	
-	public Account findById(String id);
+	public Account findById(int id);
 	
 	public Account findByName(String name);
 	
@@ -16,7 +16,7 @@ public interface AccountDao {
 	
 	public boolean update(Account acc);
 	
-	public boolean delete(String id);
+	public boolean delete(int id);
 	
 	public boolean delete(Account acc);
 

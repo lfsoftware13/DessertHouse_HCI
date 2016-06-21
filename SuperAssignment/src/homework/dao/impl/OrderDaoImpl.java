@@ -28,13 +28,13 @@ public class OrderDaoImpl implements OrderDao {
 	}
 
 	@Override
-	public Order findById(String id) {
+	public Order findById(int id) {
 		// TODO Auto-generated method stub
 		return (Order)baseDao.load(Order.class, id);
 	}
 
 	@Override
-	public List findByMember(String memberid) {
+	public List findByMember(int memberid) {
 		// TODO Auto-generated method stub
 		session=baseDao.getNewSession();
 		Criteria c=session.createCriteria(Order.class);
@@ -69,7 +69,7 @@ public class OrderDaoImpl implements OrderDao {
 	}
 
 	@Override
-	public boolean delete(String id) {
+	public boolean delete(int id) {
 		// TODO Auto-generated method stub
 		baseDao.delete(Order.class, id);
 		return true;
@@ -83,13 +83,13 @@ public class OrderDaoImpl implements OrderDao {
 	}
 
 	@Override
-	public OrderItem findItemById(String id) {
+	public OrderItem findItemById(int id) {
 		// TODO Auto-generated method stub
 		return (OrderItem)baseDao.load(OrderItem.class, id);
 	}
 
 	@Override
-	public List findByOrder(String orderid) {
+	public List findByOrder(int orderid) {
 		// TODO Auto-generated method stub
 		session=baseDao.getNewSession();
 		Criteria c=session.createCriteria(OrderItem.class);
@@ -124,7 +124,7 @@ public class OrderDaoImpl implements OrderDao {
 	}
 
 	@Override
-	public boolean deleteItem(String id) {
+	public boolean deleteItem(int id) {
 		// TODO Auto-generated method stub
 		baseDao.delete(OrderItem.class, id);
 		return true;

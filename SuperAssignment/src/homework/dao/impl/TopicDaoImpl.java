@@ -25,7 +25,7 @@ public class TopicDaoImpl implements TopicDao {
 	}
 
 	@Override
-	public Topic findById(String id) {
+	public Topic findById(int id) {
 		// TODO Auto-generated method stub
 		return (Topic)baseDao.load(Topic.class, id);
 	}
@@ -52,7 +52,7 @@ public class TopicDaoImpl implements TopicDao {
 	}
 
 	@Override
-	public boolean delete(String id) {
+	public boolean delete(int id) {
 		// TODO Auto-generated method stub
 		baseDao.delete(Topic.class, id);
 		return true;

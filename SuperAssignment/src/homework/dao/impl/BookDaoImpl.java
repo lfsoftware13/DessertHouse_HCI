@@ -25,7 +25,7 @@ public class BookDaoImpl implements BookDao {
 	}
 
 	@Override
-	public Book findById(String id) {
+	public Book findById(int id) {
 		// TODO Auto-generated method stub
 		return (Book)baseDao.load(Book.class, id);
 	}
@@ -52,7 +52,7 @@ public class BookDaoImpl implements BookDao {
 	}
 
 	@Override
-	public boolean delete(String id) {
+	public boolean delete(int id) {
 		// TODO Auto-generated method stub
 		baseDao.delete(Book.class, id);
 		return true;

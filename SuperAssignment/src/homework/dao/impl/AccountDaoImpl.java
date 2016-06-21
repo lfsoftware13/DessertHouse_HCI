@@ -27,7 +27,7 @@ public class AccountDaoImpl implements AccountDao{
 	}
 
 	@Override
-	public Account findById(String id) {
+	public Account findById(int id) {
 		// TODO Auto-generated method stub
 		return (Account)baseDao.load(Account.class, id);
 	}
@@ -61,7 +61,7 @@ public class AccountDaoImpl implements AccountDao{
 	}
 
 	@Override
-	public boolean delete(String id) {
+	public boolean delete(int id) {
 		// TODO Auto-generated method stub
 		baseDao.delete(Account.class, id);
 		return true;
@@ -70,7 +70,7 @@ public class AccountDaoImpl implements AccountDao{
 	@Override
 	public boolean delete(Account acc) {
 		// TODO Auto-generated method stub
-		baseDao.delete(Account.class, acc.getId());
+//		baseDao.delete(Account.class, acc.getId());
 		return true;
 	}
 

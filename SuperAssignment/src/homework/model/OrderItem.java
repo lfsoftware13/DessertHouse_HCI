@@ -15,15 +15,16 @@ public class OrderItem implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	private String id;
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private int id;
 
 	private String book;
 
-	private String bookid;
+	private int bookid;
 
 	private int number;
 
-	private String orderid;
+	private int orderid;
 
 	private double price;
 
@@ -32,11 +33,11 @@ public class OrderItem implements Serializable {
 	public OrderItem() {
 	}
 
-	public String getId() {
+	public int getId() {
 		return this.id;
 	}
 
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
@@ -48,11 +49,11 @@ public class OrderItem implements Serializable {
 		this.book = book;
 	}
 
-	public String getBookid() {
+	public int getBookid() {
 		return this.bookid;
 	}
 
-	public void setBookid(String bookid) {
+	public void setBookid(int bookid) {
 		this.bookid = bookid;
 	}
 
@@ -64,11 +65,11 @@ public class OrderItem implements Serializable {
 		this.number = number;
 	}
 
-	public String getOrderid() {
+	public int getOrderid() {
 		return this.orderid;
 	}
 
-	public void setOrderid(String orderid) {
+	public void setOrderid(int orderid) {
 		this.orderid = orderid;
 	}
 

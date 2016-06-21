@@ -8,7 +8,7 @@ public interface TopicDao {
 	
 	public List findAll();
 	
-	public Topic findById(String id);
+	public Topic findById(int id);
 	
 	public boolean save(Topic topic);
 	
@@ -16,6 +16,6 @@ public interface TopicDao {
 	
 	public boolean delete(Topic topic);
 	
-	public boolean delete(String id);
+	public boolean delete(int id);
 
 }

@@ -8,11 +8,11 @@ public interface BooktopicDao {
 	
 	public List findAll();
 	
-	public Booktopic findById(String id);
+	public Booktopic findById(int id);
 	
-	public List findByBookid(String bookid);
+	public List findByBookid(int bookid);
 	
-	public List findByTopicid(String topicid);
+	public List findByTopicid(int topicid);
 	
 	public boolean save(Booktopic top);
 	
@@ -20,6 +20,6 @@ public interface BooktopicDao {
 	
 	public boolean delete(Booktopic top);
 	
-	public boolean delete(String id);
+	public boolean delete(int id);
 
 }

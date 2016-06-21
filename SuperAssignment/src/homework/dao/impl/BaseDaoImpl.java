@@ -35,7 +35,7 @@ public class BaseDaoImpl implements BaseDao {
 
 	/** * ���� id ��ѯ��Ϣ * * @param id * @return */
 	@SuppressWarnings("rawtypes")
-	public Object load(Class c, String id) {
+	public Object load(Class c, int id) {
 		Session session = getSession();
 		return session.get(c, id);
 	}
@@ -93,7 +93,7 @@ public class BaseDaoImpl implements BaseDao {
 
 	/** * ����IDɾ�� * * @param c �� * * @param id ID * */
 	@SuppressWarnings({ "rawtypes" })
-	public void delete(Class c, String id) {
+	public void delete(Class c, int id) {
 		Session session = getNewSession();
 		Object obj = session.get(c, id);
 		session.delete(obj);
@@ -104,8 +104,8 @@ public class BaseDaoImpl implements BaseDao {
 
 	/** * ����ɾ�� * * @param c �� * * @param ids ID ���� * */
 	@SuppressWarnings({ "rawtypes" })
-	public void delete(Class c, String[] ids) {
-		for (String id : ids) {
+	public void delete(Class c, int[] ids) {
+		for (int id : ids) {
 			Object obj = getSession().get(c, id);
 			if (obj != null) {
 				getSession().delete(obj);

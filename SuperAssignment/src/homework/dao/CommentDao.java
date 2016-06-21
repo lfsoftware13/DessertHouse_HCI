@@ -8,9 +8,9 @@ public interface CommentDao {
 
 	public List findAll();
 	
-	public Comment findById(String id);
+	public Comment findById(int id);
 	
-	public List findByBook(String bookid);
+	public List findByBook(int bookid);
 	
 	public boolean save(Comment com);
 	
@@ -18,6 +18,6 @@ public interface CommentDao {
 	
 	public boolean delete(Comment com);
 	
-	public boolean delete(String id);
+	public boolean delete(int id);
 	
 }

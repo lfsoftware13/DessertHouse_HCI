@@ -8,9 +8,9 @@ public interface AddressDao {
 
 	public List findAll();
 	
-	public Address findById(String id);
+	public Address findById(int id);
 	
-	public List findByMember(String memberid);
+	public List findByMember(int memberid);
 	
 	public Address findByName(String name);
 	
@@ -20,6 +20,6 @@ public interface AddressDao {
 	
 	public boolean delete(Address address);
 	
-	public boolean delete(String id);
+	public boolean delete(int id);
 	
 }

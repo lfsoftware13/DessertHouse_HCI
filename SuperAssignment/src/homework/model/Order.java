@@ -15,15 +15,16 @@ public class Order implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	private String id;
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private int id;
 
 	private String address;
 
-	private String addressid;
+	private int addressid;
 
 	private String member;
 
-	private String memberid;
+	private int memberid;
 
 	private int number;
 
@@ -37,11 +38,11 @@ public class Order implements Serializable {
 	public Order() {
 	}
 
-	public String getId() {
+	public int getId() {
 		return this.id;
 	}
 
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
@@ -53,11 +54,11 @@ public class Order implements Serializable {
 		this.address = address;
 	}
 
-	public String getAddressid() {
+	public int getAddressid() {
 		return this.addressid;
 	}
 
-	public void setAddressid(String addressid) {
+	public void setAddressid(int addressid) {
 		this.addressid = addressid;
 	}
 
@@ -69,11 +70,11 @@ public class Order implements Serializable {
 		this.member = member;
 	}
 
-	public String getMemberid() {
+	public int getMemberid() {
 		return this.memberid;
 	}
 
-	public void setMemberid(String memberid) {
+	public void setMemberid(int memberid) {
 		this.memberid = memberid;
 	}
 

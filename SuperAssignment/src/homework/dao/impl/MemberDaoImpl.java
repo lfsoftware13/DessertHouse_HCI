@@ -25,7 +25,7 @@ public class MemberDaoImpl implements MemberDao {
 	}
 
 	@Override
-	public Member findById(String id) {
+	public Member findById(int id) {
 		// TODO Auto-generated method stub
 		return (Member)baseDao.load(Member.class, id);
 	}
@@ -47,12 +47,12 @@ public class MemberDaoImpl implements MemberDao {
 	@Override
 	public boolean delete(Member mem) {
 		// TODO Auto-generated method stub
-		baseDao.delete(Member.class, mem.getId());
+//		baseDao.delete(Member.class, mem.getId());
 		return true;
 	}
 
 	@Override
-	public boolean delete(String id) {
+	public boolean delete(int id) {
 		// TODO Auto-generated method stub
 		baseDao.delete(Member.class, id);
 		return true;

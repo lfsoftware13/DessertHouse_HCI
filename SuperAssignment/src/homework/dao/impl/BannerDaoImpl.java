@@ -25,7 +25,7 @@ public class BannerDaoImpl implements BannerDao {
 	}
 
 	@Override
-	public Banner findBannerById(String id) {
+	public Banner findBannerById(int id) {
 		// TODO Auto-generated method stub
 		return (Banner)baseDao.load(Banner.class, id);
 	}
@@ -52,7 +52,7 @@ public class BannerDaoImpl implements BannerDao {
 	}
 
 	@Override
-	public boolean delete(String id) {
+	public boolean delete(int id) {
 		// TODO Auto-generated method stub
 		baseDao.delete(Banner.class, id);
 		return true;

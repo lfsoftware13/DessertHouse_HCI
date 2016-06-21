@@ -28,13 +28,13 @@ public class AddressDaoImpl implements AddressDao {
 	}
 
 	@Override
-	public Address findById(String id) {
+	public Address findById(int id) {
 		// TODO Auto-generated method stub
 		return (Address)baseDao.load(Address.class, id);
 	}
 
 	@Override
-	public List findByMember(String memberid) {
+	public List findByMember(int memberid) {
 		// TODO Auto-generated method stub
 		session=baseDao.getNewSession();
 		Criteria c=session.createCriteria(Address.class);
@@ -83,7 +83,7 @@ public class AddressDaoImpl implements AddressDao {
 	}
 
 	@Override
-	public boolean delete(String id) {
+	public boolean delete(int id) {
 		// TODO Auto-generated method stub
 		baseDao.delete(Address.class, id);
 		return true;

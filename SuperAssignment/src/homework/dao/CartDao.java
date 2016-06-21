@@ -9,9 +9,9 @@ public interface CartDao {
 	
 	public List findAll();
 	
-	public Cart findById(String id);
+	public Cart findById(int id);
 	
-	public List findByMemberid(String memberid);
+	public List findByMemberid(int memberid);
 	
 	public boolean save(Cart cart);
 	
@@ -19,14 +19,14 @@ public interface CartDao {
 	
 	public boolean delete(Cart cart);
 	
-	public boolean delete(String id);
+	public boolean delete(int id);
 	
 	
 	public List findAllItem();
 	
-	public CartItem findItemById(String id);
+	public CartItem findItemById(int id);
 	
-	public List findItemByCart(String cartid);
+	public List findItemByCart(int cartid);
 	
 	public boolean saveItem(CartItem item);
 	
@@ -34,6 +34,6 @@ public interface CartDao {
 	
 	public boolean deleteItem(CartItem item);
 	
-	public boolean deleteItem(String id);
+	public boolean deleteItem(int id);
 	
 }

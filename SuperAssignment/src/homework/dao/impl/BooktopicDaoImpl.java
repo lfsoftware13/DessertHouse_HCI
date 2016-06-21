@@ -27,13 +27,13 @@ public class BooktopicDaoImpl implements BooktopicDao {
 	}
 
 	@Override
-	public Booktopic findById(String id) {
+	public Booktopic findById(int id) {
 		// TODO Auto-generated method stub
 		return (Booktopic)baseDao.load(Booktopic.class, id);
 	}
 
 	@Override
-	public List findByBookid(String bookid) {
+	public List findByBookid(int bookid) {
 		// TODO Auto-generated method stub
 		session=baseDao.getNewSession();
 		Criteria c=session.createCriteria(Booktopic.class);
@@ -47,7 +47,7 @@ public class BooktopicDaoImpl implements BooktopicDao {
 	}
 
 	@Override
-	public List findByTopicid(String topicid) {
+	public List findByTopicid(int topicid) {
 		// TODO Auto-generated method stub
 		session=baseDao.getNewSession();
 		Criteria c=session.createCriteria(Booktopic.class);
@@ -82,7 +82,7 @@ public class BooktopicDaoImpl implements BooktopicDao {
 	}
 
 	@Override
-	public boolean delete(String id) {
+	public boolean delete(int id) {
 		// TODO Auto-generated method stub
 		baseDao.delete(Booktopic.class, id);
 		return true;
