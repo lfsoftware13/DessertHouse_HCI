@@ -1,5 +1,5 @@
 ﻿# Host: 127.0.0.1  (Version: 5.5.40)
-# Date: 2016-06-20 01:02:29
+# Date: 2016-06-21 22:03:22
 # Generator: MySQL-Front 5.3  (Build 4.120)
 
 /*!40101 SET NAMES utf8 */;
@@ -9,7 +9,7 @@
 #
 
 CREATE TABLE `account` (
-  `id` varchar(255) NOT NULL DEFAULT '0',
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `type` int(11) NOT NULL DEFAULT '0',
   `account` varchar(255) NOT NULL DEFAULT '',
   `password` varchar(255) NOT NULL DEFAULT '',
@@ -21,8 +21,8 @@ CREATE TABLE `account` (
 #
 
 CREATE TABLE `address` (
-  `id` varchar(255) NOT NULL DEFAULT '',
-  `memberid` varchar(255) NOT NULL DEFAULT '',
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `memberid` int(11) NOT NULL DEFAULT '0',
   `name` varchar(255) NOT NULL DEFAULT '',
   `prov` varchar(255) NOT NULL DEFAULT '',
   `city` varchar(255) NOT NULL DEFAULT '',
@@ -38,8 +38,8 @@ CREATE TABLE `address` (
 #
 
 CREATE TABLE `banner` (
-  `id` varchar(255) NOT NULL DEFAULT '',
-  `bookid` varchar(255) NOT NULL DEFAULT '',
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `bookid` int(11) NOT NULL DEFAULT '0',
   `image` varchar(255) NOT NULL DEFAULT '',
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
@@ -49,7 +49,7 @@ CREATE TABLE `banner` (
 #
 
 CREATE TABLE `book` (
-  `id` varchar(255) NOT NULL DEFAULT '0',
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL DEFAULT '',
   `name_cn` varchar(255) NOT NULL DEFAULT '',
   `introduction` varchar(255) NOT NULL DEFAULT '',
@@ -73,9 +73,9 @@ CREATE TABLE `book` (
 #
 
 CREATE TABLE `booktopic` (
-  `id` varchar(255) NOT NULL DEFAULT '0',
-  `topicid` varchar(255) NOT NULL DEFAULT '',
-  `bookid` varchar(255) NOT NULL DEFAULT '',
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `topicid` int(11) NOT NULL DEFAULT '0',
+  `bookid` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
@@ -84,8 +84,8 @@ CREATE TABLE `booktopic` (
 #
 
 CREATE TABLE `cart` (
-  `id` varchar(255) NOT NULL DEFAULT '',
-  `memberid` varchar(255) NOT NULL DEFAULT '',
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `memberid` int(11) NOT NULL DEFAULT '0',
   `member` varchar(255) NOT NULL DEFAULT '',
   `number` int(11) NOT NULL DEFAULT '0',
   `total` double NOT NULL DEFAULT '0',
@@ -97,9 +97,9 @@ CREATE TABLE `cart` (
 #
 
 CREATE TABLE `cart_item` (
-  `id` varchar(255) NOT NULL DEFAULT '0',
-  `cartid` varchar(255) NOT NULL DEFAULT '',
-  `bookid` varchar(255) NOT NULL DEFAULT '',
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `cartid` int(11) NOT NULL DEFAULT '0',
+  `bookid` int(11) NOT NULL DEFAULT '0',
   `book` varchar(255) NOT NULL DEFAULT '',
   `number` int(11) NOT NULL DEFAULT '0',
   `price` double NOT NULL DEFAULT '0',
@@ -112,8 +112,8 @@ CREATE TABLE `cart_item` (
 #
 
 CREATE TABLE `comment` (
-  `id` varchar(255) NOT NULL DEFAULT '',
-  `bookid` varchar(255) NOT NULL DEFAULT '',
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `bookid` int(11) NOT NULL DEFAULT '0',
   `comment` varchar(3000) NOT NULL DEFAULT '',
   `att` int(11) NOT NULL DEFAULT '0',
   `time` date NOT NULL DEFAULT '0000-00-00',
@@ -125,7 +125,7 @@ CREATE TABLE `comment` (
 #
 
 CREATE TABLE `member` (
-  `id` varchar(255) NOT NULL DEFAULT '',
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL DEFAULT '',
   `nickname` varchar(255) NOT NULL DEFAULT '',
   `sex` varchar(255) DEFAULT '0',
@@ -141,10 +141,10 @@ CREATE TABLE `member` (
 #
 
 CREATE TABLE `order` (
-  `id` varchar(255) NOT NULL DEFAULT '',
-  `memberid` varchar(255) NOT NULL DEFAULT '',
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `memberid` int(11) NOT NULL DEFAULT '0',
   `member` varchar(255) NOT NULL DEFAULT '',
-  `addressid` varchar(255) NOT NULL DEFAULT '',
+  `addressid` int(11) NOT NULL DEFAULT '0',
   `address` varchar(255) NOT NULL DEFAULT '',
   `number` int(11) NOT NULL DEFAULT '0',
   `total` double NOT NULL DEFAULT '0',
@@ -158,9 +158,9 @@ CREATE TABLE `order` (
 #
 
 CREATE TABLE `order_item` (
-  `id` varchar(255) NOT NULL DEFAULT '',
-  `orderid` varchar(255) NOT NULL DEFAULT '',
-  `bookid` varchar(255) NOT NULL DEFAULT '',
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `orderid` int(11) NOT NULL DEFAULT '0',
+  `bookid` int(11) NOT NULL DEFAULT '0',
   `book` varchar(255) NOT NULL DEFAULT '',
   `price` double NOT NULL DEFAULT '0',
   `number` int(11) NOT NULL DEFAULT '0',
@@ -173,7 +173,7 @@ CREATE TABLE `order_item` (
 #
 
 CREATE TABLE `topic` (
-  `id` varchar(255) NOT NULL DEFAULT '',
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL DEFAULT '',
   `image` varchar(255) NOT NULL DEFAULT '',
   PRIMARY KEY (`id`)
