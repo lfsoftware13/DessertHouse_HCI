@@ -1,13 +1,23 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="java.util.List" %>
+<%@ page import="homework.model.Classification" %>
+
 <div class="left_nav">
 	<div class="classification_title"><p class="title">图&nbsp书&nbsp分&nbsp类</p></div>
-	<%for(int i=0; i<8; i++){ %>
+	<%
+	List<Classification> classifications = (List<Classification>)session.getAttribute("classifications");
+	for(int i=0; i<classifications.size(); i++){
+		Classification c1 = classifications.get(i);
+	%>
 	<div class="classification">
 		<dl>
-			<dt><a href="../SearchServlet?type=c1&kw=c1">一级分类<%= i+1 %></a></dt>
-			<%for(int j=0; j<4; j++){ %>
-			<dd><a href="../SearchServlet?type=c2&kw=c2">二级分类<%=j+1 %></a></dd>
+			<dt><a href="../SearchServlet?type=c1&kw=<%=c1.c1%>"><%=c1.c1%></a></dt>
+			<%
+			for(int j=0; j<c1.c2.length; j++){
+				String c2 = c1.c2[j];
+			%>
+			<dd><a href="../SearchServlet?type=c2&kw=<%=c2%>"><%=c2%></a></dd>
 			<%} %>
 		</dl>
 	</div>

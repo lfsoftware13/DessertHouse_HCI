@@ -5,5 +5,114 @@
 .classification dd.not_last{border-right: solid 1px gray; padding-right: 12px;color:black;}
 .classification_title{width: 100%; height: 50px; background-color: #556589;}
 .classification_title .title{width: 100%; height: 50px; text-align: center; line-height: 50px; font-size: 25px; color: white; }
-.bgcolor_even{background-color: #ecf3fe;}
-.bgcolor_odd{background-color: #cedaef;}
+.bgcolor_even{background-color: #ecf3fe !important;}
+.bgcolor_odd{background-color: #cedaef !important;}
+
+
+
+
+
+
+
+
+#sidebar-menu { 
+/*目前要求宽度是238px,高度是332px，左边框+width正好238，以后需要可以修改*/ 
+width : 230px; 
+/* height : 332px; */ 
+margin : 0; 
+padding : 0; 
+} 
+#sidebar-menu > ul { 
+list-style : none; 
+padding : 0; 
+margin : 0; 
+} 
+#sidebar-menu > ul > li { 
+list-style : none; 
+padding : 0; 
+margin : 0; 
+position : relative; 
+} 
+#sidebar-menu > ul > li.selected { 
+border-left : 1px solid #556589;
+border-top : 1px solid #556589; 
+border-bottom : 1px solid #556589; 
+} 
+
+#sidebar-menu .menu-item { 
+background : no-repeat left center; 
+height : 40px; /**控制菜单中每行的宽度，下面还有两处需要修改**/ 
+z-index : 10000; 
+position : relative; 
+} 
+
+#sidebar-menu > ul > li.selected .menu-item { 
+border-right : 1px solid #FFF; 
+background : #FFF no-repeat left center; 
+} 
+#sidebar-menu .menu-item span { 
+font-size : 17px; 
+font-weight : bold; 
+height : 40px; 
+line-height : 40px; 
+padding-left : 15px; 
+padding-top : 2px; 
+display : inline-block; 
+} 
+
+#sidebar-menu .menu-panel { 
+padding : 10px 20px; 
+display : none; 
+border-right : 1px solid #556589;
+border-top : 1px solid #556589;
+border-bottom : 1px solid #556589;
+width : 500px; 
+position : absolute; 
+left : 229px; 
+top : -1px; 
+z-index : 5000; 
+min-height : 50px; 
+box-shadow: 1px 1px 4px #888888; 
+} 
+
+#sidebar-menu div.menu-panel.selected { 
+display : block; 
+} 
+
+/*Panel 里面的链接列表*/ 
+#sidebar-menu div.menu-panel ul { 
+list-style : none; 
+padding : 0; 
+margin : 0; 
+} 
+#sidebar-menu div.menu-panel ul li { 
+list-style : none; 
+padding : 5px 0px; 
+margin : 0; 
+} 
+
+#sidebar-menu div.menu-panel>ul>li>div.link-list { 
+float : left; 
+padding-left : 10px; 
+width : 450px; 
+} 
+#sidebar-menu div.menu-panel div.link-wrapper { 
+display : inline-block; 
+padding : 3px 0px; 
+} 
+#sidebar-menu div.menu-panel div.link-wrapper span { 
+font-size : 13px;
+padding-right : 4px; 
+} 
+#sidebar-menu div.menu-panel div.link-list a { 
+font-size : 15px;
+text-decoration : none; 
+} 
+#sidebar-menu div.menu-panel div.link-list a:hover { 
+text-decoration : underline; 
+} 
+#sidebar-menu div.clear { 
+clear : both; 
+height : 0; 
+line-height : 0; 
+} 

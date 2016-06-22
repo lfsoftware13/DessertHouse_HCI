@@ -13,13 +13,13 @@
 		</form>
 	</div>
 	<div class="cart">
-		<a href="../CartServlet">
+		<a>
 			<i class="fa fa-cart-plus fa-lg"></i> 
 			&nbsp购物车
 		</a>
 	</div>
 	<div class="orders">
-		<a href="../OrdersServlet">
+		<a>
 			<i class = "fa fa-file-text fa-lg"></i>
 			&nbsp我的订单
 		</a>
@@ -42,5 +42,26 @@ $(document).ready(function(){
 	 }
 	%>
 	$("#search_key").val("<%= keyword %>");
+	
+	$(".cart a").click(function(){
+		if(isLogin()){
+			window.location = "../CartServlet";
+		}else{
+			$("#a_login").trigger("click");
+		}
+	});
+	
+	$(".orders a").click(function(){
+		if(isLogin()){
+			window.location = "../OrdersServlet";
+		}else{
+			$("#a_login").trigger("click");
+		}
+	});
+	
+	function isLogin(){
+		var login = <%= session.getAttribute("user") == null ? false : true %>;
+		return login;
+	}
 });
 </script>

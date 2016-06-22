@@ -24,7 +24,7 @@
 	<%@ include file="/jsp/logoline.jsp" %>
 	
 	<div class="home_first_screen">
-		<%@ include file="/jsp/classification.jsp" %>
+		<%@ include file="/jsp/classification2.jsp" %>
 		<div class="home_carousel">
 			<div class="col storey_one_center" style = "width:800px;">
 				<div id='component_403753' style = "width:800px;"></div>

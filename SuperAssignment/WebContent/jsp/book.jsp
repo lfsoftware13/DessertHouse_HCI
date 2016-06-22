@@ -294,22 +294,36 @@ $(document).ready(function(){
 			$(".input_quantity").attr("value", val-1);
 		}
 	});
-	
-	$(".btn_addToCart").click(function(){
-		var bookId = $("#bookId").val();
-		var quantity = $(".input_quantity").val();
-		$.ajax({
-			type: 'post',
-			url: '../CartServlet?action=add&bookId=' + bookId + '&quantity=' + quantity
-		});
-	});
 });
 </script>
 
 <script>
 //加入购物车效果
+
+	$(".btn_addToCart").click(function(){
+		if(!isLogin()){
+			$("#a_login").trigger("click");
+		}else{
+			var bookId = $("#bookId").val();
+			var quantity = $(".input_quantity").val();
+			$.ajax({
+				type: 'post',
+				url: '../CartServlet?action=add&bookId=' + bookId + '&quantity=' + quantity
+			});
+		}
+	});
+	
+	
+	function isLogin(){
+		var login = <%= session.getAttribute("user") == null ? false : true %>;
+		return login;
+	}
+
 $(function() {
 	$(".btn_addToCart").click(function(event) {
+		if(!isLogin()){
+			return;
+		}
 		var offset = $(".logoline .cart").find("i").offset();
 		var scrollTop = $(window).scrollTop();
 		var flyer = $('<i class="fa fa-book fa-2x" style = "color:#556589;"></i>');//抛物体对象 
