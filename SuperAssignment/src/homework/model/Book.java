@@ -46,6 +46,48 @@ public class Book implements Serializable {
 	private int sales;
 
 	private double score;
+	
+	private String details;
+	
+	private String fitpeo;
+	
+	private String autintro;
+	
+	private String bookindex;
+
+	public String getDetails() {
+		return details;
+	}
+
+	public void setDetails(String details) {
+		this.details = details;
+	}
+	
+	public String getFitpeo() {
+		return fitpeo;
+	}
+
+	public void setFitpeo(String fitpeo) {
+		this.fitpeo = fitpeo;
+	}
+
+	public String getAutintro() {
+		return autintro;
+	}
+
+	public void setAutintro(String autintro) {
+		this.autintro = autintro;
+	}
+
+	public String getBookindex() {
+		return bookindex;
+	}
+
+	public void setBookindex(String bookindex) {
+		this.bookindex = bookindex;
+	}
+
+
 
 	@Temporal(TemporalType.DATE)
 	private Date time;

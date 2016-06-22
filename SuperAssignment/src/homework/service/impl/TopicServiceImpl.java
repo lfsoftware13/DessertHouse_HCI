@@ -27,7 +27,7 @@ public class TopicServiceImpl implements TopicService {
 	@Override
 	public List<Book> newbook() {
 		// TODO Auto-generated method stub
-		Topic t=topicDao.findByName("new");
+		Topic t=topicDao.findByName("新书速递");
 		List<Booktopic> list=booktopicDao.findByTopicid(t.getId());
 		List<Book> res=new ArrayList<Book>();
 		for(int i=0;i<list.size();i++){
@@ -57,7 +57,7 @@ public class TopicServiceImpl implements TopicService {
 	@Override
 	public List<Book> hotBook(int topicid) {
 		// TODO Auto-generated method stub
-		Topic t=topicDao.findByName("hot");
+		Topic t=topicDao.findByName("热门专区");
 		List<Booktopic> list=booktopicDao.findByTopicid(t.getId());
 		List<Book> res=new ArrayList<Book>();
 		for(int i=0;i<list.size();i++){
