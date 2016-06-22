@@ -58,12 +58,13 @@
 						</span>
 					</td>
 
-					<td class = "total total_info">99.9</td>
+					<td class = "total total_info">11.1</td>
 					<td class = "del">
 						<!-- <div class="div_btn deleteline" style="width: 100px; margin: 0 auto;">删除</div> -->
 						<i class="fa fa-trash-o fa-lg"></i>
 					</td>
-					<td class="bookId" style="display: none;">bookId_12345</td>
+					<td class="bookId" style="display: none;">12345</td>
+					<td class="cartId" style="display: none;">123</td>
 				</tr>
 				<%} %>
 			</table>
@@ -120,17 +121,6 @@ $("input[type='checkbox'][name!='chooseAll']").click(function(){
 	}
 });
 
-$(".deleteline").click(function(){
-	var checkbox = $(this).parent().parent().find("td:eq(0)").find("input[type='checkbox']");
-	if(checkbox.prop("checked")){
-		var quantity = parseInt($("#book_quantity").html()) - 1;
-		var sum = parseFloat($("#sum").html()) - parseFloat(checkbox.parent().parent().find("td:eq(4)").html());
-		$("#book_quantity").html(quantity);
-		$("#sum").html(sum.toFixed(1));
-	}
-	$(this).parent().parent().remove();
-});
-
 $("#settle").click(function(){
 	var list = new Array();
 	$("input[type='checkbox'][name='choose']:checked").each(function(i){
@@ -159,6 +149,7 @@ function OrderList(list){
 	this.list = list;
 }
 
+/*
 $(document).ready(function(){
 	for (var i = 0; i < 10; i++) {
 
@@ -185,7 +176,58 @@ $(document).ready(function(){
 	});
 	})(i);
 	}
+});
+*/
 
+$("span.add_cart").click(function(){
+	var row = $(this).parent().parent().parent();
+	var price = row.find("td.price").html();
+	var quantity = row.find("td.num").find("input[type='text']").val();
+	var total = row.find("td.total").html();
+	row.find("input[type='text']").val(parseInt(quantity) + 1);
+	row.find("td.total").html((parseFloat(total) + parseFloat(price)).toFixed(1));
+	sumup();
+});
+
+$("span.minus_cart").click(function(){
+	var row = $(this).parent().parent().parent();
+	var price = row.find("td.price").html();
+	var quantity = row.find("td.num").find("input[type='text']").val();
+	var total = row.find("td.total").html();
+	if(parseInt(quantity) > 1){
+		row.find("input[type='text']").val(parseInt(quantity) - 1);
+		row.find("td.total").html((parseFloat(total) - parseFloat(price)).toFixed(1));
+	}
+	sumup();
+});
+
+function sumup(){
+	var sum = 0;
+	$(".tbl_cart tr:gt(0)").each(function(){
+		var checkbox = $(this).find("td.select").find("input[type='checkbox']");
+		if(checkbox.prop("checked")){
+			sum += parseFloat($(this).find("td:eq(4)").html());
+		}
+	});
+	$("#sum").html(sum.toFixed(1));
+}
+
+$("td.del i").click(function(){
+	var row = $(this).parent().parent();
+	var cartId = row.find("td.cartId").html();
+	var checkbox = row.find("td.select").find("input[type='checkbox']");
+	$.ajax({
+		type: "post",
+		url: "../CartServlet?action=delete&cartId=" + cartId,
+		success: function(){
+			if(checkbox.prop("checked")){
+				var linetotal = row.find("td.total").html();
+				var total = $("#sum").html();
+				$("#sum").html((parseFloat(total) - parseFloat(linetotal)).toFixed(1));
+			}
+			row.remove();
+		}
+	});
 });
 </script>
 

@@ -33,7 +33,7 @@ public class AddressServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
 		Address address = new Address();
-		address.setId("12321");
+		address.setId(12321);
 		address.setName("六五四");
 		address.setProv("北京市");
 		address.setCity("北京");

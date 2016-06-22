@@ -64,7 +64,7 @@ public class PurchaseServlet extends HttpServlet {
 			double sum = obj.getDouble("sum");
 			System.out.println(bookId + " " + bookName + " " + price + " " + quantity + " " + sum);
 			OrderItem item = new OrderItem();
-			item.setBookid(bookId);
+			item.setBookid(Integer.parseInt(bookId));
 			item.setBook(bookName);
 			item.setPrice(price);
 			item.setNumber(quantity);
