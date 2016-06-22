@@ -42,7 +42,7 @@ border-bottom : 1px solid #556589;
 #sidebar-menu .menu-item { 
 background : no-repeat left center; 
 height : 40px; /**控制菜单中每行的宽度，下面还有两处需要修改**/ 
-z-index : 10000; 
+z-index : 100; 
 position : relative; 
 } 
 

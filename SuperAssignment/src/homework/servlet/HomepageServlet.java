@@ -51,13 +51,13 @@ public class HomepageServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		List<Book> newBooks = topicService.newbook();
-		List<Topic> hotTopics = topicService.hotTopic();
+		//List<Book> newBooks = topicService.newbook();
+		//List<Topic> hotTopics = topicService.hotTopic();
 		List<Classification> classifications = this.getClassification();
 		
 		HttpSession session = request.getSession();
-		session.setAttribute("newBooks", newBooks);
-		session.setAttribute("hotTopics", hotTopics);
+		//session.setAttribute("newBooks", newBooks);
+		//session.setAttribute("hotTopics", hotTopics);
 		session.setAttribute("classifications", classifications);
 		
 		response.sendRedirect(request.getContextPath() + "/jsp/homepage.jsp");
