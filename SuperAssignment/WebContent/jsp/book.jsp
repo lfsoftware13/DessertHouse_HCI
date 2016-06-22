@@ -79,7 +79,17 @@
 				</div>
 				<div class="btn_addToCart">
 					<i class="fa fa-cart-plus fa-lg"></i> 加入购物车
+
 				</div>
+
+				<div class="btn_buyNow">
+					<i class="fa fa-credit-card fa-lg"></i>&nbsp立即购买
+				</div>
+				<div class = "btn_share">
+					<a><i class="fa fa-share-alt"></i>&nbsp分享
+					</a>
+				</div>
+
 			</div>
 		</div>
 		<div class="bottom_part">

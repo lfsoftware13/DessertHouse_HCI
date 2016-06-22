@@ -98,7 +98,10 @@
 						<td>南京市鼓楼区汉口路xx号</td>
 						<td>222222</td>
 						<td>123****890</td>
-						<td><a class="deleteline">删除</a></td>
+						<td><a class="deleteline">
+						
+						<i class="fa fa-trash-o fa-lg"></i>
+					</a></td>
 						<td style="display: none;">addressId_<%= i %></td>
 					</tr>
 					<%} %>

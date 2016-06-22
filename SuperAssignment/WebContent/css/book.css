@@ -32,8 +32,12 @@ font.ranking_num{font-family: 'Lithos Pro';font-size: 15px;color: red;}
 .span_quantity .unit{display: block; float: left; margin-left: 10px; height: 40px; line-height: 40px;}
 .span_quantity .add_minus{display: block; float: left; margin-left: 5px; width: 20px; height: 30px;}
 .add_minus span{display: block; margin-bottom: 4px; width: 20px; height: 18px; line-height: 15px; text-align: center; border: solid 1px gray; cursor: pointer;}
-div.btn_addToCart{margin-top: 10px; width: 150px; height: 40px; line-height: 40px; text-align: center; font-size: 16px; font-weight: lighter; color: white; background-color: #556589; cursor: pointer;}
+div.btn_addToCart{float:left;margin-top: 10px; width: 150px; height: 40px; line-height: 40px; text-align: center; font-size: 16px; font-weight: lighter; color: white; background-color: #556589; cursor: pointer;}
 div.btn_addToCart:hover{background-color: #718dbf}
+div.btn_buyNow{float:left; margin-left:20px;margin-top: 10px; width: 150px; height: 40px; line-height: 40px; text-align: center; font-size: 16px; font-weight: lighter; color: white; background-color: #e48279; cursor: pointer;}
+div.btn_buyNow:hover{background-color: #e99a93}
+div.btn_share a{margin-top:20px;float:right;color: #a8a8a8}
+div.btn_share a:hover{color: #CCCCCC;text-decoration: none;}
 
 .book_recommend{float: left; margin-left: 50px;margin-bottom: 20px; width: 230px;margin-top: 50px;}
 .book_recommend .title{height: 20px; font-size: 18px; line-height: 20px; color: #BBBBBB;}

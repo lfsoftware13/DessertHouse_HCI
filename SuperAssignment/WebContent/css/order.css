@@ -1,8 +1,8 @@
 h2{margin-left: 100px; color: #475A82;}
 
-.choose_address{margin-left: 150px; width: 1000px;}
-.orderInfo{margin-left: 150px; margin-top:40px;width: 1000px;}
-.sum_submit{float: right; margin-right: 247px; margin-top: 20px; height: 150px; width: 300px;margin-bottom: 50px;}
+.choose_address{margin: 0 auto; width: 1100px;}
+.orderInfo{margin: 0 auto; margin-top:40px;width: 1100px;}
+.sum_submit{float: right; margin-right: 75px; margin-top: 20px; height: 150px; width: 300px;margin-bottom: 50px;}
 #set_default{color: #A4A4A4;font-size: 14px;}
 .address_list{margin: 0 auto; width: 1000px;}
 .addressItem{float: left; margin-left: 30px; margin-top: 30px;  width: 200px; height: 100px; text-align: center; background-color: #ECF2FE; border: dotted 3px white; cursor: pointer;}
@@ -11,7 +11,7 @@ h2{margin-left: 100px; color: #475A82;}
 
 .address_list .selected{border: dotted 3px gray;}
 
-.order_list{margin: 0 auto; width: 1000px;}
+.order_list{margin: 0 auto; width: 1100px;}
 .tbl_orderItems{margin: 0 auto; border: 1px; text-align: center;}
 .tbl_orderItems tr{display: block; margin-top: 5px; color: #556589;}
 .tbl_orderItems tr.head{font-size: 18px; color: white;background-color: #556589;text-align: center}
@@ -21,7 +21,7 @@ h2{margin-left: 100px; color: #475A82;}
 
 .orderline{background-color: #F5F5F5;margin-top:30px;border-bottom: solid 1px #E7E7E7;}
 .orderline td{font-size: 15px;}
-.tbl_orderItems td.bookinfo{width: 200px}
+.tbl_orderItems td.bookinfo{width: 400px}
 .tbl_orderItems td.price{width: 200px;}
 .tbl_orderItems td.price_info{font-family: 'Trajan Pro';color: black;}
 .tbl_orderItems td.num{margin-left:50px;width:180px;}
@@ -35,7 +35,7 @@ h2{margin-left: 100px; color: #475A82;}
 .add_minus span{display: block; margin-bottom: 4px; width: 20px; height: 18px; line-height: 15px; text-align: center; border: solid 1px gray; cursor: pointer;}
 
 
-.sum_submit{background-color: #F5F5F5;border: 1px solid #DDDDDD;padding-top: 30px;padding-bottom: 30px;padding-left: 50px;padding-right: 50px; }
+.sum_submit{padding-top: 30px;padding-bottom: 30px;padding-left: 50px;padding-right: 50px; }
 .sum_submit .sum{line-height: 50px; text-align: center;}
 .sum_submit .submit{height: 50px; text-align: center;}
 .sum span{font-size: 18px; color: black;}
@@ -45,7 +45,7 @@ div.div_btn{float:right;margin-left: 25px; width: 100px; height: 40px; font-size
 div.div_btn_clicked{background-color: #556589;color: white;}
 div.div_btn:hover{background-color: #718dbf;}
 
-.info_title{margin-top:20px;border-bottom: 1px solid #718dbf;width: 1000px;height: 25px; margin-bottom: 20px}
+.info_title{margin-top:20px;border-bottom: 1px solid #718dbf;width: 1100px;height: 25px; margin-bottom: 20px}
 .info_title span{padding-left:10px; padding-top: 5px; padding-right:10px; padding-bottom: 5px;	background-color: #718dbf;color: white;border-left: 2px solid #556589;}
 .info_title a{float: right; margin-right:20px;font-size: 15px; color: #556589;}
 .info_title a:hover{color: #718dbf;text-decoration: none;}

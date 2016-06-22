@@ -48,25 +48,45 @@
 			</div>
 			<div class="filter_line filter_border" id="filter_publish">
 				<span class="title">出版社：</span>
-				<span><input type="checkbox" class="checkbox_filter" name="checkbox_publish" value="0">所有</span>
-				<span><input type="checkbox" class="checkbox_filter" name="checkbox_publish" value="1">机械工业出版社</span>
-				<span><input type="checkbox" class="checkbox_filter" name="checkbox_publish" value="2">电子工业出版社</span>
-				<span><input type="checkbox" class="checkbox_filter" name="checkbox_publish" value="3">其它</span>
+				<span><input type="checkbox" class="checkbox_filter" name="checkbox_publish" value="0">
+					<span class = "checkItem">所有</span>
+				</span>
+				<span><input type="checkbox" class="checkbox_filter" name="checkbox_publish" value="1">
+					<span class = "checkItem">机械工业出版社</span>
+				</span>
+				<span><input type="checkbox" class="checkbox_filter" name="checkbox_publish" value="2">
+					<span class = "checkItem">电子工业出版社</span>
+				</span>
+				<span><input type="checkbox" class="checkbox_filter" name="checkbox_publish" value="3">
+					<span class = "checkItem">其它</span>
+				</span>
 			</div>
 			<div class="filter_line filter_border" id="filter_publish_date">
 				<span class="title">出版时间：</span>
-				<span><input type="checkbox" class="checkbox_filter" name="checkbox_publishDate" value="0">所有</span>
-				<span><input type="checkbox" class="checkbox_filter" name="checkbox_publishDate" value="1">2000年以前</span>
-				<span><input type="checkbox" class="checkbox_filter" name="checkbox_publishDate" value="2">2000年-2010年</span>
-				<span><input type="checkbox" class="checkbox_filter" name="checkbox_publishDate" value="3">2010年以后</span>
+				<span><input type="checkbox" class="checkbox_filter" name="checkbox_publishDate" value="0">
+					<span class = "checkItem">所有</span>
+				</span>
+				<span><input type="checkbox" class="checkbox_filter" name="checkbox_publishDate" value="1">
+					<span class = "checkItem">2000年以前</span>
+				</span>
+				<span><input type="checkbox" class="checkbox_filter" name="checkbox_publishDate" value="2">
+					<span class = "checkItem">2000年-2010年</span>
+				</span>
+				<span><input type="checkbox" class="checkbox_filter" name="checkbox_publishDate" value="3">
+					<span class = "checkItem">2010年以后</span></span>
 			</div>
 			<div class="filter_line filter_border" id="filter_price">
 				<span class="title">价格：</span>
-				<span><input type="checkbox" class="checkbox_filter" name="checkbox_price" value="0">所有</span>
-				<span><input type="checkbox" class="checkbox_filter" name="checkbox_price" value="1">小于20元</span>
-				<span><input type="checkbox" class="checkbox_filter" name="checkbox_price" value="2">20-50元</span>
-				<span><input type="checkbox" class="checkbox_filter" name="checkbox_price" value="3">50-100元</span>
-				<span><input type="checkbox" class="checkbox_filter" name="checkbox_price" value="4">100元以上</span>
+				<span><input type="checkbox" class="checkbox_filter" name="checkbox_price" value="0">
+					<span class = "checkItem">所有</span></span>
+				<span><input type="checkbox" class="checkbox_filter" name="checkbox_price" value="1">
+					<span class = "checkItem">小于20元</span></span>
+				<span><input type="checkbox" class="checkbox_filter" name="checkbox_price" value="2">
+					<span class = "checkItem">20-50元</span></span>
+				<span><input type="checkbox" class="checkbox_filter" name="checkbox_price" value="3">
+					<span class = "checkItem">50-100元</span></span>
+				<span><input type="checkbox" class="checkbox_filter" name="checkbox_price" value="4">
+					<span class = "checkItem">100元以上</span></span>
 			</div>
 		</div>
 		<div class="result_sort">
@@ -79,7 +99,8 @@
 				</div>
 			</div>
 			<div class="available_only">
-				<input type="checkbox" id="checkbox_show_available_only">仅显示有货
+				<input type="checkbox" id="checkbox_show_available_only">
+				<span class = "checkItem">仅显示有货</span>
 			</div>
 		</div>
 		<div class="book_list">

@@ -25,6 +25,7 @@
 
 
 .result_filter .checkbox_filter{margin-left: 50px;}
+.checkItem{margin-left:5px;}
 .result_filter .first_line{border-top: solid 1px #DDDDDD;}
 .result_filter .filter_border{border-left: solid 1px #DDDDDD; border-right: solid 1px #DDDDDD; border-bottom: solid 1px #DDDDDD;}
 

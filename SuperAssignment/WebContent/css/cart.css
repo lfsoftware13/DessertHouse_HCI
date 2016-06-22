@@ -31,8 +31,8 @@ div.empty{height: 50px;}
 .footer span.space{margin-left: 10px;}
 .footer span.big_font{font-size: 30px;font-family: 'Trajan Pro';vertical-align: middle;}
 .footer input[type="checkbox"]{width: 15px; height: 15px;}
-.footer .div_btn{width: 150px; height: 50px; line-height: 50px; background-color: #556589;border: 3px solid #EEEEEE;vertical-align: middle;}
-.footer .div_btn:hover{background-color: #718dbf}
+.footer .div_btn{color:#53658B;font-weight:bold;width: 150px; height: 50px; line-height: 50px; background-color: #EEEEEE;vertical-align: middle;}
+.footer .div_btn:hover{background-color: #718dbf;color: white;}
 
 .span_quantity{display: block; height: 40px;text-align: center}
 .span_quantity .input_quantity_cart{float: left; width:70px; margin-left: 5px;height: 40px; line-height: 40px; font-size: 15p; border: solid 1px #CCCCCC;}
