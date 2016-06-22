@@ -82,12 +82,14 @@
 				<div class="scroll_new_books">
 					<%for(int i=0; i<3; i++){ %>
 					<div class="new_book" value="<%=i %>">
+						<a href="../BookServlet?id=12345">
 						<img src="../img/vc.jpg">
 						<p class="introduction">
 							为了你我愿意热爱整个世界<%=i %><br>
 							xx著&nbsp&nbsp&nbsp&nbspxx出版社<br>
 							<font>¥20.0</font>
 						</p>
+						</a>
 					</div>
 					<%} %>
 				</div>
@@ -103,7 +105,7 @@
 				<%for(int j=0; j<10; j++){ %>
 				<div class="book">
 					<a href="../BookServlet?id=book_i"><img class="book_cover" src="https://images-cn.ssl-images-amazon.com/images/I/516W9PDv80L._SX353_BO1,204,203,200_.jpg" alt="cover"></a>
-					<p><a href="../BookServlet?id=book_i">Head First Java中文版</a><br><font>¥20</font></p>
+					<p><a href="../BookServlet?id=12345">Head First Java中文版</a><br><font>¥20</font></p>
 				</div>
 				<%} %>
 			</div>

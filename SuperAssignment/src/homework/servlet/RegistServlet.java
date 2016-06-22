@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -48,7 +49,10 @@ public class RegistServlet extends HttpServlet {
 		String username = request.getParameter("id");
 		String password = request.getParameter("password");
 		memberService.register(username, password);
-		response.getWriter().print("注册成功");
+		int userId = memberService.login(username, password);
+		HttpSession session = request.getSession();
+		session.setAttribute("user", userId);
+		response.sendRedirect(request.getHeader("Referer"));
 	}
 
 	/**

@@ -85,7 +85,7 @@ $(".order .deleteOrder").click(function(){
 	var orderId = $(this).parent().parent().find("span.orderId").html();
 	$.ajax({
 		type: "post",
-		url: "../OrderServlet?action=delete&orderId=" + orderId
+		url: "../OrdersServlet?action=delete&orderId=" + orderId
 	});
 	
 });

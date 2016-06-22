@@ -1,8 +1,10 @@
 package homework.servlet;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -10,7 +12,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
 import homework.model.Address;
+import homework.service.AddressService;
+import homework.service.TopicService;
 
 /**
  * Servlet implementation class AddressServlet
@@ -18,6 +25,17 @@ import homework.model.Address;
 @WebServlet("/AddressServlet")
 public class AddressServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	
+	private static ApplicationContext appliationContext;
+	private AddressService addressService;
+	
+	public void init(ServletConfig config)throws ServletException{
+
+		super.init(config);
+
+	    appliationContext=new ClassPathXmlApplicationContext("applicationContext.xml"); 
+	    addressService=(AddressService)appliationContext.getBean("addressService");
+	}
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -32,6 +50,8 @@ public class AddressServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
+		int userId = (int)session.getAttribute("user");
+		List<Address> addressList = addressService.findAddress(userId);
 		Address address = new Address();
 		address.setId(12321);
 		address.setName("六五四");
@@ -53,12 +73,15 @@ public class AddressServlet extends HttpServlet {
 		switch(action){
 		case "add":
 			address = this.getAddressFromRequest(request);
+			addressService.addAddress(0, address.getName(), address.getProv(), address.getCity(), address.getDetails(), address.getZip(), address.getPhone(), address.getIsDefault() == 1? true: false);
 			break;
 		case "modify":
 			address = this.getAddressFromRequest(request);
+			addressService.updateAddress(address.getId(), address.getName(), address.getProv(), address.getCity(), address.getDetails(), address.getZip(), address.getPhone(), address.getIsDefault() == 1? true: false);
 			break;
 		case "delete":
 			String id = request.getParameter("addressId");
+			addressService.deleteAddress(Integer.parseInt(id));
 			break;
 		}
 		response.getWriter().print(returnMessage);
