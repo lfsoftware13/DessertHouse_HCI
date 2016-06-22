@@ -1,5 +1,9 @@
 package homework.service;
 
+import java.util.List;
+
+import homework.model.Address;
+
 public interface AddressService {
 	
 	
@@ -35,4 +39,9 @@ public interface AddressService {
 	 */
 	public boolean deleteAddress(int addressid);
 	
+	/**
+	 * @param memberid 用户id
+	 * @return 地址列表
+	 */
+	public List<Address> findAddress(int memberid); 
 }

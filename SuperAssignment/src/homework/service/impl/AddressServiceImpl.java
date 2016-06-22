@@ -1,5 +1,7 @@
 package homework.service.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -58,6 +60,11 @@ public class AddressServiceImpl implements AddressService {
 	public boolean deleteAddress(int addressid) {
 		// TODO Auto-generated method stub
 		return addressDao.delete(addressid);
+	}
+	
+	@Override
+	public List<Address> findAddress(int memberid){
+		return addressDao.findByMember(memberid);
 	}
 
 }
