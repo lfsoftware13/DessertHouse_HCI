@@ -40,7 +40,7 @@
 			<div>
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close" style="margin-top: 8px; margin-right: 10px;"><span aria-hidden="true">&times;</span></button>
 				<ul id="myTab" class="nav nav-tabs">
-   					<li class="active"><a href="#login" data-toggle="tab">登陆</a></li>
+   					<li class="active"><a href="#login" data-toggle="tab">登录</a></li>
    					<li><a href="#regist" data-toggle="tab">注册</a></li>
 				</ul>
 			</div>
@@ -62,7 +62,7 @@
 					</div>
 					<div class="my-modal-footer">
 						<span></span>
-						<button class="btn btn-default" id="btn_login" style = "margin-left:200px;">登陆</button>
+						<button class="btn btn-default" id="btn_login" style = "margin-left:200px;">登录</button>
 					</div>
 				</div>
 				<div class="tab-pane fade" id="regist">
