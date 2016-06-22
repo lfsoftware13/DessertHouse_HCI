@@ -50,19 +50,15 @@
 
 	<bean id="memberService" class="homework.service.impl.MemberServiceImpl">
 	</bean>
-	<bean id="clerkService" class="homework.service.impl.ClerkServiceImpl">
+	<bean id="addressService" class="homework.service.impl.AddressServiceImpl">
 	</bean>
-	<bean id="manageService" class="homework.service.impl.ManageServiceImpl">
+	<bean id="bookService" class="homework.service.impl.BookServiceImpl">
 	</bean>
-	<bean id="noteService" class="homework.service.impl.NoteServiceImpl">
+	<bean id="cartService" class="homework.service.impl.CartServiceImpl">
 	</bean>
-	<bean id="planService" class="homework.service.impl.PlanServiceImpl">
+	<bean id="orderService" class="homework.service.impl.OrderServiceImpl">
 	</bean>
-	<bean id="storeService" class="homework.service.impl.StoreServiceImpl">
-	</bean>
-	<bean id="tradeService" class="homework.service.impl.TradeServiceImpl">
-	</bean>
-	<bean id="statService" class="homework.service.impl.StatServiceImpl">
+	<bean id="topicService" class="homework.service.impl.TopicServiceImpl">
 	</bean>
 	
 	<!-- 定义 Autowired 自动注入 bean -->

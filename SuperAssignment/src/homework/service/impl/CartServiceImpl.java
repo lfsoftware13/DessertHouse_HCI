@@ -14,7 +14,7 @@ import homework.model.CartItem;
 import homework.model.Member;
 
 @Service
-public class CartService implements homework.service.CartService {
+public class CartServiceImpl implements homework.service.CartService {
 	
 	@Autowired
 	CartDao cartDao;

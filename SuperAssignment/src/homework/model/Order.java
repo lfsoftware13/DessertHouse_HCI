@@ -47,10 +47,12 @@ public class Order implements Serializable {
 	@Transient
 	private List<OrderItem> items;
 
+	@Transient
 	public List<OrderItem> getItems() {
 		return items;
 	}
 
+	@Transient
 	public void setItems(List<OrderItem> items) {
 		this.items = items;
 	}

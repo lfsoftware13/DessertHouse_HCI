@@ -81,12 +81,19 @@ public class MemberServiceImpl implements MemberService {
 		// TODO Auto-generated method stub
 		Member mem=new Member();
 		mem.setName(account);
+		mem.setImage("");
+		mem.setMail("");
+		mem.setNickname("");
+		mem.setPhone("");
+		mem.setSex("");
+		mem.setAge(0);
 		memberDao.save(mem);
 		
 		Account acc=new Account();
 		acc.setAccount(account);
 		acc.setPassword(password);
 		acc.setType(1);
+		acc.setId(mem.getId());
 		accountDao.save(acc);
 		
 		return true;
