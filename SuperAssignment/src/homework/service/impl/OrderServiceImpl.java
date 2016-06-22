@@ -71,5 +71,10 @@ public class OrderServiceImpl implements OrderService {
 		}
 		return true;
 	}
+	
+	@Override
+	public boolean deleteOrder(int orderid){
+		return orderDao.delete(orderid);
+	}
 
 }

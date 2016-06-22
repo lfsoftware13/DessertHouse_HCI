@@ -23,4 +23,10 @@ public interface OrderService {
 	 */
 	public boolean addOrder(int addressid, List<OrderItem> list, double total, int memberid);
 	
+	/**
+	 * @param orderid 订单id
+	 * @return 删除是否成功
+	 */
+	public boolean deleteOrder(int orderid);
+	
 }
