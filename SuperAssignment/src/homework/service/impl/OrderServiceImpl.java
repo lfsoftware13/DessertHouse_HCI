@@ -12,7 +12,7 @@ import homework.dao.MemberDao;
 import homework.dao.OrderDao;
 import homework.model.Address;
 import homework.model.Member;
-import homework.model.Order;
+import homework.model.Orderesd;
 import homework.model.OrderItem;
 import homework.service.OrderService;
 
@@ -27,12 +27,13 @@ public class OrderServiceImpl implements OrderService {
 	MemberDao memberDao;
 	
 	@Override
-	public List<Order> getOrder(int memberid, int page) {
+	public List<Orderesd> getOrder(int memberid, int page) {
 		// TODO Auto-generated method stub
-		List<Order> list=orderDao.findByMember(memberid);
-		List<Order> res=new ArrayList<Order>();
+		List<Orderesd> list=orderDao.findAll();
+		List<Orderesd> res=new ArrayList<Orderesd>();
 		for(int i=(page-1)*5;i<list.size()&&i<page*5;i++){
-			Order l=list.get(i);
+			Orderesd l=list.get(i);
+			if(memberid!=l.getMemberid()) continue;
 			List<OrderItem> items=orderDao.findByOrder(l.getId());
 			l.setItems(items);
 		}
@@ -51,7 +52,7 @@ public class OrderServiceImpl implements OrderService {
 			tot=tot+list.get(i).getNumber()*list.get(i).getPrice();
 		}
 		if(add==null||mem==null) return false;
-		Order l=new Order();
+		Orderesd l=new Orderesd();
 		l.setAddressid(addressid);
 		l.setAddress(add.getName());
 		l.setMemberid(memberid);

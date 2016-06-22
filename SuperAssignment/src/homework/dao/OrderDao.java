@@ -2,22 +2,22 @@ package homework.dao;
 
 import java.util.List;
 
-import homework.model.Order;
+import homework.model.Orderesd;
 import homework.model.OrderItem;
 
 public interface OrderDao {
 	
 	public List findAll();
 	
-	public Order findById(int id);
+	public Orderesd findById(int id);
 	
 	public List findByMember(int memberid);
 	
-	public boolean save(Order order);
+	public boolean save(Orderesd order);
 	
-	public boolean update(Order order);
+	public boolean update(Orderesd order);
 	
-	public boolean delete(Order order);
+	public boolean delete(Orderesd order);
 	
 	public boolean delete(int id);
 	

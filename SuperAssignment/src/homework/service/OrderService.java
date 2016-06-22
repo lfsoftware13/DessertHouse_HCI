@@ -2,7 +2,7 @@ package homework.service;
 
 import java.util.List;
 
-import homework.model.Order;
+import homework.model.Orderesd;
 import homework.model.OrderItem;
 
 public interface OrderService {
@@ -12,7 +12,7 @@ public interface OrderService {
 	 * @param page 分页
 	 * @return 订单列表
 	 */
-	public List<Order> getOrder(int memberid, int page);
+	public List<Orderesd> getOrder(int memberid, int page);
 	
 	/**
 	 * @param addressid 地址id

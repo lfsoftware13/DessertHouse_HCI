@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 
 import homework.dao.BaseDao;
 import homework.dao.OrderDao;
-import homework.model.Order;
+import homework.model.Orderesd;
 import homework.model.OrderItem;
 
 @Repository
@@ -24,20 +24,20 @@ public class OrderDaoImpl implements OrderDao {
 	@Override
 	public List findAll() {
 		// TODO Auto-generated method stub
-		return baseDao.getAllList(Order.class);
+		return baseDao.getAllList(Orderesd.class);
 	}
 
 	@Override
-	public Order findById(int id) {
+	public Orderesd findById(int id) {
 		// TODO Auto-generated method stub
-		return (Order)baseDao.load(Order.class, id);
+		return (Orderesd)baseDao.load(Orderesd.class, id);
 	}
 
 	@Override
 	public List findByMember(int memberid) {
 		// TODO Auto-generated method stub
 		session=baseDao.getNewSession();
-		Criteria c=session.createCriteria(Order.class);
+		Criteria c=session.createCriteria(Orderesd.class);
 		c.add(Restrictions.eq("memberid",memberid));
 		List list=c.list();
 		session.close();
@@ -48,30 +48,30 @@ public class OrderDaoImpl implements OrderDao {
 	}
 
 	@Override
-	public boolean save(Order order) {
+	public boolean save(Orderesd order) {
 		// TODO Auto-generated method stub
 		baseDao.save(order);
 		return true;
 	}
 
 	@Override
-	public boolean update(Order order) {
+	public boolean update(Orderesd order) {
 		// TODO Auto-generated method stub
 		baseDao.update(order);
 		return true;
 	}
 
 	@Override
-	public boolean delete(Order order) {
+	public boolean delete(Orderesd order) {
 		// TODO Auto-generated method stub
-		baseDao.delete(Order.class, order.getId());
+		baseDao.delete(Orderesd.class, order.getId());
 		return true;
 	}
 
 	@Override
 	public boolean delete(int id) {
 		// TODO Auto-generated method stub
-		baseDao.delete(Order.class, id);
+		baseDao.delete(Orderesd.class, id);
 		return true;
 	}
 	

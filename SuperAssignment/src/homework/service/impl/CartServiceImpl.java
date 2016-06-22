@@ -54,6 +54,15 @@ public class CartServiceImpl implements homework.service.CartService {
 	public List<CartItem> getCartItem(int memberid) {
 		// TODO Auto-generated method stub
 		Cart ca=cartDao.findByMemberid(memberid);
+		if(ca==null){
+			Member mem=memberDao.findById(memberid);
+			ca=new Cart();
+			ca.setMemberid(memberid);
+			ca.setMember(mem.getName());
+			ca.setNumber(0);
+			ca.setTotal(0);
+			cartDao.save(ca);
+		}
 		return cartDao.findItemByCart(ca.getId());
 	}
 

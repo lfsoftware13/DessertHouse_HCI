@@ -15,12 +15,12 @@ import javax.persistence.Transient;
 
 
 /**
- * The persistent class for the order database table.
+ * The persistent class for the orderesd database table.
  * 
  */
 @Entity
-@NamedQuery(name="Order.findAll", query="SELECT o FROM Order o")
-public class Order implements Serializable {
+@NamedQuery(name="Orderesd.findAll", query="SELECT o FROM Orderesd o")
+public class Orderesd implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -46,18 +46,16 @@ public class Order implements Serializable {
 	
 	@Transient
 	private List<OrderItem> items;
-
-	@Transient
+	
 	public List<OrderItem> getItems() {
-		return items;
+		return this.items;
 	}
 
-	@Transient
 	public void setItems(List<OrderItem> items) {
 		this.items = items;
 	}
 
-	public Order() {
+	public Orderesd() {
 	}
 
 	public int getId() {
