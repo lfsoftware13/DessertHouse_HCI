@@ -48,7 +48,7 @@ public interface MemberService {
 	 * @param password 密码
 	 * @return 登陆是否成功
 	 */
-	public boolean login(String account, String password);
+	public int login(String account, String password);
 	
 	/**
 	 * @param account 用户名

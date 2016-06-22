@@ -66,14 +66,14 @@ public class MemberServiceImpl implements MemberService {
 	}
 
 	@Override
-	public boolean login(String account, String password) {
+	public int login(String account, String password) {
 		// TODO Auto-generated method stub
 		Account acc=accountDao.findByName(account);
-		if(acc==null) return false;
+		if(acc==null) return -1;
 		if(acc.getPassword().equals(password)){
-			return true;
+			return acc.getId();
 		}
-		return false;
+		return -1;
 	}
 
 	@Override
