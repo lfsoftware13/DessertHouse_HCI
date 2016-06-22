@@ -6,8 +6,13 @@
 	<div>
 		<!--向左对齐-->
 		<font class="topnav-text topnav-left title">LingTu.Com</font>
-		<a class="topnav-text topnav-left" id="a_login">请登录</a>
-		<a class="topnav-text topnav-left" id="a_regist">免费注册</a>
+		
+		<span class = "topnav-text" style="margin-left:950px;color:white;">[</span>
+		<a class="topnav-text" id="a_login">登录</a>
+		<span class = "topnav-text" style = "color:white;">&nbsp|&nbsp</span>
+		 
+		<a class="topnav-text " id="a_regist">注册</a>
+		<span class = "topnav-text" style = "color:white;">]</span>
 	</div>
 </div>
 <%}else{%>
@@ -57,7 +62,7 @@
 					</div>
 					<div class="my-modal-footer">
 						<span></span>
-						<button class="btn btn-default" id="btn_login">登陆</button>
+						<button class="btn btn-default" id="btn_login" style = "margin-left:200px;">登陆</button>
 					</div>
 				</div>
 				<div class="tab-pane fade" id="regist">
