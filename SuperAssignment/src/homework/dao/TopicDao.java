@@ -10,6 +10,8 @@ public interface TopicDao {
 	
 	public Topic findById(int id);
 	
+	public Topic findByName(String name);
+	
 	public boolean save(Topic topic);
 	
 	public boolean update(Topic topic);
