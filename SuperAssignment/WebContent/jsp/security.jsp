@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="homework.model.Member" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -29,16 +30,19 @@
 		
 	<div class="pc_right_part">
 		<div class="init">
+		<%
+		Member userInfo = (Member)session.getAttribute("userInfo");
+		%>
 			<div class="security_item">
 				<table class="tbl_pc">
 					<tr>
 						<td class="title">登录邮箱：</td>
-						<td class="content">xinjin@163.com</td>
+						<td class="content"><%= userInfo.getMail().equals("") ? "未填写" : userInfo.getMail() %></td>
 						<td class="btn"><div class="div_btn" id="show_mod_email">修改邮箱</div></td>
 					</tr>
 					<tr>
 						<td class="title">绑定手机：</td>
-						<td class="content">130xxxx3152</td>
+						<td class="content"><%= userInfo.getPhone().equals("") ? "未填写" : userInfo.getPhone() %></td>
 						<td class="btn"><div class="div_btn" id="show_mod_phone">修改手机</div></td>
 					</tr>
 					<tr>

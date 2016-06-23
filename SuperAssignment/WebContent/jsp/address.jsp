@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="java.util.List" %>
+<%@ page import="homework.model.Address" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -37,7 +39,6 @@
 						<td>
 							<select name="area_county" id="">
 								<option value="cn">中国大陆</option>
-								<option value="cn1">中国大陆1</option>
 							</select>
 							<select name="area_province" runat="server" id="province" onchange="selectprovince(this);"></select>
 							<select name="area_city" id="city"></select>
@@ -91,20 +92,29 @@
 						<td>联系方式</td>
 						<td>操作</td>
 					</tr>
-					<%for(int i=0; i<5; i++){ %>
+					<%
+					List<Address> addressList = (List<Address>)session.getAttribute("addressList");
+					if(addressList != null){
+					for(int i=0; i<addressList.size(); i++){
+					Address address = addressList.get(i);
+					%>
 					<tr class="addressline">
-						<td>许珂磊</td>
-						<td>江苏南京</td>
-						<td style = "width:270px">南京市鼓楼区汉口路xx号</td>
-						<td>222222</td>
-						<td style = "width:130px;">123****890</td>
+
+						<td><%= address.getName() %></td>
+						<td><%= address.getProv() + address.getCity() %></td>
+						<td style = "width:270px"><%= address.getDetails() %></td>
+						<td><%= address.getZip() %></td>
+						<td style = "width:130px;"><%= address.getPhone() %></td>
+
 						<td><a class="deleteline">
 						
 						<i class="fa fa-trash-o fa-lg"></i>
 					</a></td>
-						<td style="display: none;">addressId_<%= i %></td>
+						<td style="display: none;" class="addressId"><%= address.getId() %></td>
 					</tr>
-					<%} %>
+					<%
+					}
+					}%>
 				</table>
 			</div>
 			<div class="emptyr"><br><br><br></div>
@@ -117,7 +127,16 @@ $(".pc_leftnav li:eq(1)").addClass("selected");
 $(".pc_leftnav li:eq(1)").find("a").addClass("selected");
 
 $(".tbl_address").on("click", "a.deleteline", function(){
-	$(this).parent().parent().remove();
+	var row = $(this).parent().parent();
+	var id = row.find("td.addressId").html();
+	alert(id);
+	$.ajax({
+		type: "post",
+		url: "../AddressServlet?action=delete&addressId=" + id,
+		success: function(){
+			row.remove();
+		}
+	});
 });
 </script>
 
@@ -132,6 +151,7 @@ $(".tbl_address").on("click", "a.deleteline", function(){
 		var name = $("#txt_name").val();
 		var phone = $("#txt_contact").val();
 		var isDefault = $("#set_default").prop("checked");
+		alert(isDefault);
 		var address = new Address(addressId, province, city, detailedAddr, zipcode, name, phone, isDefault);
 		var action = "add";
 		if(addressId != ""){
@@ -182,6 +202,41 @@ $(".tbl_address").on("click", "a.deleteline", function(){
 	
 	function modifyAddressLine(address){
 		
+	}
+	
+	<%
+	if(addressList != null){
+		Address address = null;
+		if(addressList.size() > 0){
+			for(int i=0; i<addressList.size(); i++){
+				if(addressList.get(i).getIsDefault() == 1){
+					address = addressList.get(i);
+					break;
+				}
+			}
+		}
+		if(address == null){
+			address = addressList.get(0);
+		}
+	%>
+		defaultAddress("<%= address.getProv() %>", "<%= address.getCity() %>", "<%= address.getDetails() %>", "<%= address.getZip() %>", "<%= address.getName() %>", "<%= address.getPhone() %>", "<%= address.getId() %>");
+	<%
+	}else{
+	%>
+		defaultAddress("江苏省", "南京市", "江苏省南京市鼓楼区汉口路南京大学", "210000", "六五四", "15850551711", "");
+	<%
+	}
+	%>
+	
+	function defaultAddress(prov, city, details, zip, name, phone, id){
+		$("#province").val(prov);
+		$("#province").trigger("change");
+		$("#city").val(city);
+		$("#detailedAddress").val(details);
+		$("#txt_zipcode").val(zip);
+		$("#txt_name").val(name);
+		$("#txt_contact").val(phone);
+		$("#addressId").val(id);
 	}
 </script>
 	

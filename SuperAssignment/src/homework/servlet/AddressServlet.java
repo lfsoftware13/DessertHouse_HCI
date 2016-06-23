@@ -51,15 +51,9 @@ public class AddressServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
 		int userId = (int)session.getAttribute("user");
+		System.out.println(userId);
 		List<Address> addressList = addressService.findAddress(userId);
-		Address address = new Address();
-		address.setId(12321);
-		address.setName("六五四");
-		address.setProv("北京市");
-		address.setCity("北京");
-		address.setPhone("1232181279");
-		address.setDetails("详细地址");
-		session.setAttribute("defaultAddress", address);
+		session.setAttribute("addressList", addressList);
 		response.sendRedirect(request.getContextPath() + "/jsp/address.jsp");
 	}
 
@@ -73,17 +67,24 @@ public class AddressServlet extends HttpServlet {
 		switch(action){
 		case "add":
 			address = this.getAddressFromRequest(request);
-			addressService.addAddress(0, address.getName(), address.getProv(), address.getCity(), address.getDetails(), address.getZip(), address.getPhone(), address.getIsDefault() == 1? true: false);
+			addressService.addAddress(address.getMemberid(), address.getName(), address.getProv(), address.getCity(), address.getDetails(), address.getZip(), address.getPhone(), address.getIsDefault() == 1? true: false);
+			System.out.println("add");
 			break;
 		case "modify":
 			address = this.getAddressFromRequest(request);
 			addressService.updateAddress(address.getId(), address.getName(), address.getProv(), address.getCity(), address.getDetails(), address.getZip(), address.getPhone(), address.getIsDefault() == 1? true: false);
+			System.out.println("modify");
 			break;
 		case "delete":
 			String id = request.getParameter("addressId");
 			addressService.deleteAddress(Integer.parseInt(id));
+			System.out.println("delete");
 			break;
 		}
+		HttpSession session = request.getSession();
+		int userId = (int)session.getAttribute("user");
+		List<Address> addressList = addressService.findAddress(userId);
+		session.setAttribute("addressList", addressList);
 		response.getWriter().print(returnMessage);
 	}
 	
@@ -91,15 +92,25 @@ public class AddressServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 		Address address  = new Address();
 		String id = request.getParameter("id");
-		String userId = "?????????????";
+		int userId = (int)session.getAttribute("user");
 		String province = request.getParameter("province");
 		String city = request.getParameter("city");
 		String detailedAddr = request.getParameter("detailedAddr");
 		String zipcode = request.getParameter("zipcode");
 		String name = request.getParameter("name");
 		String phone = request.getParameter("phone");
-		boolean isDefault = Boolean.getBoolean(request.getParameter("idDefault"));
+		boolean isDefault = Boolean.getBoolean(request.getParameter("isDefault"));
 		System.out.println(id + " " + province + " " + city + " " + detailedAddr + " " + zipcode + " " + name + " " + phone + " " + isDefault);
+		System.out.println(userId);
+		address.setCity(city);
+		address.setDetails(detailedAddr);
+		address.setId(0);
+		address.setIsDefault(isDefault ? 1 : 0);
+		address.setMemberid(userId);
+		address.setName(name);
+		address.setPhone(phone);
+		address.setProv(province);
+		address.setZip(zipcode);
 		return address;
 	}
 

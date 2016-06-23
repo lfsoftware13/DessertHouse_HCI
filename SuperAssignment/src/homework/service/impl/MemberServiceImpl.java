@@ -87,7 +87,7 @@ public class MemberServiceImpl implements MemberService {
 		mem.setName(account);
 		mem.setImage("");
 		mem.setMail("");
-		mem.setNickname("");
+		mem.setNickname(account);
 		mem.setPhone("");
 		mem.setSex("");
 		mem.setAge(0);

@@ -18,7 +18,7 @@ public interface AddressService {
 	 * @param isDefault	是否默认
 	 * @return	操作是否成功
 	 */
-	public boolean addAddress(int memberid, String name, String prov, String city, String details, String zip, String phone, boolean isDefault);
+	public int addAddress(int memberid, String name, String prov, String city, String details, String zip, String phone, boolean isDefault);
 	
 	/**
 	 * @param addressid	地址id
