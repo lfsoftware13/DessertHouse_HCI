@@ -48,7 +48,6 @@ public class RegistServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String username = request.getParameter("id");
 		String password = request.getParameter("password");
-		memberService.register(username, password);
 		int userId = memberService.login(username, password);
 		HttpSession session = request.getSession();
 		session.setAttribute("user", userId);
@@ -59,8 +58,10 @@ public class RegistServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		String username = request.getParameter("id");
+		String password = request.getParameter("password");
+		boolean success = memberService.register(username, password);
+		response.getWriter().print(success);
 	}
 
 }

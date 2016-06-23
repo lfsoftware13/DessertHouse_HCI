@@ -62,7 +62,7 @@
 					</div>
 					<div class="my-modal-footer">
 						<span></span>
-						<button class="btn btn-default" id="btn_login" style = "margin-left:200px;">登录</button>
+						<button class="btn btn-default" id="btn_login">登录</button>
 					</div>
 				</div>
 				<div class="tab-pane fade" id="regist">
@@ -124,7 +124,19 @@ $("#btn_login").click(function(){
 	}else if(password == ""){
 		$("#login .my-modal-footer").find("span").html("请输入密码");
 	}else{
-		$("#form_login").submit();
+		$.ajax({
+			type: "post",
+			url: "../LoginServlet?id=" + username + "&password=" + password,
+			success: function(msg){
+				if(msg == -1){
+					$("#login .my-modal-footer").find("span").html("用户名不存在");
+				}else if(msg == -2){
+					$("#login .my-modal-footer").find("span").html("密码错误");
+				}else{
+					window.location = "../LoginServlet?id=" + username + "&password=" + password;
+				}
+			}
+		});
 	}
 });
 
@@ -141,7 +153,17 @@ $("#btn_regist").click(function(){
 	}else if(password != password2){
 		$("#regist .my-modal-footer").find("span").html("两次密码不一致");
 	}else{
-		$("#form_regist").submit();
+		$.ajax({
+			type: "post",
+			url: "../RegistServlet?id=" + username + "&password=" + password,
+			success: function(success){
+				if(success == "false"){
+					$("#regist .my-modal-footer").find("span").html("用户名已存在");
+				}else{
+					window.location = "../RegistServlet?id=" + username + "&password=" + password;
+				}
+			}
+		});
 	}
 });
 </script>
