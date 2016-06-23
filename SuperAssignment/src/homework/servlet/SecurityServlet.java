@@ -73,7 +73,8 @@ public class SecurityServlet extends HttpServlet {
 		case "password":
 			String oldVal = request.getParameter("old");
 			System.out.println(action + "   " + oldVal + "   " + newVal);
-			memberService.updatePassword(userId, oldVal, newVal);
+			boolean success = memberService.updatePassword(userId, oldVal, newVal);
+			response.getWriter().print(success);
 			break;
 		default:
 			System.out.println("invalid parameters");

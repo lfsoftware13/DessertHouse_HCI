@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="java.io.IOException" %>
 <%@ page import="java.util.List" %>
 <%@ page import="homework.model.Orderesd" %>
 <%@ page import="homework.model.OrderItem" %>
@@ -51,7 +52,7 @@
 			%>
 			<div class="order">
 				<div class="order_title">
-					<span class="bold"><%= order.getTotal() %></span>
+					<span class="bold"><%= order.getTime() %></span>
 					<span>订单号：<span class="orderId"><%= order.getId() %></span></span>
 					<span class="del">
 						<i class="fa fa-trash-o fa-lg deleteOrder"></i>
@@ -62,7 +63,7 @@
 						<%
 						List<OrderItem> items = order.getItems();
 						for(int j=0; j<order.getItems().size(); j++){
-							OrderItem item = items.get(i);
+							OrderItem item = items.get(j);
 						%>
 						<tr class="orderline">
 							<td class="bookinfo"><img src="<%= request.getContextPath() %>/img/cpp.jpg" alt="cover"><%= item.getBook() %></td>
@@ -96,7 +97,10 @@ $(".order .deleteOrder").click(function(){
 	var orderId = $(this).parent().parent().find("span.orderId").html();
 	$.ajax({
 		type: "post",
-		url: "../OrdersServlet?action=delete&orderId=" + orderId
+		url: "../OrdersServlet?action=delete&orderId=" + orderId,
+		success: function(){
+			window.location = "../OrdersServlet?page=<%= request.getParameter("page") %>";
+		}
 	});
 	
 });

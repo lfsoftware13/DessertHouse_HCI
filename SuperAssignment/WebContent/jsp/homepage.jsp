@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="java.util.List" %>
+<%@ page import="homework.model.Book" %>
+<%@ page import="homework.model.Topic" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -117,14 +120,18 @@
 			<p class="title">新书速递</p>
 			<div class="scroll_box">
 				<div class="scroll_new_books">
-					<%for(int i=0; i<3; i++){ %>
+					<%
+					List<Book> newBooks = (List<Book>)session.getAttribute("newBooks");
+					for(int i=0; i<newBooks.size(); i++){
+						Book book = newBooks.get(i);
+					%>
 					<div class="new_book" value="<%=i %>">
-						<a href="../BookServlet?id=12345">
-						<img src="../img/vc.jpg">
+						<a href="../BookServlet?id=<%= book.getId() %>">
+						<img src="..<%= book.getImage() %>">
 						<p class="introduction">
-							为了你我愿意热爱整个世界<%=i %><br>
-							xx著&nbsp&nbsp&nbsp&nbspxx出版社<br>
-							<font>¥20.0</font>
+							<%= book.getName() %><br>
+							<%= book.getAuthor() %>著&nbsp&nbsp&nbsp&nbsp<%= book.getPublisher() %><br>
+							<font>¥<%= book.getPrice() %></font>
 						</p>
 						</a>
 					</div>

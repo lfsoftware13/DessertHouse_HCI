@@ -163,14 +163,12 @@ $(".tbl_address").on("click", "a.deleteline", function(){
 		var name = $("#txt_name").val();
 		var phone = $("#txt_contact").val();
 		var isDefault = $("#set_default").prop("checked");
-		alert(isDefault);
 		var address = new Address(addressId, province, city, detailedAddr, zipcode, name, phone, isDefault);
 		var action = "add";
 		if(addressId != ""){
 			action = "modify";
 			address.id = $("#addressId").val();
 		}
-		alert(action);
 		$.ajax({
 			type: "post",
 			url: "../AddressServlet?action=" + action,
@@ -216,7 +214,17 @@ $(".tbl_address").on("click", "a.deleteline", function(){
 	}
 	
 	function modifyAddressLine(address){
-		
+		var addressId = $("#addressId").val();
+		$(".tbl_address tr:gt(0)").each(function(){
+			var id = $(this).find("td.addressId").html();
+			if(id == addressId){
+				$(this).find("td:eq(0)").html($("#txt_name").val());
+				$(this).find("td:eq(1)").html($("#province option:selected").text() + $("#city option:selected").text());
+				$(this).find("td:eq(2)").html($("#detailedAddress").val());
+				$(this).find("td:eq(3)").html($("#txt_zipcode").val());
+				$(this).find("td:eq(4)").html($("#txt_contact").val());
+			}
+		});
 	}
 	
 	<%

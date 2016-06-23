@@ -44,12 +44,12 @@
 		%>
 			<div class="addressItem selected">
 				<input type="hidden" class="addressId" value="<%= address.getId() %>">
-				<p><%= address.getDetails() %></p>
+				<p style="padding-top: 10px;"><%= address.getDetails() %></p>
 			</div>
 		<%}else{ %>
 			<div class="addressItem">
 				<input type="hidden" class="addressId" value="<%= address.getId() %>">
-				<p><%= address.getDetails() %></p>
+				<p style="padding-top: 10px;"><%= address.getDetails() %></p>
 			</div>
 			<%}
 		}%>
@@ -185,7 +185,7 @@ $(".submit .div_btn").click(function(){
 	var list = new Array();
 	$(".tbl_orderItems tr:gt(0)").each(function(i){
 		var bookId = $(this).find("td.bookId").html();
-		var bookName = "???";
+		var bookName = $(this).find("td.bookinfo").find("a").html();
 		var price = $(this).find("td.price").html();
 		var quantity = $(this).find("td.num").find("input").val();
 		alert(bookId + " " + bookName + " " + price + " " + quantity);
