@@ -8,12 +8,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import homework.dao.AddressDao;
+import homework.dao.CartDao;
 import homework.dao.MemberDao;
 import homework.dao.OrderDao;
 import homework.model.Address;
+import homework.model.Cart;
+import homework.model.CartItem;
 import homework.model.Member;
-import homework.model.Orderesd;
 import homework.model.OrderItem;
+import homework.model.Orderesd;
 import homework.service.OrderService;
 
 @Service
@@ -25,6 +28,8 @@ public class OrderServiceImpl implements OrderService {
 	AddressDao addressDao;
 	@Autowired
 	MemberDao memberDao;
+	@Autowired
+	CartDao cartDao;
 	
 	@Override
 	public List<Orderesd> getOrder(int memberid, int page) {
@@ -70,6 +75,23 @@ public class OrderServiceImpl implements OrderService {
 				return false;
 			}
 		}
+		
+		Cart cart=cartDao.findByMemberid(memberid);
+		if(cart==null) return true;
+		List<CartItem> items=cartDao.findItemByCart(cart.getId());
+		
+		for(int i=0;i<items.size();i++){
+			for(int j=0;j<list.size();j++){
+				if(items.get(i).getBookid()==list.get(j).getBookid()){
+					items.get(i).setNumber(items.get(i).getNumber()-list.get(j).getNumber());
+					if(items.get(i).getNumber()<=0){
+						cartDao.deleteItem(items.get(i).getId());
+					}
+					break;
+				}
+			}
+		}
+		
 		return true;
 	}
 	
