@@ -51,8 +51,12 @@
 	<div class="search_right">
 		<div class="result_filter">
 			<div class = "filter_line filter_border first_line line">
+			<%
+			List<Book> books1=(List<Book>)session.getAttribute("search_books");
+			int len=books1.size();
+			%>
 				<span id = "search_type" value = "<%= session.getAttribute("kw") %>"></span>
-				<span id = "book_num">相关书籍123本</span>
+				<span id = "book_num">相关书籍<%= books1.size()%>本</span>
 			</div>
 			<div class="filter_line filter_border" id="filter_publish">
 				<span class="title">出版社：</span>
@@ -121,7 +125,7 @@
 				Book book = bookList.get(i);
 			%>
 				<div class="book" id="<%= book.getId() %>">
-					<a href="../BookServlet?id=<%= book.getId() %>"><img class="cover" src="<%= book.getImage() %>" alt="cover"></a><br>
+					<a href="../BookSer	vlet?id=<%= book.getId() %>"><img class="cover" src="..<%= book.getImage() %>" alt="cover"></a><br>
 					<p><a href="../BookServlet?id=<%= book.getId() %>"><%= book.getName() %></a><br>
 					<a href=""><%= book.getAuthor() %></a>&nbsp&nbsp<a href=""><%= book.getPublisher() %></a><br>
 					<font>¥<%= book.getPrice() %></font>

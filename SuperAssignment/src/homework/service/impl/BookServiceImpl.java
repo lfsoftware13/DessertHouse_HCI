@@ -61,9 +61,9 @@ public class BookServiceImpl implements BookService {
 		}
 		
 		switch(sort){
-		case 1:res=sortScore(res);break;
-		case 2:res=sortPrice(res);break;
-		case 3:res=sortDiscount(res);break;
+		case 0:res=sortScore(res);break;
+		case 1:res=sortPrice(res);break;
+		case 2:res=sortDiscount(res);break;
 		}
 		
 		ArrayList<Book> res1=new ArrayList<Book>();
