@@ -16,7 +16,7 @@ public class AddressServiceImpl implements AddressService {
 	AddressDao addressDao;
 	
 	@Override
-	public boolean addAddress(int memberid, String name, String prov, String city, String details, String zip,
+	public int addAddress(int memberid, String name, String prov, String city, String details, String zip,
 			String phone, boolean isDefault) {
 		// TODO Auto-generated method stub
 		Address add=new Address();
@@ -38,8 +38,9 @@ public class AddressServiceImpl implements AddressService {
 		if(l.size()<=0){
 			add.setIsDefault(1);
 		}
+		addressDao.save(add);
 		
-		return addressDao.save(add);
+		return add.getId();
 	}
 
 	@Override
