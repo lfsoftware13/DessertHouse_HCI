@@ -15,7 +15,7 @@ public interface BookService {
 	 * @param sift_time	筛选时间
 	 * @param sift_price	筛选价格
 	 * @param sort	排序: 1 评分，2 价格，3 折扣
-	 * @param hasStock	是否有货
+	 * @param hasStock	是否需要有货
 	 * @param page	分页
 	 * @return	图书列表
 	 */

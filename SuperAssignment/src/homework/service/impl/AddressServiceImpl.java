@@ -33,6 +33,12 @@ public class AddressServiceImpl implements AddressService {
 		else{
 			add.setIsDefault(0);
 		}
+		
+		List<Address> l=addressDao.findByMember(memberid);
+		if(l.size()<=0){
+			add.setIsDefault(1);
+		}
+		
 		return addressDao.save(add);
 	}
 

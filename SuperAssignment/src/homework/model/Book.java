@@ -26,9 +26,9 @@ public class Book implements Serializable {
 
 	private String introduction;
 
-	private int level1;
+	private String level1;
 
-	private int level2;
+	private String level2;
 
 	private String name;
 
@@ -135,19 +135,19 @@ public class Book implements Serializable {
 		this.introduction = introduction;
 	}
 
-	public int getLevel1() {
+	public String getLevel1() {
 		return this.level1;
 	}
 
-	public void setLevel1(int level1) {
+	public void setLevel1(String level1) {
 		this.level1 = level1;
 	}
 
-	public int getLevel2() {
+	public String getLevel2() {
 		return this.level2;
 	}
 
-	public void setLevel2(int level2) {
+	public void setLevel2(String level2) {
 		this.level2 = level2;
 	}
 
