@@ -22,7 +22,7 @@ a.new_address:hover{color:#718dbf; text-decoration: none;}
 .tbl_address tr{}
 .tbl_address tr.tbl_head{font-size: 18px;background-color: #556589;font-weight: lighter;}
 .tbl_address tr.addressline{height: 40px; line-height: 40px; font-size: 13px; background-color: #F5F5F5;}
-.tbl_address td{min-width: 150px; color: black;}
+.tbl_address td{min-width: 120px; color: black;}
 .tbl_address .tbl_head td{color: white;}
 .tbl_address .addressline td{color: black;}
 a.deleteline{color: #556589}

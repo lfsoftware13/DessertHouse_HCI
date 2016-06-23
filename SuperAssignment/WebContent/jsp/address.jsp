@@ -95,9 +95,9 @@
 					<tr class="addressline">
 						<td>许珂磊</td>
 						<td>江苏南京</td>
-						<td>南京市鼓楼区汉口路xx号</td>
+						<td style = "width:270px">南京市鼓楼区汉口路xx号</td>
 						<td>222222</td>
-						<td>123****890</td>
+						<td style = "width:130px;">123****890</td>
 						<td><a class="deleteline">
 						
 						<i class="fa fa-trash-o fa-lg"></i>
