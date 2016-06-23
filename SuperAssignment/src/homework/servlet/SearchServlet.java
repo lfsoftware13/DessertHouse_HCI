@@ -130,6 +130,9 @@ public class SearchServlet extends HttpServlet {
 		List<Book> bookList = bookService.search(i_type, keyword, Integer.parseInt(fPublish), Integer.parseInt(fPublishDate), Integer.parseInt(fPrice), Integer.parseInt(sortBy), Boolean.parseBoolean(fAvailable), Integer.parseInt(page));
 		session.setAttribute("search_books", bookList);
 		
+		List<Book> recommend = bookService.bookrecommend();
+		session.setAttribute("recommend", recommend);
+		
 		String url = request.getContextPath() + "/jsp/search.jsp";
 		if(page != null){
 			url += "?page=" + page;

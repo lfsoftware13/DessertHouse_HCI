@@ -22,3 +22,9 @@ tr.tbl_head{font-size: 20px; font-weight: bold;}
 tr input[type="checkbox"]{width: 15px; height: 15px;}
 
 .div_btn{font-size: 20px; color: white; line-height: 40px; text-align: center; background-color: #556589; cursor: pointer;}
+
+
+a.normal:link{color: #475A82; text-decoration: none;}
+a.normal:visited{color: #475A82;}
+a.normal:hover{color: #475A82;}
+a.normal:active{color: #475A82;}

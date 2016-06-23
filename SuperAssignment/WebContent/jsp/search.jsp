@@ -31,18 +31,18 @@
 		<div class="search_recommend">
 			<div class="recommend_title">
 				<p class="title">图书推荐</p>
+				<%
+				List<Book> recommend = (List<Book>)session.getAttribute("recommend");
+				for(int i=0; i<3; i++){
+					Book book = recommend.get(i);
+				%>
 				<div class="book_recommend">
-					<a href="../BookServlet?id=book_i"><img src="../image/05.jpg"></a>
-					<p><a href="../BookServlet?id=book_i">深入理解Linux内核</a><br><font>¥79.0</font></p>	
+					<a href="../BookServlet?id=<%= book.getId() %>"><img src="..<%= book.getImage() %>"></a>
+					<p><a href="../BookServlet?id=<%= book.getId() %>"><%= book.getName() %></a><br><font>¥<%= book.getPrice() %></font></p>	
 				</div>
-				<div class="book_recommend">
-					<a href="../BookServlet?id=book_i"><img src="../image/10.jpg"></a>
-					<p><a href="../BookServlet?id=book_i">高性能MySQL</a><br><font>¥68.0</font></p>	
-				</div>
-				<div class="book_recommend">
-					<a href="../BookServlet?id=book_i"><img src="../image/02.jpg"></a>
-					<p><a href="../BookServlet?id=book_i">Visual C++从入门到精通</a><br><font>¥20.0</font></p>	
-				</div>
+				<%
+				}
+				%>
 			</div>
 			
 		</div>

@@ -1,11 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ page import="java.util.List" %>
 <%@ page import="homework.model.Book" %>
+<% Book book = (Book)session.getAttribute("book"); %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Visual C++</title>
+<title><%= book.getName() %></title>
 
 <link
 	href="http://cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css"
@@ -34,14 +36,15 @@
 	<div class="lt_container">
 		<%@ include file="/jsp/topnav.jsp"%>
 		<%@ include file="/jsp/logoline.jsp"%>
-		<%@ include file="/jsp/nav_route.jsp"%>
+<div class="route">
+	<p><a href="../HomepageServlet">首页</a> > <a href="../SearchServlet?type=topic&kw=从零开始学html">从零开始学html</a> > <%= book.getName() %></p>
+</div>
 
 		<div class="top_part">
 			<div class="pictures">
-				<img src="../image/10.jpg">
+				<img src="..<%= book.getImage() %>">
 			</div>
 			<div class="details">
-			<% Book book = (Book)session.getAttribute("book"); %>
 				<input type="hidden" id="bookId" value="<%= book.getId() %>">
 				<div class="book_title"><%= book.getName() %></div>
 				<div class="book_introduction">
@@ -96,12 +99,14 @@
 				<p class="title">看过本商品的人还看了</p>
 				<div class="booklist">
 					<%
-					for(int i=0; i<5; i++) {
+					List<Book> similar = (List<Book>)session.getAttribute("similar");
+					for(int i=0; i<4; i++) {
+						Book b = similar.get(i);
 					%>
 					<div class="book">
-						<a href="../BookServlet?id=123456789"> <img src="../img/vc.jpg">
+						<a href="../BookServlet?id=<%= b.getId() %>"> <img src="..<%= b.getImage() %>">
 							<p>
-								Visual C++从入门到精通<br> <font>¥20.0</font><br> xx著
+								<%= b.getName() %><br> <font>¥<%= b.getPrice() %></font><br> <%= b.getAuthor() %>著
 							</p>
 						</a>
 					</div>
@@ -236,6 +241,16 @@
 							</div>
 						</div>
 						<%
+						String[] comments = new String[]{
+								"好评！",
+								"这本书太好看了！",
+								"受用一生的一本书。",
+								"质量很好，给个赞",
+								"还行，质量一般，书是一本好书。",
+								"书送过来的时候已经破掉了，质量太差，还好客服给退了。",
+								"很好很不错，下次还来买。",
+								"很好很强大，很全面，是自己想要的，好评"
+						};
 						for (int i = 0; i < 8; i++) {
 						%>
 						<div class="single_comment">
@@ -246,7 +261,7 @@
 							</div>
 							<div class="right">
 								<div class="right1">
-									<p>书很好</p>
+									<p><%= comments[i] %></p>
 								</div>
 								<div class="right2">2016年6月1日</div>
 							</div>

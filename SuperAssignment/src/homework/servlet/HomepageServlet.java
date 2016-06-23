@@ -19,6 +19,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import homework.model.Book;
 import homework.model.Classification;
 import homework.model.Topic;
+import homework.service.BookService;
 import homework.service.TopicService;
 
 /**
@@ -30,6 +31,7 @@ public class HomepageServlet extends HttpServlet {
 	
 	private static ApplicationContext appliationContext;
 	private TopicService topicService;
+	private BookService bookService;
 	
 	public void init(ServletConfig config)throws ServletException{
 
@@ -37,6 +39,7 @@ public class HomepageServlet extends HttpServlet {
 
 	    appliationContext=new ClassPathXmlApplicationContext("applicationContext.xml"); 
 	    topicService=(TopicService)appliationContext.getBean("topicService");
+	    bookService=(BookService)appliationContext.getBean("bookService");
 	}
        
     /**
@@ -52,12 +55,16 @@ public class HomepageServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		List<Book> newBooks = topicService.newbook();
-		//List<Topic> hotTopics = topicService.hotTopic();
+		List<Topic> hotTopics = topicService.hotTopic();
+		List<Book> rankings1 = bookService.bookrecommend();
+		List<Book> rankings2 = bookService.bookrecommend();
 		List<Classification> classifications = this.getClassification();
 		
 		HttpSession session = request.getSession();
 		session.setAttribute("newBooks", newBooks);
-		//session.setAttribute("hotTopics", hotTopics);
+		session.setAttribute("hotTopics", hotTopics);
+		session.setAttribute("rankings", rankings1);
+		session.setAttribute("rankings", rankings2);
 		session.setAttribute("classifications", classifications);
 		
 		response.sendRedirect(request.getContextPath() + "/jsp/homepage.jsp");

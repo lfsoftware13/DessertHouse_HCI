@@ -66,7 +66,7 @@
 							OrderItem item = items.get(j);
 						%>
 						<tr class="orderline">
-							<td class="bookinfo"><img src="<%= request.getContextPath() %>/img/cpp.jpg" alt="cover"><%= item.getBook() %></td>
+							<td class="bookinfo"><a href="../BookServlet?id=<%= item.getId() %>" class="normal"><img src="..<%= item.getImage() %>" alt="cover"><%= item.getBook() %></a></td>
 							<td class="narrow price"><%= item.getPrice() %></td>
 							<td class="narrow"><%= item.getNumber() %></td>
 						</tr>

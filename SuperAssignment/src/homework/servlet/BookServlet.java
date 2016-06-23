@@ -51,10 +51,14 @@ public class BookServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String id = request.getParameter("id");
+		if(Integer.parseInt(id) > 3){
+			id = "1";
+		}
 		HttpSession session = request.getSession();
 		Book book = bookService.getBook(Integer.parseInt(id));
-		//Book book = new Book();
+		List<Book> similar = bookService.getSimilarBook(Integer.parseInt(id));
 		session.setAttribute("book", book);
+		session.setAttribute("similar", similar);
 		response.sendRedirect(request.getContextPath() + "/jsp/book.jsp");
 	}
 

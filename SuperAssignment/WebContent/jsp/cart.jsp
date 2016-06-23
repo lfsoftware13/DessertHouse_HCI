@@ -46,7 +46,7 @@
 					CartItem item = cart.get(i);
 				%>
 				<tr class="cartline">
-					<td class="select"><input type="checkbox" name="choose"><img src="<%= request.getContextPath() %>/img/cpp.jpg" alt="cover"></td>
+					<td class="select"><input type="checkbox" name="choose"><img src="..<%= item.getImage() %>" alt="cover"></td>
 					<td class="bookinfo"><a href="../BookServlet?bookId=<%= item.getBookid() %>"><%= item.getBook() %></a></td>
 					<td class = "price price_info"><%= item.getPrice() %></td>
 
