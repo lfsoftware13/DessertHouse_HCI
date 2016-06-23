@@ -233,7 +233,6 @@ $(document).ready(function(){
 		var price = $("input[name='checkbox_price']:checked:eq(0)").val();
 		var sort = $("button[name='btn_sort'].active").val();
 		var available = $("#checkbox_show_available_only").prop("checked");
-		alert(publish + " " + publishDate + " " + price + " " + sort + " " + available);
 		window.location = "../SearchServlet?type=" + type + "&kw=" + kw + "&f_publish=" + publish + "&f_pd=" + publishDate + "&f_price=" + price + "&sort=" + sort + "&f_available=" + available;
 	}
 });

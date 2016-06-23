@@ -31,7 +31,7 @@ $(".menu-item", this).css("background-image", bgImg);
 	%>
 		<li>
 			<div class="menu-item classification"> 
-				<span><a href=""><%= c1.c1 %></a></span> 
+				<span><a href="../SearchServlet?type=c1&kw=<%= c1.c1 %>"><%= c1.c1 %></a></span> 
 			</div> 
 			<div class="menu-panel"> 
 				<ul>
@@ -43,7 +43,7 @@ $(".menu-item", this).css("background-image", bgImg);
 				%>
 							<div class="link-wrapper">
 								<span>|</span>
-								<a href="#"><%= c2 %></a>
+								<a href="../SearchServlet?type=c2&kw=<%= c2 %>"><%= c2 %></a>
 							</div> 
 				<%} %>
 						</div>

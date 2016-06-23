@@ -172,6 +172,9 @@ $(".content input[type='password']").keyup(function(){
 });
 
 $("#btn_mod_email").click(function(){
+	if($(".div_mod_email .error_msg").html() != "输入一致"){
+		return;
+	}
 	var email1 = $("#text_new_email1").val();
 	var email2 = $("#text_new_email2").val();
 	$.ajax({
@@ -184,6 +187,9 @@ $("#btn_mod_email").click(function(){
 });
 
 $("#btn_mod_phone").click(function(){
+	if($(".div_mod_phone .error_msg").html() != "输入一致"){
+		return;
+	}
 	var phone1 = $("#text_new_phone1").val();
 	var phone2 = $("#text_new_phone2").val();
 	$.ajax({
@@ -196,14 +202,21 @@ $("#btn_mod_phone").click(function(){
 });
 
 $("#btn_mod_password").click(function(){
+	if($(".div_mod_password .error_msg").html() != "输入一致"){
+		return;
+	}
 	var old_password = $("#text_old_password").val();
 	var password1 = $("#text_new_password1").val();
 	var password2 = $("#text_new_password2").val();
 	$.ajax({
 		type: 'post',
 		url: '../SecurityServlet?action=password&old=' + old_password + '&new=' + password1,
-		success: function(){
-			window.location = "../SecurityServlet";
+		success: function(msg){
+			if(msg == "false"){
+				alert("密码错误");
+			}else{
+				window.location = "../SecurityServlet";
+			}
 		}
 	});
 });

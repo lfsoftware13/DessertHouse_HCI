@@ -57,7 +57,7 @@ public class OrdersServlet extends HttpServlet {
 		System.out.println(page);
 		
 		List<Orderesd> orders = orderService.getOrder(userId, Integer.parseInt(page));
-		System.out.println(orders.size());
+		System.out.println(orders.size() + "***********");
 		session.setAttribute("orders", orders);
 		
 		response.sendRedirect(request.getContextPath() + "/jsp/myorders.jsp?page=" + page);
@@ -72,7 +72,7 @@ public class OrdersServlet extends HttpServlet {
 			String orderId = request.getParameter("orderId");
 			orderService.deleteOrder(Integer.parseInt(orderId));
 		}
-		response.sendRedirect(request.getHeader("Referer"));
+		doGet(request, response);
 	}
 
 }
