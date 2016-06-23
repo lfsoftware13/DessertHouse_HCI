@@ -93,6 +93,9 @@ public class AddressServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 		Address address  = new Address();
 		String id = request.getParameter("id");
+		if(id.equals("")){
+			id = "0";
+		}
 		int userId = (int)session.getAttribute("user");
 		String province = request.getParameter("province");
 		String city = request.getParameter("city");
@@ -105,7 +108,7 @@ public class AddressServlet extends HttpServlet {
 		System.out.println(userId);
 		address.setCity(city);
 		address.setDetails(detailedAddr);
-		address.setId(0);
+		address.setId(Integer.parseInt(id));
 		address.setIsDefault(isDefault ? 1 : 0);
 		address.setMemberid(userId);
 		address.setName(name);

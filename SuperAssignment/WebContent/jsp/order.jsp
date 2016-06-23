@@ -1,7 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="java.util.List" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="homework.model.OrderItem" %>
+<%@ page import="homework.model.Address" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -34,11 +36,23 @@
 		</div>
 		</div>
 		<div class = "address_list">
-		<%for(int i=0; i<5; i++){ %>
-			<div class="addressItem">
-				<p>江苏省南京市鼓楼区汉口路22号陶园1舍3楼313室</p>
+		<%
+		List<Address> addressList = (List<Address>)session.getAttribute("addressList");
+		for(int i=0; i<addressList.size(); i++){
+			Address address = addressList.get(i);
+			if(address.getIsDefault() == 1){
+		%>
+			<div class="addressItem selected">
+				<input type="hidden" class="addressId" value="<%= address.getId() %>">
+				<p><%= address.getDetails() %></p>
 			</div>
-			<%} %>
+		<%}else{ %>
+			<div class="addressItem">
+				<input type="hidden" class="addressId" value="<%= address.getId() %>">
+				<p><%= address.getDetails() %></p>
+			</div>
+			<%}
+		}%>
 		</div>
 		<div style="clear: both"></div>
 		
@@ -86,7 +100,7 @@
 
 					<td class = "total total_info"><%= item.getTotal() %></td>
 					<td><a class="deleteline">放回购物车</a></td>
-					<td style="display: none;"><%= item.getBookid() %></td>
+					<td style="display: none;" class="bookId"><%= item.getBookid() %></td>
 				</tr>
 				<%} %>
 			</table>
@@ -164,6 +178,43 @@ $("a.deleteline").click(function(){
 	$("#sum").html(sum.toFixed(1));
 	$(this).parent().parent().remove();
 });
+
+$(".submit .div_btn").click(function(){
+	var addressId = $(".address_list .selected").find("input").val();
+	alert(addressId);
+	var list = new Array();
+	$(".tbl_orderItems tr:gt(0)").each(function(i){
+		var bookId = $(this).find("td.bookId").html();
+		var bookName = "???";
+		var price = $(this).find("td.price").html();
+		var quantity = $(this).find("td.num").find("input").val();
+		alert(bookId + " " + bookName + " " + price + " " + quantity);
+		var orderItem = new OrderItem(bookId, bookName, price, quantity);
+		list[i] = orderItem;
+	});
+	var order = new OrderList(list);
+	alert(JSON.stringify(order));
+	$.ajax({
+		type: "post",
+		url: "../PurchaseServlet?addressId=" + addressId + "&order=" + JSON.stringify(order),
+		success: function(){
+			alert("购买成功");
+		}
+	});
+});
+
+function OrderItem(bookId, bookName, price, quantity){
+	this.bookId = bookId;
+	this.bookName = bookName;
+	this.price = price;
+	this.quantity = quantity;
+	this.sum = price * quantity;
+}
+
+function OrderList(list){
+	this.list = list;
+}
+
 </script>
 
 </body>

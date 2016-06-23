@@ -61,8 +61,6 @@ public class PurchaseServlet extends HttpServlet {
 		String json_orderList = request.getParameter("orderList");
 		System.out.println(json_orderList);
 		ArrayList<OrderItem> orderList = parseOrderList(json_orderList);
-		System.out.println(json_orderList);
-		session.setAttribute("addressList", null);
 		session.setAttribute("orderList", orderList);
 		response.sendRedirect(request.getContextPath() + "/jsp/order.jsp");
 	}
@@ -73,8 +71,12 @@ public class PurchaseServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
 		int userId = (int)session.getAttribute("user");
-		orderService.addOrder(0, new ArrayList<OrderItem>(), 0, userId);
-		doGet(request, response);
+		String addressId = request.getParameter("addressId");
+		String json_orderList = request.getParameter("order");
+		System.out.println(json_orderList);
+		ArrayList<OrderItem> order = this.parseOrderList(json_orderList);
+		double total = this.getTotal(order);
+		orderService.addOrder(Integer.parseInt(addressId), order, total, userId);
 	}
 	
 	private ArrayList<OrderItem> parseOrderList(String json_orderList){
@@ -97,6 +99,14 @@ public class PurchaseServlet extends HttpServlet {
 			list.add(item);
 		}
 		return list;
+	}
+	
+	private double getTotal(ArrayList<OrderItem> list){
+		double total = 0;
+		for(OrderItem item: list){
+			total += item.getPrice() + item.getNumber();
+		}
+		return total;
 	}
 
 }

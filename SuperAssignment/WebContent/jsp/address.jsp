@@ -168,7 +168,9 @@ $(".tbl_address").on("click", "a.deleteline", function(){
 		var action = "add";
 		if(addressId != ""){
 			action = "modify";
+			address.id = $("#addressId").val();
 		}
+		alert(action);
 		$.ajax({
 			type: "post",
 			url: "../AddressServlet?action=" + action,
@@ -218,7 +220,7 @@ $(".tbl_address").on("click", "a.deleteline", function(){
 	}
 	
 	<%
-	if(addressList != null){
+	if(addressList.size() > 0){
 		Address address = null;
 		if(addressList.size() > 0){
 			for(int i=0; i<addressList.size(); i++){
