@@ -1,5 +1,6 @@
 package homework.dao.impl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.hibernate.Criteria;
@@ -10,7 +11,6 @@ import org.springframework.stereotype.Repository;
 
 import homework.dao.BaseDao;
 import homework.dao.CartDao;
-import homework.model.Booktopic;
 import homework.model.Cart;
 import homework.model.CartItem;
 
@@ -98,7 +98,7 @@ public class CartDaoImpl implements CartDao {
 		List list=c.list();
 		session.close();
 		if(list.size()<=0){
-			return null;
+			return new ArrayList<CartItem>();
 		}
 		return list;
 	}

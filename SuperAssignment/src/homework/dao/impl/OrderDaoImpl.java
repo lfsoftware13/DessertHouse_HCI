@@ -1,5 +1,6 @@
 package homework.dao.impl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.hibernate.Criteria;
@@ -10,8 +11,8 @@ import org.springframework.stereotype.Repository;
 
 import homework.dao.BaseDao;
 import homework.dao.OrderDao;
-import homework.model.Orderesd;
 import homework.model.OrderItem;
+import homework.model.Orderesd;
 
 @Repository
 public class OrderDaoImpl implements OrderDao {
@@ -42,7 +43,7 @@ public class OrderDaoImpl implements OrderDao {
 		List list=c.list();
 		session.close();
 		if(list.size()<=0){
-			return null;
+			return new ArrayList<Orderesd>();
 		}
 		return list;
 	}
@@ -97,7 +98,7 @@ public class OrderDaoImpl implements OrderDao {
 		List list=c.list();
 		session.close();
 		if(list.size()<=0){
-			return null;
+			return new ArrayList<OrderItem>();
 		}
 		return list;
 	}

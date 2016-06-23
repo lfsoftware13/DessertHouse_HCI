@@ -1,5 +1,6 @@
 package homework.dao.impl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.hibernate.Criteria;
@@ -10,7 +11,6 @@ import org.springframework.stereotype.Repository;
 
 import homework.dao.BaseDao;
 import homework.dao.CommentDao;
-import homework.model.Booktopic;
 import homework.model.Comment;
 
 @Repository
@@ -42,7 +42,7 @@ public class CommentDaoImpl implements CommentDao {
 		List list=c.list();
 		session.close();
 		if(list.size()<=0){
-			return null;
+			return new ArrayList<Comment>();
 		}
 		return list;
 	}

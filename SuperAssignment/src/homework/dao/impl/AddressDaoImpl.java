@@ -1,5 +1,6 @@
 package homework.dao.impl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.hibernate.Criteria;
@@ -10,7 +11,6 @@ import org.springframework.stereotype.Repository;
 
 import homework.dao.AddressDao;
 import homework.dao.BaseDao;
-import homework.model.Account;
 import homework.model.Address;
 
 @Repository
@@ -42,7 +42,7 @@ public class AddressDaoImpl implements AddressDao {
 		List list=c.list();
 		session.close();
 		if(list.size()<=0){
-			return null;
+			return new ArrayList<Address>();
 		}
 		return list;
 	}
