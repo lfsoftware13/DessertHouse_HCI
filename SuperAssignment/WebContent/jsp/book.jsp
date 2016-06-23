@@ -89,11 +89,6 @@
 					<a><i class="fa fa-share-alt" ></i>&nbsp分享
 					</a>
 				</div>
-<script>
-$(".btn_share a").click(function(){
-	alert('分享成功');
-});
-</script>
 			</div>
 		</div>
 		<div class="bottom_part">
@@ -315,6 +310,35 @@ $(document).ready(function(){
 				url: '../CartServlet?action=add&bookId=' + bookId + '&quantity=' + quantity
 			});
 		}
+	});
+	
+	$(".btn_buyNow").click(function(){
+		var list = new Array();
+		var bookId = $("#bookId").val();
+		var bookName = $("div.book_title").html();
+		var price = $("font.price").html();
+		var quantity = $(".input_quantity").val();
+		var orderItem = new OrderItem(bookId, bookName, price, quantity);
+		list[0] = orderItem;
+		var orderList = new OrderList(list);
+		var str_list = JSON.stringify(orderList).replace(/\+/g, "%2B");
+		window.location = "../PurchaseServlet?orderList=" + str_list;
+	});
+	
+	function OrderItem(bookId, bookName, price, quantity){
+		this.bookId = bookId;
+		this.bookName = bookName;
+		this.price = price;
+		this.quantity = quantity;
+		this.sum = price * quantity;
+	}
+
+	function OrderList(list){
+		this.list = list;
+	}
+	
+	$(".btn_share a").click(function(){
+		alert('分享成功');
 	});
 	
 	

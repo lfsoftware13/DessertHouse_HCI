@@ -126,6 +126,18 @@
 $(".pc_leftnav li:eq(1)").addClass("selected");
 $(".pc_leftnav li:eq(1)").find("a").addClass("selected");
 
+$("a.new_address").click(function(){
+	$("#province").val("北京市");
+	$("#province").trigger("change");
+	$("#city").val("北京");
+	$("#detailedAddress").val("");
+	$("#txt_zipcode").val("");
+	$("#txt_name").val("");
+	$("#txt_contact").val("");
+	$("#addressId").val("");
+	$("#set_default").prop("checked", false);
+});
+
 $(".tbl_address").on("click", "a.deleteline", function(){
 	var row = $(this).parent().parent();
 	var id = row.find("td.addressId").html();
@@ -166,6 +178,7 @@ $(".tbl_address").on("click", "a.deleteline", function(){
 					if(action == "add"){
 						address.id = msg;
 						addAddressLine(address);
+						$("#addressId").val(msg);
 					}else if(action == "modify"){
 						modifyAddressLine(address);
 					}
@@ -221,10 +234,6 @@ $(".tbl_address").on("click", "a.deleteline", function(){
 	%>
 		defaultAddress("<%= address.getProv() %>", "<%= address.getCity() %>", "<%= address.getDetails() %>", "<%= address.getZip() %>", "<%= address.getName() %>", "<%= address.getPhone() %>", "<%= address.getId() %>");
 	<%
-	}else{
-	%>
-		defaultAddress("江苏省", "南京市", "江苏省南京市鼓楼区汉口路南京大学", "210000", "六五四", "15850551711", "");
-	<%
 	}
 	%>
 	
@@ -237,6 +246,7 @@ $(".tbl_address").on("click", "a.deleteline", function(){
 		$("#txt_name").val(name);
 		$("#txt_contact").val(phone);
 		$("#addressId").val(id);
+		$("#set_default").prop("checked", true);
 	}
 </script>
 	
