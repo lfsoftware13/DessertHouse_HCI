@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="homework.model.Member" %>
 
 <%if(session.getAttribute("user") == null){%>
 <div class="topnav">
@@ -15,7 +16,9 @@
 		<span class = "topnav-text" style = "color:white;">]</span>
 	</div>
 </div>
-<%}else{%>
+<%}else{
+	Member userInfo = (Member)session.getAttribute("userInfo");
+%>
 <div class="topnav">
 	<div>
 		<!--向左对齐-->
@@ -27,7 +30,7 @@
 		</a>
 		<a class="topnav-text topnav-right user" href="../PersonalCenterServlet"> 
 			<i class = "fa fa-user fa-lg"></i>
-			&nbspUser1
+			&nbsp<%= userInfo.getNickname() %>
 		</a>
 	</div>
 </div>

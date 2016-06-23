@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="homework.model.Member" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -32,11 +33,14 @@
 			<div class="avatar">
 				<img src="../img/avatar2.jpg">
 			</div>
+			<%
+			Member userInfo = (Member)session.getAttribute("userInfo");
+			%>
 			<div class="info">
 				<table>
 					<tr>
 						<td class="title">昵称</td>
-						<td class="content"><input type="text" id="nickname" value="许珂磊"></td>
+						<td class="content"><input type="text" id="nickname" value="<%= userInfo.getNickname() %>"></td>
 					</tr>
 					<tr>
 						<td class="title">性别</td>
@@ -47,12 +51,12 @@
 					</tr>
 					<tr>
 						<td class="title">真实姓名</td>
-						<td class="content"><input type="text" id="name" value="许珂磊"></td>
+						<td class="content"><input type="text" id="name" value="<%= userInfo.getName() %>"></td>
 					</tr>
 				</table>
 			</div>
 			<div style="clear: both;"></div>
-			<div class="div_btn">保存</div>				
+			<div class="div_btn" id="btn_save">保存</div>				
 		</div>
 	</div>
 	</div>
@@ -63,18 +67,27 @@
 $(".pc_leftnav li:eq(0)").addClass("selected");
 $(".pc_leftnav li:eq(0)").find("a").addClass("selected");
 
-$(".div_btn").click(function(){
-	$(this).addClass("div_btn_clicked");
+$("#btn_save").click(function(){
 	var nickname = $("#nickname").val();
 	var sex = $("input[name='sex']:checked").val();
 	var name = $("#name").val();
+	alert(nickname + sex + name);
 	$.ajax({
 		type: 'post',
-		url: '../PersonalCenterServlet?nickname=' + nickname + "&sex=" + sex + "&name=" + name
+		url: '../PersonalCenterServlet?nickname=' + nickname + "&sex=" + sex + "&name=" + name,
+		success: function(){
+			alert("修改成功");
+		}
 	});
-	
-	setTimeout(function(){$(".div_btn").removeClass("div_btn_clicked");}, 50);
 });
+
+if("男" == "<%= userInfo.getSex() %>"){
+	$("input[type='radio']:eq(0)").prop("checked", true);
+	$("input[type='radio']:eq(1)").prop("checked", false);
+}else{
+	$("input[type='radio']:eq(0)").prop("checked", false);
+	$("input[type='radio']:eq(1)").prop("checked", true);
+}
 
 </script>
 

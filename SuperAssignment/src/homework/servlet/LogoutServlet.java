@@ -30,7 +30,7 @@ public class LogoutServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 		session.removeAttribute("user");
 		
-		response.sendRedirect(request.getHeader("Referer"));
+		response.sendRedirect(request.getContextPath() + "/jsp/homepage.jsp");
 	}
 
 	/**

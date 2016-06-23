@@ -49,6 +49,7 @@ public class SecurityServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 		int userId = (int)session.getAttribute("user");
 		Member member = memberService.getMember(userId);
+		session.setAttribute("userInfo", member);
 		response.sendRedirect(request.getContextPath() + "/jsp/security.jsp");
 	}
 

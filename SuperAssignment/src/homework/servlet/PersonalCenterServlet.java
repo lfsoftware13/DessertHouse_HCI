@@ -50,12 +50,7 @@ public class PersonalCenterServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 		int userId = (int)session.getAttribute("user");
 		Member user = memberService.getMember(userId);
-		String nickname = "昵称";
-		String sex = "female";
-		String name = "姓名";
-		session.setAttribute("nickname", nickname);
-		session.setAttribute("sex", sex);
-		session.setAttribute("name", name);
+		session.setAttribute("userInfo", user);
 		response.sendRedirect(request.getContextPath() + "/jsp/myinfo.jsp");
 	}
 

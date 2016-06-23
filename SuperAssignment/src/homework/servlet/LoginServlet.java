@@ -13,6 +13,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import homework.model.Member;
 import homework.service.CartService;
 import homework.service.MemberService;
 
@@ -50,7 +51,9 @@ public class LoginServlet extends HttpServlet {
 		String password = request.getParameter("password");
 		int userId = memberService.login(username, password);
 		HttpSession session = request.getSession();
-		session.setAttribute("user", userId);		
+		session.setAttribute("user", userId);
+		Member member = memberService.getMember(userId);
+		session.setAttribute("userInfo", member);
 		response.sendRedirect(request.getHeader("Referer"));
 	}
 
