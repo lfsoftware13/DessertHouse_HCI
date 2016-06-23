@@ -52,6 +52,7 @@ public class CartServlet extends HttpServlet {
 		int userId = (int)session.getAttribute("user");
 		
 		List<CartItem> cart = cartService.getCartItem(userId);
+		session.setAttribute("cart", cart);
 		
 		response.sendRedirect(request.getContextPath() + "/jsp/cart.jsp");
 	}

@@ -57,6 +57,7 @@ public class OrdersServlet extends HttpServlet {
 		System.out.println(page);
 		
 		List<Orderesd> orders = orderService.getOrder(userId, Integer.parseInt(page));
+		session.setAttribute("orders", orders);
 		
 		response.sendRedirect(request.getContextPath() + "/jsp/myorders.jsp?page=" + page);
 	}

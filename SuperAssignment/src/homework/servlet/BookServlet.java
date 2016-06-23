@@ -51,9 +51,10 @@ public class BookServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String id = request.getParameter("id");
+		id = "1";
 		HttpSession session = request.getSession();
-		Book bookTest = bookService.getBook(Integer.parseInt(id));
-		Book book = new Book();
+		Book book = bookService.getBook(Integer.parseInt(id));
+		//Book book = new Book();
 		session.setAttribute("book", book);
 		response.sendRedirect(request.getContextPath() + "/jsp/book.jsp");
 	}

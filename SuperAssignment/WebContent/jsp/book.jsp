@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-
+<%@ page import="homework.model.Book" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -41,27 +41,27 @@
 				<img src="../image/10.jpg">
 			</div>
 			<div class="details">
-				<input type="hidden" id="bookId" value="123456789">
-				<div class="book_title">高性能MYSQL</div>
+			<% Book book = (Book)session.getAttribute("book"); %>
+				<input type="hidden" id="bookId" value="<%= book.getId() %>">
+				<div class="book_title"><%= book.getName() %></div>
 				<div class="book_introduction">
-					<p>累计15次印刷 14小时视频 881个实例 371项面试真题 616项测试 vc 入门经典 范例 案例 视频教程
-						零基础学vc 深入详解 长期位居 vc 开发实战 类排行榜前列</p>
+					<p><%= book.getIntroduction() %></p>
 				</div>
 				<div class="publish_info">
-					<span>作者：<a href="">明日科技</a></span> <span>出版社：<a href="">清华大学出版社</a></span>
-					<span>出版时间：<a href="">2012年9月</a></span>
+					<span>作者：<a href=""><%= book.getAuthor() %></a></span> <span>出版社：<a href=""><%= book.getPublisher() %></a></span>
+					<span>出版时间：<a href=""><%= book.getTime() %></a></span>
 				</div>
 				<div class="sales_comments">
-					<span class="comments_name line">月销量<font>33</font>
+					<span class="comments_name line">月销量<font><%= book.getSales() %></font>
 					</span> <span class="comments_name ">累计评价<font>10</font></span>
 				</div>
 				<div class="price">
-					<font class="price_symbol">￥</font> <font class="price">32.9</font>
+					<font class="price_symbol">￥</font> <font class="price"><%= book.getPrice() %></font>
 					<br> <span class="level"> <i class="fa fa-star level"></i><i
 						class="fa fa-star"></i><i class="fa fa-star"></i><i
 						class="fa fa-star"></i><i class="fa fa-star-half-o"></i>
-					</span> <font class="ranking">在c++类图书 排名: </font> <font
-						class="ranking_num"> 88</font> <font class="ranking"
+					</span> <font class="ranking">在<%= book.getLevel2() %>类图书 排名: </font> <font
+						class="ranking_num"> <%= book.getRank() %></font> <font class="ranking"
 						style="margin-left: 5px;">位</font>
 				</div>
 				<div class="quantity">

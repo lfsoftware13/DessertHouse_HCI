@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="java.util.List" %>
+<%@ page import="homework.model.Orderesd" %>
+<%@ page import="homework.model.OrderItem" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -41,30 +44,38 @@
 					</tr>
 				</table>
 			</div>
-			<%for(int i=0; i<5; i++){ %>
+			<%
+			List<Orderesd> orders = (List<Orderesd>)session.getAttribute("orders");
+			for(int i=0; i<orders.size(); i++){
+				Orderesd order = orders.get(i);
+			%>
 			<div class="order">
 				<div class="order_title">
-					<span class="bold">2016-05-26</span>
-					<span>订单号：<span class="orderId">9347013740912375</span></span>
+					<span class="bold"><%= order.getTotal() %></span>
+					<span>订单号：<span class="orderId"><%= order.getId() %></span></span>
 					<span class="del">
 						<i class="fa fa-trash-o fa-lg deleteOrder"></i>
 					</span>
 				</div>
 				<div class="order_details">
 					<table class="tbl_orders">
-						<%for(int j=0; j<3; j++){ %>
+						<%
+						List<OrderItem> items = order.getItems();
+						for(int j=0; j<order.getItems().size(); j++){
+							OrderItem item = items.get(i);
+						%>
 						<tr class="orderline">
-							<td class="bookinfo"><img src="<%= request.getContextPath() %>/img/cpp.jpg" alt="cover">Head First Java(Edition 1)</td>
-							<td class="narrow price">22.0</td>
-							<td class="narrow">4</td>
+							<td class="bookinfo"><img src="<%= request.getContextPath() %>/img/cpp.jpg" alt="cover"><%= item.getBook() %></td>
+							<td class="narrow price"><%= item.getPrice() %></td>
+							<td class="narrow"><%= item.getNumber() %></td>
 						</tr>
 						<%} %>
 					</table>
 				</div>
-				<div class="vertical_line totle" style="height: <%=110 * 3 %>px; line-height: <%=110 * 3 %>px;">
-					123.0
+				<div class="vertical_line totle" style="height: <%=110 * items.size() %>px; line-height: <%=110 * items.size() %>px;">
+					<%= order.getTotal() %>
 				</div>
-				<div class="vertical_line" style="height: <%=110 * 3 %>px; line-height: <%=110 * 3 %>px;">
+				<div class="vertical_line" style="height: <%=110 * items.size() %>px; line-height: <%=110 * items.size() %>px;">
 					交易成功
 				</div>
 				<div style="clear: both;"></div>

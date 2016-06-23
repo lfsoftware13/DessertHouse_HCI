@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="java.util.List" %>
+<%@ page import="homework.model.CartItem" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -38,11 +40,15 @@
 		</div>
 		<div class="bottom">
 			<table class="tbl_cart">
-				<%for(int i=0; i<10; i++){ %>
+				<%
+				List<CartItem> cart = (List<CartItem>)session.getAttribute("cart");
+				for(int i=0; i<cart.size(); i++){
+					CartItem item = cart.get(i);
+				%>
 				<tr class="cartline">
 					<td class="select"><input type="checkbox" name="choose"><img src="<%= request.getContextPath() %>/img/cpp.jpg" alt="cover"></td>
-					<td class="bookinfo"><a href="">C++高级程序设计</a></td>
-					<td class = "price price_info">11.1</td>
+					<td class="bookinfo"><a href="../BookServlet?bookId=<%= item.getBookid() %>"><%= item.getBook() %></a></td>
+					<td class = "price price_info"><%= item.getPrice() %></td>
 
 					<td class = "num">
 						<span class="span_quantity" id="span_quantity">
@@ -51,7 +57,7 @@
 							</span>
 							
 							 <input
-								type="text" value="1" id = "input_quantity_cart<%=i%>"class="input_quantity_cart">
+								type="text" value="<%= item.getNumber() %>" id = "input_quantity_cart<%=i%>"class="input_quantity_cart">
 							<span id="quantity_add_cart<%=i%>" class = "add_cart" style = "margin-left:5px;">
 							+
 							</span>
@@ -59,13 +65,13 @@
 						</span>
 					</td>
 
-					<td class = "total total_info">11.1</td>
+					<td class = "total total_info"><%= item.getTotal() %></td>
 					<td class = "del">
 						<!-- <div class="div_btn deleteline" style="width: 100px; margin: 0 auto;">删除</div> -->
 						<i class="fa fa-trash-o fa-lg"></i>
 					</td>
-					<td class="bookId" style="display: none;">12345</td>
-					<td class="cartId" style="display: none;">123</td>
+					<td class="bookId" style="display: none;"><%= item.getBookid() %></td>
+					<td class="cartId" style="display: none;"><%= item.getCartid() %></td>
 				</tr>
 				<%} %>
 			</table>

@@ -57,6 +57,7 @@ public class PurchaseServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 		int userId = (int)session.getAttribute("user");
 		List<Address> addressList = addressService.findAddress(userId);
+		session.setAttribute("addressList", addressList);
 		String json_orderList = request.getParameter("orderList");
 		System.out.println(json_orderList);
 		ArrayList<OrderItem> orderList = parseOrderList(json_orderList);
