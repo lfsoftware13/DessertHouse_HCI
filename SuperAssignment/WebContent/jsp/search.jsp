@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="java.util.List" %>
+<%@ page import="homework.model.Book" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -113,12 +115,16 @@
 		String[] books = new String[]{"Linux从入门到精通","Linux鸟叔的私房菜","嵌入式Linux开发","Linux设备驱动程序","Linux内核","Linux内核与实现","数理统计与数据分析","数据挖掘-概念与技术","数据库系统概念"};
 		%>
 		<div class="book_list">
-			<% for(int i=0; i<20; i++){ %>
-				<div class="book" id="book_i">
-					<a href="../BookServlet?id=123456"><img class="cover" src="../image/<%= String.format("%02d", i%16+1) %>.jpg" alt="cover"></a><br>
-					<p><a href="../BookServlet?id=123"><%= books[i%9] %></a><br>
-					
-					<font>¥<%= String.format("%.2f", (Math.random() * 100 + 20)) %></font>
+			<%
+			List<Book> bookList = (List<Book>)session.getAttribute("search_books");
+			for(int i=0; i<bookList.size(); i++){
+				Book book = bookList.get(i);
+			%>
+				<div class="book" id="<%= book.getId() %>">
+					<a href="../BookServlet?id=<%= book.getId() %>"><img class="cover" src="<%= book.getImage() %>" alt="cover"></a><br>
+					<p><a href="../BookServlet?id=<%= book.getId() %>"><%= book.getName() %></a><br>
+					<a href=""><%= book.getAuthor() %></a>&nbsp&nbsp<a href=""><%= book.getPublisher() %></a><br>
+					<font>¥<%= book.getPrice() %></font>
 					</p>
 					<span class = "level" >
 						<i class = "fa fa-star level"></i><i class = "fa fa-star"></i><i class = "fa fa-star"></i><i class = "fa fa-star"></i><i class = "fa fa-star-half-o"></i>
