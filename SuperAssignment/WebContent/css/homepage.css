@@ -8,7 +8,8 @@
 .home_single_topic .hot_books{float: left; width: 1000px; height: 100%;}
 .home_single_topic h3{color: #556589}
 .home_single_topic .topic_rankings{float: right; margin-right: 60px; width: 250px; height: 100%;}
-.hot_books, .topic_rankings h1{color: #9097A7;}
+.hot_books, .topic_rankings h1{col
+	or: #9097A7;}
 .topic_rankings img{width: 100px; height: 110px;}
 
 .home_hot_topics .topics{float: left; margin-left: 0px; width: 100%; }

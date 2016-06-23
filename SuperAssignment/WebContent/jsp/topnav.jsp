@@ -22,8 +22,8 @@
 		<font class="topnav-text topnav-left title">LingTu.Com</font>
 		<!--向右对齐-->
 		<a class="topnav-text topnav-right user" href="../LogoutServlet"> 
-			<i class = "fa fa-user fa-lg"></i>
-			注销
+			<i class="fa fa-sign-out fa-lg"></i>
+			&nbsp注销
 		</a>
 		<a class="topnav-text topnav-right user" href="../PersonalCenterServlet"> 
 			<i class = "fa fa-user fa-lg"></i>
