@@ -3,9 +3,9 @@
 .logo span{float: right; margin-right: 40px; height: 80px; line-height: 100px; font-size: 50px; font-weight: bold; font-family:幼圆}
 .logo a.no_underline{color: #6F7F98;}
 .search{position: absolute; margin-left: 300px; margin-top: 25px; width: 700px; height: 50px;}
-.cart a{position:absolute; margin-left: 1050px; margin-top: 25px; width: 130px; height: 50px; line-height: 50px; text-align: center; font-size: 20px; font-family: 微软雅黑;}
+.cart a{ color:#556589;position:absolute; margin-left: 1050px; margin-top: 25px; width: 130px; height: 50px; line-height: 50px; text-align: center; font-size: 20px; font-family: 微软雅黑;}
 .cart a:hover{color:#718dbf; text-decoration: none;}
-.orders a{position:absolute; margin-left: 1180px; margin-top: 25px; width: 130px; height: 50px; line-height: 50px; text-align: center; font-size: 20px; font-family: 微软雅黑;}
+.orders a{ color:#556589;position:absolute; margin-left: 1180px; margin-top: 25px; width: 130px; height: 50px; line-height: 50px; text-align: center; font-size: 20px; font-family: 微软雅黑;}
 .orders a:hover{color:#718dbf; text-decoration:none;}
 .searchform{align: center;}
 .search-text{position: absolute; padding-left:10px;margin-top: 0px; margin-left: 30px; width: 540px; height: 50px; font-size: 18px; line-height: 50px; border: solid 2px #556589;}
