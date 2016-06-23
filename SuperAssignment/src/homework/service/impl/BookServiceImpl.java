@@ -68,7 +68,7 @@ public class BookServiceImpl implements BookService {
 		
 		ArrayList<Book> res1=new ArrayList<Book>();
 		
-		for(int i=(page-1)*20;i<page*20;i++){
+		for(int i=(page-1)*20;i<page*20&&i<res.size();i++){
 			res1.add(res.get(i));
 		}
 		
