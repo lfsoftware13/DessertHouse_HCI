@@ -8,10 +8,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import homework.dao.AddressDao;
+import homework.dao.BookDao;
 import homework.dao.CartDao;
 import homework.dao.MemberDao;
 import homework.dao.OrderDao;
 import homework.model.Address;
+import homework.model.Book;
 import homework.model.Cart;
 import homework.model.CartItem;
 import homework.model.Member;
@@ -30,6 +32,8 @@ public class OrderServiceImpl implements OrderService {
 	MemberDao memberDao;
 	@Autowired
 	CartDao cartDao;
+	@Autowired
+	BookDao bookDao;
 	
 	@Override
 	public List<Orderesd> getOrder(int memberid, int page) {
@@ -74,6 +78,9 @@ public class OrderServiceImpl implements OrderService {
 		}
 		for(int i=0;i<list.size();i++){
 			list.get(i).setOrderid(l.getId());
+			Book b=(Book)bookDao.findById(list.get(i).getBookid());
+			list.get(i).setBook(b.getName());
+			list.get(i).setImage(b.getImage());
 			if(!orderDao.saveItem(list.get(i))){
 				return false;
 			}

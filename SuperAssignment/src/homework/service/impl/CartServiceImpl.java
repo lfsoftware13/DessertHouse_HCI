@@ -47,6 +47,7 @@ public class CartServiceImpl implements homework.service.CartService {
 		item.setNumber(number);
 		item.setPrice(b.getPrice());
 		item.setTotal(b.getPrice()*number);
+		item.setImage(b.getImage());
 		return cartDao.saveItem(item);
 	}
 
