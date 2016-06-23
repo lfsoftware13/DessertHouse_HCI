@@ -67,7 +67,8 @@ public class AddressServlet extends HttpServlet {
 		switch(action){
 		case "add":
 			address = this.getAddressFromRequest(request);
-			addressService.addAddress(address.getMemberid(), address.getName(), address.getProv(), address.getCity(), address.getDetails(), address.getZip(), address.getPhone(), address.getIsDefault() == 1? true: false);
+			int newId = addressService.addAddress(address.getMemberid(), address.getName(), address.getProv(), address.getCity(), address.getDetails(), address.getZip(), address.getPhone(), address.getIsDefault() == 1? true: false);
+			response.getWriter().print(newId);
 			System.out.println("add");
 			break;
 		case "modify":

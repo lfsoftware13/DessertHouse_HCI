@@ -46,13 +46,14 @@
 
 					<td class = "num">
 						<span class="span_quantity" id="span_quantity">
-							<span id="quantity_add_cart<%=i%>" class = "add_cart">
-							+
-							</span>
-							 <input
-								type="text" value="1" id = "input_quantity_cart<%=i%>"class="input_quantity_cart">
 							<span id="quantity_minus_cart<%=i%>" class = "minus_cart">
 							-
+							</span>
+							
+							 <input
+								type="text" value="1" id = "input_quantity_cart<%=i%>"class="input_quantity_cart">
+							<span id="quantity_add_cart<%=i%>" class = "add_cart" style = "margin-left:5px;">
+							+
 							</span>
 								
 						</span>

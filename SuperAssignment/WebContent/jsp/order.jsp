@@ -71,13 +71,14 @@
 
 					<td class = "num">
 						<span class="span_quantity" id="span_quantity">
-							<span id="quantity_add_order<%=i%>" class = "add_cart" click = "">
-							+
-							</span>
-							 <input
-								type="text" value="<%= item.getNumber() %>" id = "input_quantity_order<%=i%>"class="input_quantity_order">
 							<span id="quantity_minus_order<%=i%>" class = "minus_cart">
 							-
+							</span>
+							
+							 <input
+								type="text" value="<%= item.getNumber() %>" id = "input_quantity_order<%=i%>"class="input_quantity_order">
+							<span id="quantity_add_order<%=i%>" class = "add_cart" style = "margin-left:5px;" click = "">
+							+
 							</span>
 								
 						</span>
