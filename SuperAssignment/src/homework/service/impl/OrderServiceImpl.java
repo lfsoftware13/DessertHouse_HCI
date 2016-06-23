@@ -34,13 +34,16 @@ public class OrderServiceImpl implements OrderService {
 	@Override
 	public List<Orderesd> getOrder(int memberid, int page) {
 		// TODO Auto-generated method stub
+		System.out.println("memberid:"+memberid+"  page:"+page);
 		List<Orderesd> list=orderDao.findAll();
 		List<Orderesd> res=new ArrayList<Orderesd>();
 		for(int i=(page-1)*5;i<list.size()&&i<page*5;i++){
 			Orderesd l=list.get(i);
+			System.out.println(l.getMemberid());
 			if(memberid!=l.getMemberid()) continue;
 			List<OrderItem> items=orderDao.findByOrder(l.getId());
 			l.setItems(items);
+			res.add(l);
 		}
 		return res;
 	}
