@@ -25,16 +25,22 @@
 	<%@ include file="/jsp/logoline.jsp" %>
 	
 	<div class="search_left">
-		<%@ include file="classification.jsp" %>
+		<%@ include file="classification2.jsp" %>
 		<div class="search_recommend">
 			<div class="recommend_title">
 				<p class="title">图书推荐</p>
-				<%for(int i=0; i<3; i++){ %>
 				<div class="book_recommend">
-					<a href="../BookServlet?id=book_i"><img src="../img/vc.jpg"></a>
+					<a href="../BookServlet?id=book_i"><img src="../image/05.jpg"></a>
+					<p><a href="../BookServlet?id=book_i">深入理解Linux内核</a><br><font>¥79.0</font></p>	
+				</div>
+				<div class="book_recommend">
+					<a href="../BookServlet?id=book_i"><img src="../image/10.jpg"></a>
+					<p><a href="../BookServlet?id=book_i">高性能MySQL</a><br><font>¥68.0</font></p>	
+				</div>
+				<div class="book_recommend">
+					<a href="../BookServlet?id=book_i"><img src="../image/02.jpg"></a>
 					<p><a href="../BookServlet?id=book_i">Visual C++从入门到精通</a><br><font>¥20.0</font></p>	
 				</div>
-				<%} %>
 			</div>
 			
 		</div>
@@ -103,13 +109,16 @@
 				<span class = "checkItem">仅显示有货</span>
 			</div>
 		</div>
+		<%
+		String[] books = new String[]{"Linux从入门到精通","Linux鸟叔的私房菜","嵌入式Linux开发","Linux设备驱动程序","Linux内核","Linux内核与实现","数理统计与数据分析","数据挖掘-概念与技术","数据库系统概念"};
+		%>
 		<div class="book_list">
 			<% for(int i=0; i<20; i++){ %>
 				<div class="book" id="book_i">
-					<a href="../BookServlet?id=book_i"><img class="cover" src="https://images-cn.ssl-images-amazon.com/images/I/516W9PDv80L._SX353_BO1,204,203,200_.jpg" alt="cover"></a><br>
-					<p><a href="../BookServlet?id=book_i">Head First Java</a><br>
-					<a href="">xx著</a>&nbsp&nbsp<a href="">xx出版社</a><br>
-					<font>¥20.0</font>
+					<a href="../BookServlet?id=123456"><img class="cover" src="../image/<%= String.format("%02d", i%16+1) %>.jpg" alt="cover"></a><br>
+					<p><a href="../BookServlet?id=123"><%= books[i%9] %></a><br>
+					
+					<font>¥<%= String.format("%.2f", (Math.random() * 100 + 20)) %></font>
 					</p>
 					<span class = "level" >
 						<i class = "fa fa-star level"></i><i class = "fa fa-star"></i><i class = "fa fa-star"></i><i class = "fa fa-star"></i><i class = "fa fa-star-half-o"></i>

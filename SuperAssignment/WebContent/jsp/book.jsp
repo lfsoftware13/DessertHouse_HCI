@@ -38,11 +38,11 @@
 
 		<div class="top_part">
 			<div class="pictures">
-				<img src="../img/cpp.jpg">
+				<img src="../image/10.jpg">
 			</div>
 			<div class="details">
 				<input type="hidden" id="bookId" value="123456789">
-				<div class="book_title">Visual C++从入门到精通</div>
+				<div class="book_title">高性能MYSQL</div>
 				<div class="book_introduction">
 					<p>累计15次印刷 14小时视频 881个实例 371项面试真题 616项测试 vc 入门经典 范例 案例 视频教程
 						零基础学vc 深入详解 长期位居 vc 开发实战 类排行榜前列</p>
@@ -86,10 +86,14 @@
 					<i class="fa fa-credit-card fa-lg"></i>&nbsp立即购买
 				</div>
 				<div class = "btn_share">
-					<a><i class="fa fa-share-alt"></i>&nbsp分享
+					<a><i class="fa fa-share-alt" ></i>&nbsp分享
 					</a>
 				</div>
-
+<script>
+$(".btn_share a").click(function(){
+	alert('分享成功');
+});
+</script>
 			</div>
 		</div>
 		<div class="bottom_part">
@@ -100,7 +104,7 @@
 					for(int i=0; i<5; i++) {
 					%>
 					<div class="book">
-						<a href="../BookServlet?id=book_i"> <img src="../img/vc.jpg">
+						<a href="../BookServlet?id=123456789"> <img src="../img/vc.jpg">
 							<p>
 								Visual C++从入门到精通<br> <font>¥20.0</font><br> xx著
 							</p>

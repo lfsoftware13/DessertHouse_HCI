@@ -61,11 +61,48 @@
 				<span>&nbsp<i class = "fa fa-bookmark-o fg"></i> &nbsp热门专题</span>
 			</div>
 			<div class="topics">
-				<%for(int i=0; i<14; i++){ %>
 				<div class="hot_topic">
-					从零开始学html
+					新手入门
 				</div>
-				<%} %>
+				<div class="hot_topic">
+					热销专题
+				</div>
+				<div class="hot_topic">
+					理论基础
+				</div>
+				<div class="hot_topic">
+					计算机安全
+				</div>
+				<div class="hot_topic">
+					计算机网络
+				</div>
+				<div class="hot_topic">
+					自由软件
+				</div>
+				<div class="hot_topic">
+					极限编程
+				</div>
+				<div class="hot_topic">
+					专家系统
+				</div>
+				<div class="hot_topic">
+					模式识别
+				</div>
+				<div class="hot_topic">
+					神经计算
+				</div>
+				<div class="hot_topic">
+					工具软件
+				</div>
+				<div class="hot_topic">
+					硬件与维护
+				</div>
+				<div class="hot_topic">
+					数据库
+				</div>
+				<div class="hot_topic">
+					证书相关
+				</div>
 				<div class="change" >
 					<a href="" >
 						<i class="fa fa-refresh fa-spin"></i>
