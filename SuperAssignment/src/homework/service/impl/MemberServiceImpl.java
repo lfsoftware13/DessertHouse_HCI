@@ -73,12 +73,16 @@ public class MemberServiceImpl implements MemberService {
 		if(acc.getPassword().equals(password)){
 			return acc.getId();
 		}
-		return -1;
+		return -2;
 	}
 
 	@Override
 	public boolean register(String account, String password) {
 		// TODO Auto-generated method stub
+		
+		Account acc=accountDao.findByName(account);
+		if(acc!=null) return false;
+		
 		Member mem=new Member();
 		mem.setName(account);
 		mem.setImage("");
@@ -89,7 +93,7 @@ public class MemberServiceImpl implements MemberService {
 		mem.setAge(0);
 		memberDao.save(mem);
 		
-		Account acc=new Account();
+		acc=new Account();
 		acc.setAccount(account);
 		acc.setPassword(password);
 		acc.setType(1);
