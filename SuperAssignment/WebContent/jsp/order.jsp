@@ -77,7 +77,7 @@
 					OrderItem item = orderList.get(i);
 				%>
 				<tr class="orderline">
-					<td class = "bookinfo"><img src="<%= request.getContextPath() %>/img/cpp.jpg" alt="cover">
+					<td class = "bookinfo"><img src="../image/<%= String.format("%02d", item.getId()+1) %>.jpg" alt="cover">
 						<a href=""><%= item.getBook() %></a>
 
 					</td>
@@ -192,7 +192,6 @@ $(".submit .div_btn").click(function(){
 		list[i] = orderItem;
 	});
 	var order = new OrderList(list);
-	//alert(JSON.stringify(order));
 	$.ajax({
 		type: "post",
 		url: "../PurchaseServlet?addressId=" + addressId + "&order=" + JSON.stringify(order),
