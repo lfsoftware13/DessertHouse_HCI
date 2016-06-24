@@ -181,24 +181,23 @@ $("a.deleteline").click(function(){
 
 $(".submit .div_btn").click(function(){
 	var addressId = $(".address_list .selected").find("input").val();
-	alert(addressId);
 	var list = new Array();
 	$(".tbl_orderItems tr:gt(0)").each(function(i){
 		var bookId = $(this).find("td.bookId").html();
 		var bookName = $(this).find("td.bookinfo").find("a").html();
 		var price = $(this).find("td.price").html();
 		var quantity = $(this).find("td.num").find("input").val();
-		alert(bookId + " " + bookName + " " + price + " " + quantity);
+		//alert(bookId + " " + bookName + " " + price + " " + quantity);
 		var orderItem = new OrderItem(bookId, bookName, price, quantity);
 		list[i] = orderItem;
 	});
 	var order = new OrderList(list);
-	alert(JSON.stringify(order));
+	//alert(JSON.stringify(order));
 	$.ajax({
 		type: "post",
 		url: "../PurchaseServlet?addressId=" + addressId + "&order=" + JSON.stringify(order),
 		success: function(){
-			alert("购买成功");
+			window.location = "../OrdersServlet";
 		}
 	});
 });

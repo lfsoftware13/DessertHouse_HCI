@@ -41,18 +41,18 @@
 						</div>
 						<div class="tab_content_aa" >
 							<div class="content tab_1" style = "width:800px;">
-								<a class=" _1  pic" href="http://book.dangdang.com/20160528_4twk" target="_blank">
-									<img src="http://img60.ddimg.cn/upload_img/00087/hw/750x315_ljx_0603.jpg"/ style = "width:800px;">
+								<a class=" _1  pic" href="#" target="_blank">
+									<img src="../image/banner1.jpg"/ style = "width:800px;">
 								</a>
 							</div>
 							<div class="content tab_2" style="display: none; width:800px;">
-								<a class=" _1  pic" href="http://baby.dangdang.com/20160603_jnj3">
-									<img src="http://img60.ddimg.cn/upload_img/00570/tongshu/750315duan66.jpg" style = "width:800px;"/>
+								<a class=" _1  pic" href="#">
+									<img src="../image/banner2.jpg" style = "width:800px;"/>
 								</a>
 							</div>
 							<div class="content tab_3" style="display: none; width:800px;">
-								<a   class=" _1  pic" href="http://book.dangdang.com/20160606_nvsg">
-									<img src="http://img63.ddimg.cn/upload_img/00367/fyf/0607shidaihuayu750-315.jpg" style = "width:800px;"/>
+								<a   class=" _1  pic" href="#">
+									<img src="../image/banner3.jpg" style = "width:800px;"/>
 								</a>
 							</div>    
 						</div>
