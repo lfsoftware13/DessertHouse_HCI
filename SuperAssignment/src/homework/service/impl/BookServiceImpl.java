@@ -28,6 +28,12 @@ public class BookServiceImpl implements BookService {
 	public List<Book> search(int type, String key, int sift_publisher, int sift_time, int sift_price, int sort,
 			boolean hasStock, int page) {
 		// TODO Auto-generated method stub
+		
+		if(type==4){
+			type=2;
+			key="操作系统";
+		}
+		
 		List<Book> list=bookDao.findAll();
 		List<Book> res=new ArrayList<Book>();
 		

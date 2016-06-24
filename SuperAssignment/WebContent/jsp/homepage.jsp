@@ -141,15 +141,20 @@
 		</div>
 	</div>
 	
-	<%for(int i=0; i<3; i++){ %>
+	<%
+	List<Book> books1 = (List<Book>)session.getAttribute("system");
+	List<Book> books2 = (List<Book>)session.getAttribute("database");
+	%>
 	<div class="home_single_topic">
-		<div class="hot_books" id="topic_<%=i %>">
-			<h3><i class = "fa fa-code fg"></i> &nbsp&nbspAndroid学习</h3>
+		<div class="hot_books" id="topic_<%=1 %>">
+			<h3><i class = "fa fa-code fg"></i> &nbsp&nbsp操作系统</h3>
 			<div class="book_list" id="book_i">
-				<%for(int j=0; j<10; j++){ %>
+				<%for(int j=0; j<10; j++){ 
+					Book b1 = books1.get(j);
+				%>
 				<div class="book">
-					<a href="../BookServlet?id=book_i"><img class="book_cover" src="https://images-cn.ssl-images-amazon.com/images/I/516W9PDv80L._SX353_BO1,204,203,200_.jpg" alt="cover"></a>
-					<p><a href="../BookServlet?id=12345">Head First Java中文版</a><br><font>¥20</font></p>
+					<a href="../BookServlet?id=<%= b1.getId() %>"><img class="book_cover" src="..<%= b1.getImage() %>" alt="cover"></a>
+					<p><a href="../BookServlet?id=<%= b1.getId() %>"><%= b1.getName() %></a><br><font>¥<%= b1.getPrice() %></font></p>
 				</div>
 				<%} %>
 			</div>
@@ -157,22 +162,57 @@
 		<div class="topic_rankings rankings">
 			<h3><i class = "fa fa-server fg"></i>&nbsp&nbsp畅销榜单</h3>
 			<ul>
-				<%for(int k=0; k<10; k++){ %>
+				<%for(int k=0; k<10; k++){
+					Book k1 = books1.get(k);
+				%>
 				<li class="line0<%=k %> brief">
 					<span><%=k+1 %></span>
-					<a href="../BookServlet?id=123">Head First Java中文版</a>
+					<a href="../BookServlet?id=<%= k1.getId() %>"><%= k1.getName() %></a>
 				</li>
 				<li class="line1<%=k %> detail">
 					<span><%=k+1 %></span>
-					<a href="../BookServlet?id=123"><img src="../img/cpp.jpg"></a>
-					<p><a href="../BookServlet?id=123">Head First Java中文版</a></p>
-					<p><font color="red">¥20.0</font></p>
+					<a href="../BookServlet?id=<%= k1.getId() %>"><img src="..<%= k1.getImage() %>"></a>
+					<p><a href="../BookServlet?id=<%= k1.getId() %>"><%= k1.getName() %></a></p>
+					<p><font color="red">¥<%= k1.getPrice() %></font></p>
 				</li>
 				<%} %>
 			</ul>
 		</div>
 	</div>
-	<%} %>
+	<div class="home_single_topic" style="margin-top: 50px;">
+		<div class="hot_books" id="topic_<%=2 %>">
+			<h3><i class = "fa fa-code fg"></i> &nbsp&nbsp操作系统</h3>
+			<div class="book_list" id="book_i">
+				<%for(int j=0; j<10; j++){ 
+					Book b1 = books2.get(j);
+				%>
+				<div class="book">
+					<a href="../BookServlet?id=<%= b1.getId() %>"><img class="book_cover" src="..<%= b1.getImage() %>" alt="cover"></a>
+					<p><a href="../BookServlet?id=<%= b1.getId() %>"><%= b1.getName() %></a><br><font>¥<%= b1.getPrice() %></font></p>
+				</div>
+				<%} %>
+			</div>
+		</div>
+		<div class="topic_rankings rankings">
+			<h3><i class = "fa fa-server fg"></i>&nbsp&nbsp畅销榜单</h3>
+			<ul>
+				<%for(int k=0; k<10; k++){
+					Book k1 = books2.get(k);
+				%>
+				<li class="line0<%=k %> brief">
+					<span><%=k+1 %></span>
+					<a href="../BookServlet?id=<%= k1.getId() %>"><%= k1.getName() %></a>
+				</li>
+				<li class="line1<%=k %> detail">
+					<span><%=k+1 %></span>
+					<a href="../BookServlet?id=<%= k1.getId() %>"><img src="..<%= k1.getImage() %>"></a>
+					<p><a href="../BookServlet?id=<%= k1.getId() %>"><%= k1.getName() %></a></p>
+					<p><font color="red">¥<%= k1.getPrice() %></font></p>
+				</li>
+				<%} %>
+			</ul>
+		</div>
+	</div>
 </div>
 </body>
 
@@ -211,7 +251,7 @@ $(document).ready(function(){
 	
 	$(".hot_topic").click(function(){
 		var topic = $(this).html();
-		window.location = "<%= request.getContextPath() %>/SearchServlet?type=topic&kw=" + topic;
+		window.location = "../SearchServlet?type=topic&kw=" + topic;
 	});
 	
 	$(".topic_rankings li:odd").hide();

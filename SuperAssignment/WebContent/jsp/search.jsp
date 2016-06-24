@@ -124,16 +124,17 @@
 			for(int i=0; i<bookList.size(); i++){
 				Book book = bookList.get(i);
 			%>
-				<div class="book" id="<%= book.getId() %>">
+				<div class="book" id="<%= book.getId() %>" style="height: 400px;">
 					<a href="../BookSer	vlet?id=<%= book.getId() %>"><img class="cover" src="..<%= book.getImage() %>" alt="cover"></a><br>
 					<p><a href="../BookServlet?id=<%= book.getId() %>"><%= book.getName() %></a><br>
 					<a href=""><%= book.getAuthor() %></a>&nbsp&nbsp<a href=""><%= book.getPublisher() %></a><br>
 					<font>¥<%= book.getPrice() %></font>
 					</p>
-					<span class = "level" >
+					<div style="margin: bottom;">
+					<span class = "level">
 						<i class = "fa fa-star level"></i><i class = "fa fa-star"></i><i class = "fa fa-star"></i><i class = "fa fa-star"></i><i class = "fa fa-star-half-o"></i>
 					</span>
-					
+					</div>
 				</div>
 			<% } %>
 		</div>

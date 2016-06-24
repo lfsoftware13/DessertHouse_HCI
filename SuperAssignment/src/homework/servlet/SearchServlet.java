@@ -121,6 +121,8 @@ public class SearchServlet extends HttpServlet {
 			break;
 		case "c2":
 			i_type = 3;
+		case "topic":
+			i_type = 4;
 			break;
 		}
 		

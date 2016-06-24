@@ -59,12 +59,16 @@ public class HomepageServlet extends HttpServlet {
 		List<Book> rankings1 = bookService.bookrecommend();
 		List<Book> rankings2 = bookService.bookrecommend();
 		List<Classification> classifications = this.getClassification();
+		List<Book> system=bookService.search(2, "操作系统", 0, 0, 0, 0, false, 1);
+		List<Book> database=bookService.search(2, "数据库", 0, 0, 0, 0, false, 1);
 		
 		HttpSession session = request.getSession();
 		session.setAttribute("newBooks", newBooks);
 		session.setAttribute("hotTopics", hotTopics);
 		session.setAttribute("rankings", rankings1);
 		session.setAttribute("rankings", rankings2);
+		session.setAttribute("system", system);
+		session.setAttribute("database", database);
 		session.setAttribute("classifications", classifications);
 		
 		response.sendRedirect(request.getContextPath() + "/jsp/homepage.jsp");
