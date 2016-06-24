@@ -40,6 +40,14 @@ public class CartServiceImpl implements homework.service.CartService {
 		ca.setNumber(ca.getNumber()+number);
 		ca.setTotal(ca.getTotal()+b.getPrice()*number);
 		cartDao.update(ca);
+		List<CartItem> items=(List<CartItem>)cartDao.findItemByCart(ca.getId());
+		for(int i=0;i<items.size();i++){
+			if(items.get(i).getBookid()==b.getId()){
+				items.get(i).setNumber(number+items.get(i).getNumber());
+				items.get(i).setTotal(items.get(i).getPrice()*items.get(i).getNumber());
+				return cartDao.updateItem(items.get(i));
+			}
+		}
 		CartItem item=new CartItem();
 		item.setBookid(bookid);
 		item.setBook(b.getName());
@@ -70,6 +78,7 @@ public class CartServiceImpl implements homework.service.CartService {
 	@Override
 	public boolean deleteCart(int itemid) {
 		// TODO Auto-generated method stub
+		System.out.println("itemid:"+itemid);
 		return cartDao.deleteItem(itemid);
 	}
 

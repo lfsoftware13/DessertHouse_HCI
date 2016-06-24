@@ -152,7 +152,7 @@ $(".tbl_address").on("click", "a.deleteline", function(){
 });
 </script>
 
-<script src="<%= request.getContextPath() %>/js/city.js"></script>
+<script src="<%= request.getContextPath() %>/js/mycity.js"></script>
 <script>
 	$("#btn_save_address").click(function(){
 		var addressId = $("#addressId").val();

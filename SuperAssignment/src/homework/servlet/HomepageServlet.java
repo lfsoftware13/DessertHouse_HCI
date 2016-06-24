@@ -122,18 +122,105 @@ public class HomepageServlet extends HttpServlet {
 				"设计模式"}));
 		list.add(new Classification("操作系统", new String[]{"操作系统理论", "Windows", "Linux", "UNIX", "Sun solaris", "FreeBSD", "操作系统理论", "注册表"}));
 		list.add(new Classification("人工智能", new String[]{"专家系统", "模式识别", "智能机器人", "机器学习", "神经计算"})); //8
-		list.add(new Classification("专用软件", new String[]{"", "", "", ""}));
-		list.add(new Classification("办公软件", new String[]{"", "", "", ""}));
-		list.add(new Classification("计算机辅助设计与工程计算", new String[]{"", "", "", ""}));
-		list.add(new Classification("中文信息处理", new String[]{"", "", "", ""}));
-		list.add(new Classification("数码/设计", new String[]{"", "", "", ""}));
-		list.add(new Classification("硬件与维护", new String[]{"", "", "", ""}));
-		list.add(new Classification("数据库", new String[]{"", "", "", ""}));
-		list.add(new Classification("考试认证", new String[]{"", "", "", ""}));
-		list.add(new Classification("计算机控制与仿真", new String[]{"", "", "", ""}));
-		list.add(new Classification("信息系统", new String[]{"", "", "", ""}));
-		list.add(new Classification("电子工程", new String[]{"", "", "", ""}));
-		list.add(new Classification("游戏", new String[]{"", "", "", ""}));
+		list.add(new Classification("专用软件", new String[]{
+				"工具软件",
+				"排版软件",
+				"统计软件/SPSS/SAS",
+				"财务软件",
+				"Microsoft Project",
+				"SAP",
+				"ERP/PDM"
+		}));
+		list.add(new Classification("办公软件", new String[]{"OFFICE", "WPS", "LOTUS NOTES/Domino"}));
+		list.add(new Classification("计算机辅助设计与工程计算", new String[]{
+				"工具软件",
+				"排版软件",
+				"统计软件/SPSS/SAS",
+				"财务软件",
+				"Microsoft Project",
+				"SAP",
+				"ERP/PDM"
+		}));
+		list.add(new Classification("中文信息处理", new String[]{
+				"输入法",
+				"电子印前技术"
+		}));
+		list.add(new Classification("数码/设计", new String[]{
+				"人机交互",
+				"Photoshop",
+				"Premiere",
+				"Illustrator",
+				"After Effects",
+				"Freehand",
+				"Director",
+				"Authorware",
+				"Flash",
+				"Fireworks",
+				"UI/交互设计",
+				"游戏动画设计",
+				"CorelDRAW",
+				"3D Studio MAX",
+				"MAYA",
+				"zbrush",
+				"OpenGL",
+				"Painter",
+				"Softimage",
+				"多媒体技术",
+				"数字图像处理",
+				"网页设计综合",
+				"CSS",
+				"Dreamweaver",
+				"FrontPage",
+				"Combustion",
+				"视频/音频/流媒体"
+}));
+		list.add(new Classification("硬件与维护", new String[]{"计算机配件/外设",
+				"计算机维护/维修/组装",
+				"BIOS/CMOS",
+				"接口/接口程序设计"}));
+		list.add(new Classification("数据库", new String[]{"数据库理论",
+				"FoxPro",
+				"SQL Server",
+				"Oracle",
+				"FoxBase",
+				"DB2",
+				"INFORMIX",
+				"SYBASE",
+				"MySQL",
+				"SQL语言",
+				"数据库存储与管理",
+				"数据库设计"}));
+		list.add(new Classification("考试认证", new String[]{"微软认证考试",
+				"CISCO认证考试",
+				"SUN认证考试",
+				"Adobe认证考试",
+				"Sybase认证考试",
+				"CIW认证考试",
+				"Oracle认证考试",
+				"全国计算机等级考试",
+				"自学考试类",
+				"计算机软件专业技术资格和水平考试",
+				"同等学历考试",
+				"Java认证考试"}));
+		list.add(new Classification("计算机控制与仿真", new String[]{"系统仿真/虚拟现实",
+				"实时仿真",
+				"仿真语言",
+				"仿真计算机",
+				"控制系统",
+				"电路设计",
+				"可编程控制器",
+				"数字电子技术",
+				"VLSI设计",
+				"数字系统设计",
+				"现代控制理论",
+				"系统分析与设计(控制)",
+				"数字逻辑"}));
+		list.add(new Classification("信息系统", new String[]{"管理信息系统",
+				"地理信息系统"}));
+		list.add(new Classification("电子工程", new String[]{"电子电气"}));
+		list.add(new Classification("游戏", new String[]{"游戏编程",
+				"游戏动画设计",
+				"手机游戏设计"}));
 		return list;
 	}
 

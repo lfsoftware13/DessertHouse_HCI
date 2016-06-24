@@ -151,8 +151,12 @@
 	if(cur_page == null){
 		cur_page = "1";
 	}
+	if(bookList.size() == 20){
 	%>
 	$.paging(<%=cur_page %>, 100, 10, "div_pagination", "../SearchServlet");
+	<%
+	}
+	%>
 </script>
 
 

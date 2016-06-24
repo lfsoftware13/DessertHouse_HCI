@@ -115,8 +115,10 @@ $(".order_details .orderline:gt(0)").addClass("top_border");
 	if(cur_page == null){
 		cur_page = "1";
 	}
+	if(orders.size() == 5){
 	%>
 	$.paging(<%=cur_page %>, 100, 10, "div_pagination", "../OrdersServlet");
+	<%}%>
 </script>
 
 
