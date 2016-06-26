@@ -15,6 +15,7 @@
 .div_mod_title span{display: block; float: left; font-size: 30px; color: #475A82;}
 .div_mod_title a{margin-left: 10px; font-size: 18px;font-weight: lighter;}
 
+.tbl_pc td.content{width: 430px;}
 .tbl_pc .div_btn{margin-top: 10px;}
 
 .tbl_pc .div_btn, .div_mod .div_btn{font-size: 18px;width: 150px; height: 40px; line-height: 40px; background-color: #556589;}

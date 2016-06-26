@@ -77,7 +77,7 @@
 					OrderItem item = orderList.get(i);
 				%>
 				<tr class="orderline">
-					<td class = "bookinfo"><img src="../image/<%= String.format("%02d", item.getId()+1) %>.jpg" alt="cover">
+					<td class = "bookinfo"><img src="../image/<%= String.format("%02d", item.getBookid()) %>.jpg" alt="cover">
 						<a href=""><%= item.getBook() %></a>
 
 					</td>
@@ -182,6 +182,7 @@ $("a.deleteline").click(function(){
 $(".submit .div_btn").click(function(){
 	var addressId = $(".address_list .selected").find("input").val();
 	var list = new Array();
+	var total = 0;
 	$(".tbl_orderItems tr:gt(0)").each(function(i){
 		var bookId = $(this).find("td.bookId").html();
 		var bookName = $(this).find("td.bookinfo").find("a").html();
@@ -190,13 +191,14 @@ $(".submit .div_btn").click(function(){
 		//alert(bookId + " " + bookName + " " + price + " " + quantity);
 		var orderItem = new OrderItem(bookId, bookName, price, quantity);
 		list[i] = orderItem;
+		total += parseFloat(price) * parseInt(quantity);
 	});
 	var order = new OrderList(list);
 	$.ajax({
 		type: "post",
 		url: "../PurchaseServlet?addressId=" + addressId + "&order=" + JSON.stringify(order),
 		success: function(){
-			window.location = "../OrdersServlet";
+			window.location = "./pay.jsp?total=" + total;
 		}
 	});
 });

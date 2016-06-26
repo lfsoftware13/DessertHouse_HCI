@@ -32,17 +32,29 @@
 		<div class="init">
 		<%
 		Member userInfo = (Member)session.getAttribute("userInfo");
+		String email = userInfo.getMail();
+		if(email.equals("")){
+			email = "未填写";
+		}else if(email.length() > 35){
+			email = email.substring(0, 35) + "...";
+		}
+		String phone = userInfo.getPhone();
+		if(phone.equals("")){
+			phone = "未填写";
+		}else if(phone.length() > 35){
+			phone = phone.substring(0, 35) + "...";
+		}
 		%>
 			<div class="security_item">
 				<table class="tbl_pc">
 					<tr>
 						<td class="title">登录邮箱：</td>
-						<td class="content"><%= userInfo.getMail().equals("") ? "未填写" : userInfo.getMail() %></td>
+						<td class="content"><%= email %></td>
 						<td class="btn"><div class="div_btn" id="show_mod_email">修改邮箱</div></td>
 					</tr>
 					<tr>
 						<td class="title">绑定手机：</td>
-						<td class="content"><%= userInfo.getPhone().equals("") ? "未填写" : userInfo.getPhone() %></td>
+						<td class="content"><%= phone %></td>
 						<td class="btn"><div class="div_btn" id="show_mod_phone">修改手机</div></td>
 					</tr>
 					<tr>

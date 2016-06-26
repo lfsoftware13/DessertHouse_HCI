@@ -101,7 +101,7 @@
 					<tr class="addressline">
 
 						<td><%= address.getName() %></td>
-						<td><%= address.getProv() + address.getCity() %></td>
+						<td><span><%= address.getProv() %></span><span><%= address.getCity() %></span></td>
 						<td style = "width:270px"><%= address.getDetails() %></td>
 						<td><%= address.getZip() %></td>
 						<td style = "width:130px;"><%= address.getPhone() %></td>
@@ -111,6 +111,7 @@
 						<i class="fa fa-trash-o fa-lg"></i>
 					</a></td>
 						<td style="display: none;" class="addressId"><%= address.getId() %></td>
+						<td style="display: none;" class="isDefault"><%= address.getIsDefault() %></td>
 					</tr>
 					<%
 					}
@@ -150,6 +151,29 @@ $(".tbl_address").on("click", "a.deleteline", function(){
 		}
 	});
 });
+
+$(".tbl_address .addressline").find("td:lt(5)").css("cursor", "pointer");
+
+$(".tbl_address").on("click", ".addressline td", function(){
+	if($(this).prevAll().length > 4){
+		return;
+	}
+	var row = $(this).parent();
+	$("#province").val(row.find("td:eq(1)").find("span:eq(0)").html());
+	$("#province").trigger("change");
+	$("#city").val(row.find("td:eq(1)").find("span:eq(1)").html());
+	$("#detailedAddress").val(row.find("td:eq(2)").html());
+	$("#txt_zipcode").val(row.find("td:eq(3)").html());
+	$("#txt_name").val(row.find("td:eq(0)").html());
+	$("#txt_contact").val(row.find("td:eq(4)").html());
+	$("#addressId").val(row.find("td:eq(6)").html());
+	var isDefault = true;
+	if(row.find("td.isDefault").html() == "0"){
+		isDefault = false;
+	}
+	$("#set_default").prop("checked", isDefault);
+});
+
 </script>
 
 <script src="<%= request.getContextPath() %>/js/mycity.js"></script>
@@ -203,12 +227,17 @@ $(".tbl_address").on("click", "a.deleteline", function(){
 	function addAddressLine(address){
 		var html_row = "<tr class='addressline'>"
 		html_row += "<td>" + address.name + "</td>";
-		html_row += "<td>" + address.province + address.city + "</td>";
+		html_row += "<td><span>" + address.province + "</span><span>" + address.city + "</span></td>";
 		html_row += "<td>" + address.detailedAddr + "</td>";
 		html_row += "<td>" + address.zipcode + "</td>";
 		html_row += "<td>" + address.phone + "</td>";
-		html_row += "<td><a class='deleteline'>删除</a></td>";
-		html_row += "<td style='display: none;'>" + address.id + "</td>";
+		html_row += "<td><a class='deleteline'><i class='fa fa-trash-o fa-lg'></i></a></td>";
+		html_row += "<td style='display: none;' class='addressId'>" + address.id + "</td>";
+		var isDefault = 0;
+		if(address.isDefault){
+			isDefault = 1;
+		}
+		html_row += "<td style='display: none;' class='isDefault'>" + isDefault + "</td>";
 		html_row += "</tr>";
 		$(".tbl_address").append(html_row);
 	}
@@ -219,10 +248,16 @@ $(".tbl_address").on("click", "a.deleteline", function(){
 			var id = $(this).find("td.addressId").html();
 			if(id == addressId){
 				$(this).find("td:eq(0)").html($("#txt_name").val());
-				$(this).find("td:eq(1)").html($("#province option:selected").text() + $("#city option:selected").text());
+				$(this).find("td:eq(1)").find("span:eq(0)").html($("#province option:selected").text());
+				$(this).find("td:eq(1)").find("span:eq(1)").html($("#city option:selected").text());
 				$(this).find("td:eq(2)").html($("#detailedAddress").val());
 				$(this).find("td:eq(3)").html($("#txt_zipcode").val());
 				$(this).find("td:eq(4)").html($("#txt_contact").val());
+				var isDefault = 0;
+				if($(this).find("#set_default").prop("checked")){
+					isDefault = 1;
+				}
+				$(this).find("td.isDefault").html(isDefault);
 			}
 		});
 	}

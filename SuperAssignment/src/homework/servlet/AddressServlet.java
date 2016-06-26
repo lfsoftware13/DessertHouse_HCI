@@ -63,7 +63,6 @@ public class AddressServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String action = request.getParameter("action");
 		Address address;
-		String returnMessage = "success";
 		switch(action){
 		case "add":
 			address = this.getAddressFromRequest(request);
@@ -86,7 +85,6 @@ public class AddressServlet extends HttpServlet {
 		int userId = (int)session.getAttribute("user");
 		List<Address> addressList = addressService.findAddress(userId);
 		session.setAttribute("addressList", addressList);
-		response.getWriter().print(returnMessage);
 	}
 	
 	private Address getAddressFromRequest(HttpServletRequest request){
@@ -103,7 +101,7 @@ public class AddressServlet extends HttpServlet {
 		String zipcode = request.getParameter("zipcode");
 		String name = request.getParameter("name");
 		String phone = request.getParameter("phone");
-		boolean isDefault = Boolean.getBoolean(request.getParameter("isDefault"));
+		boolean isDefault = Boolean.parseBoolean(request.getParameter("isDefault"));
 		System.out.println(id + " " + province + " " + city + " " + detailedAddr + " " + zipcode + " " + name + " " + phone + " " + isDefault);
 		System.out.println(userId);
 		address.setCity(city);
