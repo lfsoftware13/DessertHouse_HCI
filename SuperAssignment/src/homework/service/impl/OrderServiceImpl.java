@@ -50,14 +50,24 @@ public class OrderServiceImpl implements OrderService {
 			res.add(l);
 		}
 		
-		int i=0;
-		int j=res.size()-1;
-		while(i<j){
-			Orderesd o=res.get(i);
-			res.set(i, res.get(j));
-			res.set(j, o);
-			i++;
-			j--;
+//		int i=0;
+//		int j=res.size()-1;
+//		while(i<j){
+//			Orderesd o=res.get(i);
+//			res.set(i, res.get(j));
+//			res.set(j, o);
+//			i++;
+//			j--;
+//		}
+		
+		for(int i=0;i<res.size();i++){
+			for(int j=0;j<(res.size()-i-1);j++){
+				if(res.get(j).getId()<res.get(j+1).getId()){
+					Orderesd o=res.get(j);
+					res.set(j, res.get(j+1));
+					res.set(j+1, o);
+				}
+			}
 		}
 		
 		return res;

@@ -55,12 +55,22 @@ public class AddressServiceImpl implements AddressService {
 		add.setZip(zip);
 		add.setPhone(phone);
 		if(isDefault){
+			clearDefault();
 			add.setIsDefault(1);
 		}
 		else{
 			add.setIsDefault(0);
 		}
 		return addressDao.update(add);
+	}
+	
+	public boolean clearDefault(){
+		List<Address> list=addressDao.findAll();
+		for(int i=0;i<list.size();i++){
+			list.get(i).setIsDefault(0);
+			addressDao.update(list.get(i));
+		}
+		return true;
 	}
 	
 	@Override
