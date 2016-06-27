@@ -71,7 +71,7 @@
 						<i class="fa fa-trash-o fa-lg"></i>
 					</td>
 					<td class="bookId" style="display: none;"><%= item.getBookid() %></td>
-					<td class="cartId" style="display: none;"><%= item.getCartid() %></td>
+					<td class="cartId" style="display: none;"><%= item.getId() %></td>
 				</tr>
 				<%} %>
 			</table>

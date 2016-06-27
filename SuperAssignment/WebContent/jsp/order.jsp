@@ -116,50 +116,9 @@
 		</div>
 	</div>
 	
-	</div>
 </div>
 
 <script>
-
-$(document).ready(function(){
-	// var i = 0;
-	//  for (var i = 0; i < 10; i++) {
-	// 	$("#quantity_add_order"+count).click(function(i){
-	// 		return function(e){
-	// 			e.preventDefault();
-	// 			var val = parseInt($("#input_quantity_order"+count).attr("value"));
-	// 			$("#input_quantity_order"+count).attr("value", val+1);
-	// 		};
-		
-	// })(i);
-	// alert("here");
-	for (var i = 0; i < 10; i++) {
-
-    	(function (lockedInIndex) {
-
-        	$("#quantity_add_order"+lockedInIndex).click(function () {
-            	// e.preventDefault();
-            	// alert('I am link #' + lockedInIndex);
-            	var val = parseInt($("#input_quantity_order"+lockedInIndex).attr("value"));
-				$("#input_quantity_order"+lockedInIndex).attr("value", val+1);
-        	});
-
-    	})(i);
-
-	}
-	// i = 0;
-	for(var i = 0; i < 10; i++){
-	(function(i){
-	$("#quantity_minus_order"+i).click(function(){
-		var val = parseInt($("#input_quantity_order"+i).attr("value"));
-		if(val > 1){
-			$("#input_quantity_order"+i).attr("value", val-1);
-		}
-	});
-	})(i);
-	}
-
-});
 
 $(".tbl_orderItems tr:gt(0)").each(function(){
 	var sum = parseFloat($(this).find("td:eq(3)").html()) + parseFloat($("#sum").html());
@@ -177,6 +136,7 @@ $("a.deleteline").click(function(){
 	var sum = parseFloat($("#sum").html()) - parseFloat($(this).parent().parent().find("td:eq(3)").html());
 	$("#sum").html(sum.toFixed(1));
 	$(this).parent().parent().remove();
+	sumpup();
 });
 
 $(".submit .div_btn").click(function(){
@@ -213,6 +173,34 @@ function OrderItem(bookId, bookName, price, quantity){
 
 function OrderList(list){
 	this.list = list;
+}
+
+$("span.add_cart").click(function(){
+	var row = $(this).parent().parent().parent();
+	var quantity = parseInt(row.find("td.num").find("input").val()) + 1;
+	row.find("td.num").find("input").val(quantity);
+	sumup();
+});
+
+$("span.minus_cart").click(function(){
+	var row = $(this).parent().parent().parent();
+	var quantity = parseInt(row.find("td.num").find("input").val()) - 1;
+	if(quantity > 0){
+		row.find("td.num").find("input").val(quantity);
+		sumup();
+	}
+});
+
+function sumup(){
+	var sum = 0;
+	$(".order_list .orderline").each(function(){
+		var quantity = $(this).find("td.num").find("input").val();
+		var price = $(this).find("td.price").html();
+		var total = parseInt(quantity) * parseFloat(price);
+		$(this).find("td.total").html(total.toFixed(1));
+		sum += total;
+	});
+	$("#sum").html(sum.toFixed(1));;
 }
 
 </script>
